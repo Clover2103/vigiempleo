@@ -1,0 +1,506 @@
+body {
+    background-color: #fff;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Decoracion de menu */
+.menu {
+    width: 100%;
+    border-bottom: 5px solid #2c3691;
+}
+
+    .menu_logo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+        .menu_logo img {
+            height: 70px;
+        }
+
+    /* Cuerpo */
+    .cuerpo {
+		min-height: 85vh;
+	}
+
+        /* Sliter */
+		.cuerpo_sliter {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			height: 300px;
+		}
+
+        .sliter_completo_izq {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            background-color:#2c3691;
+        }       
+    
+            .sliter_izq {
+                width: 50%;
+                text-align: center;
+                color: #ffffff;
+            }
+
+                .sliter_izq img{
+                    height: 125px;
+                }
+
+                .sliter_izq p{
+                    color: #fff;
+                    font-size: 1.8em;
+                    padding: 15px 0;
+                }
+
+        .sliter_completo_der {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: end;
+            background-position: right;
+            background-repeat: no-repeat;
+            background-color: #2c3691;
+            background-size: 60vh;       
+        }
+
+            .sliter_der {
+                width: 100%;
+                text-align: center;
+                height: 85%;
+                display: flex;
+                justify-content: center;
+                align-items: end;
+            }
+
+                .sliter_der img{
+                    height: 100%;
+                }
+
+    .form_login {
+        min-height: 60vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }        
+    
+        .login_container {
+            width: 500px;
+            min-height: 350px;
+            display: flex;
+            background-color: #ffffff;
+            border-radius: 5px;
+            border: 1px solid #dddbd5;
+            box-shadow: 0 1px 3px rgba(33, 41, 52, .75);
+        }
+
+            .login_cuerpo_izq {
+                display: flex;
+                min-height: 250px;
+                width: 100%;
+                padding-top: 50px;
+                padding-bottom: 50px;
+                justify-content: space-evenly;
+                align-items: center;
+                flex-direction: column;
+            }
+
+                .login_cuerpo_izq h2 {
+                    color: #2c3691;
+                }
+
+                .login_cuerpo_izq form {
+                    text-align: center;
+                    z-index: 20;
+                }
+
+                    .login_cuerpo_izq form .input {
+                        border-radius: 9px;
+                        width: 300PX;
+						height: 40px;
+                        border: 1px solid #dddbd5;
+                        padding: 5px;
+                        margin: 8px 5px;
+                    }
+
+						.login_cuerpo_izq form .input img {
+							width: 15px;
+                            height: 15px;
+						}
+
+                    .login_cuerpo_izq form .cont_check{
+                        display: flex;
+                        margin: auto;
+                        justify-content: center;
+                    }
+
+                        .cont_check div{
+                            display: flex;
+                            flex-direction: column;
+                            margin: 5px 15px 20px 15px;
+                        }
+
+                    .login_cuerpo_izq button {
+                        margin: 8px 5px 8px 5px ;
+                        padding: 5px 15px;
+                        border-radius: 25px;
+                        background-color: #2c3691;
+                        color: #ffffff;
+                        border: none;
+                        cursor: pointer;
+                    }
+
+                .login_cuerpo_der img{
+                    position: absolute;
+                    margin-left: -250px;
+                }
+
+				.contrasena {
+                    width: 98%;
+                    height: 40px;
+                    display: flex;
+                    background-color: #fff;
+                    border-radius: 9px;
+                    border: 1px solid #dddbd5;
+                    padding: 5px;
+                    margin: 8px 5px;
+                }
+
+                        .con_pass {
+                            min-width: 90%;
+                            height: 25px;
+                            border: none;
+                        }
+
+                        #btn_ver_log{
+                            background-color: #fff;
+                            border: none;
+                            cursor: pointer;
+                            padding: 0;
+                        }
+
+                            #btn_ver_log img{
+                                width: 15px;
+                                height: 15px;
+                                padding: 0;
+                            }
+
+                .contVeEmLo {
+                    display: none;
+                }
+
+                    .wind_msg_EmLo {
+                        background: rgba(33, 41, 52, .85);
+                        left: 0;
+                        bottom: 0;
+                        right: 0;
+                        top: 0;
+                        display: flex;
+                        position: fixed;
+                        z-index: 999;
+                    }
+
+                        .wind_msg_EmLo .contWinMsg_EmLo {
+                            background: #fff;
+                            border-radius: 2px;
+                            box-shadow: 0 1px 3px rgba(33, 41, 52, .75);
+                            box-sizing: content-box;
+                            display: flex;
+                            justify-content: space-around;
+                            flex-direction: column;
+                            margin: auto;
+                            height: 250px;
+                            max-width: 600px;
+                            min-width: 320px !important;
+                            overflow: hidden;
+                            position: relative;
+                            width: 100%;
+                            padding: 25px 10px 15px 10px;
+                            font-size: 1.3rem;
+                            border-radius: 15px;
+                            text-align: center;
+                        }
+
+                            .contWinMsg_EmLo{
+                                display: flex;
+                                flex-direction: column;
+                                justify-content: center;
+                                align-items: center;
+                            }
+
+                            .contWinMsg_EmLo button {
+                                margin: 8px 5px 8px 5px ;
+                                padding: 8px 20px;
+                                font-size: 1.3em;
+                                border-radius: 25px;
+                                background-color: #2c3691;
+                                color: #ffffff;
+                                border: none;
+                                cursor: pointer;
+                            }
+
+/* Pie de pagina */
+.footer {
+    border-top: 2px solid #000;
+    box-shadow: 0 -2px 3px rgba(33, 41, 52, .75);
+    min-height: 100px;
+    background-color:#ffffff ;
+}
+
+    .footer_pie {
+        width: 70%;
+        height: 80px;
+        text-align: center;
+        margin: auto;
+        display: flex;
+        justify-content: space-around;
+    }
+
+        .pie_copy, .pie_redes, .pie_contacto {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+            .pie_contacto p{
+                display: flex;
+                flex-direction: column;
+                align-items: start;
+            }
+
+/* Responsive de 1500px hasta 1200px */
+@media only screen and (max-width:1500px) and (min-width: 1200px) {
+    
+    /* Sliter */
+    .sliter_completo_izq {
+        margin-right: -150px;
+    }
+
+        .sliter_izq p {
+            font-size: 1.59em;
+        }
+
+        .sliter_izq img {
+            height: 100px;
+        }
+
+    .sliter_completo_der {
+        background-size: 85vh;
+        background-position: center;
+    }
+}
+
+/* Responsive de 1199px hasta 1024px */
+@media only screen and (max-width:1199px) and (min-width: 1024px) {
+    
+    /* Sliter */
+    .sliter_completo_izq {
+        margin-right: -120px;
+    }
+
+        .sliter_izq p {
+            font-size: 1.4em;
+        }
+
+        .sliter_izq img {
+            height: 90px;
+        }
+
+    .sliter_completo_der {
+        background-size: 60vh;
+        background-position: center;
+    }
+}
+
+/* Responsive de 1023px hasta 768px */
+@media only screen and (max-width:1023px) and (min-width: 768px) {
+
+    
+    /* Sliter */
+    .sliter_completo_izq {
+        margin-right: -6px;
+        padding-left: 35px;
+        clip-path: polygon(0 0, 100% 0,100% 100%, 0 100%)
+    }
+
+    .sliter_izq {
+        width: 80%;
+    }
+
+        .sliter_izq img {
+            height: 90px;
+        }
+
+        .sliter_izq p {
+            font-size: 1.3em;
+        }
+
+    .sliter_completo_der {
+        background-size: 60vh;
+        background-image: none;
+        background-color: #2c3691;
+        clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)
+    }
+
+    /* Buscar ofertas */
+    .oferta_conteiner {
+        width: 90%;
+    }
+
+    .login_cuerpo_der img {
+        display: none;
+    }
+}
+
+/* Responsive de 767px hasta 480px */
+@media only screen and (max-width:767px) and (min-width: 480px) {
+
+    /* Sliter */
+    .sliter_completo_izq {
+        justify-content: end;
+        margin-right: -2px;
+        clip-path: polygon(0 0, 100% 0,100% 100%, 0 100%)
+    }
+
+    .sliter_izq {
+        width: 90%;
+    }
+
+        .sliter_izq img {
+            height: 90px;
+        }
+
+        .sliter_izq p {
+            font-size: 1.3em;
+        }
+
+    .sliter_completo_der {
+        background-size: 60vh;
+        background-image: none;
+        background-color: #2c3691;
+        clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)
+    }
+
+        .sliter_der img {
+            height: 75%;
+        }
+
+    /* Buscar ofertas */
+    .cuerpo_oferta {
+        height: 30vh;
+    }
+
+    .oferta_conteiner {
+        width: 90%;
+    }
+
+        .oferta_bnt h1{
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+    /* Seccion empresas */
+    .empresas_des p {
+        font-size: 1.3em;
+    }
+
+    .oferta_conteiner {
+        width: 93%;
+    }
+
+    /* seccion final */
+    .final_general {
+        font-size: 0.8em;
+    }
+
+    .final_btn_cont {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .final_btn button {
+        font-size: 0.8em;
+    }
+
+    .login_cuerpo_der img {
+        display: none;
+    }
+
+}
+
+/* Responsive de 479px hasta 320px */
+@media only screen and (max-width:479px) {
+    
+    /* Sliter */
+    .sliter_completo_izq {
+        justify-content: end;
+        margin-right: -2px;
+        clip-path: polygon(0 0, 100% 0,100% 100%, 0 100%)
+    }
+
+    .sliter_izq {
+        width: 100%;
+    }
+
+            .sliter_izq img {
+                height: 60px;
+            }
+
+            .sliter_izq p {
+                font-size: 1.3em;
+            }
+
+    .sliter_completo_der {
+        width: 0;
+        background-size: 60vh;
+        background-image: none;
+        background-color: #2c3691;
+        clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)
+    }
+
+        .sliter_der img {
+            display: none;
+        }
+
+    /* Buscar ofertas */
+    .cuerpo_oferta {
+        height: 30vh;
+    }
+
+    .oferta_conteiner {
+        width: 93%;
+    }
+
+        .oferta_bnt h1{
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+    /* Seccion empresas */
+    .empresas_des p {
+        font-size: 1.3em;
+    }
+
+    .empresas_container{
+        width: 80%;
+    }
+
+    /* seccion final */
+    .final_general {
+        font-size: 0.8em;
+    }
+
+    .final_btn button {
+        font-size: 0.8em;
+    }
+
+    .login_cuerpo_der img {
+        display: none;
+    }
+}
