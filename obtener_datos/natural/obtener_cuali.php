@@ -19,7 +19,7 @@
             'fec_cua'   => $info['fec_cualifi'],
             'doc_cua'   => $info['doc_cualifi']
         );
-    }
+    }    
     $jsonstring = json_encode($json);
     echo $jsonstring;
 ?>

@@ -20,9 +20,9 @@ $(document).ready(function(){
 
     function validacion_num(texto){
         for(i=0; i<texto.length; i++){
-           if (numeros.indexOf(texto.charAt(i),0)!=-1){
-              return 1;
-           }
+            if (numeros.indexOf(texto.charAt(i),0)!=-1){
+                return 1;
+            }
         }
         return 0;
     }
@@ -1039,7 +1039,8 @@ $(document).ready(function(){
             nomb_ref_2:                 $('#nomb_ref_2').val(),
             ape_ref_2:                  $('#ape_ref_2').val(),
             cel_ref_2:                  $('#cel_ref_2').val(),
-            car_ref_2:                  $('#car_ref_2').val()
+            car_ref_2:                  $('#car_ref_2').val(),
+            tipo:                       "N"
         };
 
         // Se agrupan por secciones de capacitaciones para trabajar las validaciones por grupos
@@ -1086,6 +1087,17 @@ $(document).ready(function(){
             const url_token = "../controlador/controlador_token.php";
             var codigo_pin = generarAleatorios(8);
 
+            // Mostrar ventana emergente de carga
+            Swal.fire({
+                title: 'Enviando PIN...',
+                text: 'Por favor espera mientras se envía el PIN de verificación.',
+                allowOutsideClick: false,
+                showConfirmButton: false,
+                willOpen: () => {
+                    Swal.showLoading();
+                }
+            });
+
             // Envio ajax
             $.ajax({
                 beforeSend :function () {
@@ -1093,18 +1105,20 @@ $(document).ready(function(){
                 },
                 type: "POST",
                 url: url_token,
-                data: {nombre: data_form.primer_nombre, apellido: data_form.primer_apellido, token: codigo_pin, correo: data_form.correo},
+                data: {nombre: data_form.primer_nombre, apellido: data_form.primer_apellido, token: codigo_pin, correo: data_form.correo, tipo: data_form.tipo},
                 dataType: "json",
                 async: true
             })
             .done(function ajaxDone(res){
                 
+                Swal.close();  // Cerrar la ventana emergente de carga cuando la solicitud haya terminado
+
                 if (res.error !== undefined) {
                     Swal.fire({
-                        title: "Oops. A surgido un error",
-                        icon: "error",
+                        icon: 'error',
+                        title: 'Error en la inscripción',
                         text: res.error
-                    })
+                    });
                 }
 
                 if (res.mensaje !== undefined) {
@@ -1366,15 +1380,20 @@ $(document).ready(function(){
         frmDATA.append('car_ref_2',car_ref_2);
 
         if (token_invi === token_nat) {
-			
-            const url_nat =  "../controlador/controlador_registrar_usuario_natural.php";
+
+            // Mostrar ventana emergente de carga
+            Swal.fire({
+                title: 'Registrando...',
+                text: 'Por favor espera mientras procesamos tu inscripción.',
+                allowOutsideClick: false,
+                showConfirmButton: false,
+                willOpen: () => {
+                    Swal.showLoading();
+                }
+            });
+        
+            const url_nat = "../controlador/controlador_registrar_usuario_natural.php";
             $.ajax({
-                beforeSend :function () {
-                    Swal.fire({
-                        html: '<div class="spinner-border text-primary" role="status"><span class="visually-hidden">Loading...</span></div>',
-                        showConfirmButton: false
-                    })
-                },
                 type: "POST",
                 url: url_nat,
                 data: frmDATA,
@@ -1383,59 +1402,68 @@ $(document).ready(function(){
                 dataType: 'json',
                 async: true
             })
-            .done(function ajaxDone(res){
-
+            .done(function ajaxDone(res) {
+                Swal.close();  // Cerrar la ventana emergente de carga
+        
                 if (res.error !== undefined) {
                     Swal.fire({
-                        title: "Opps. A surgido un error",
+                        title: "¡Opps! Ha surgido un error",
                         icon: "error",
                         text: "Error en la inscripción: " + res.error
-                    })
+                    });
                 }
-
+        
                 if (res.mensaje !== undefined) {
                     if (res.checkNo == "true") {
                         Swal.fire({
-                            title: "Cualificate con AIEX OCP",
-                            html: "<img src='../img/cualificate con nosotros.jpeg' id='noCuali' alt='cualificate'> <br> <a href='https://wa.link/p8sl1l' target='_BLANK' rel='noreferrer noopener'>Comunicate con nosotros</a>",
+                            title: "Cualifícate con AIEX OCP",
+                            html: "<img src='../img/cualificate con nosotros.jpeg' id='noCuali' alt='cualificate'> <br> <a href='https://wa.link/p8sl1l' target='_BLANK' rel='noreferrer noopener'>Comunícate con nosotros</a>",
                             showConfirmButton: false
-                        })
+                        });
+                        
+                        // Mostrar el siguiente mensaje después de 5 segundos
                         setTimeout(() => {
                             Swal.fire({
-                                title: "¡ESO ES ESTUPENDO! YA COMPLETASTE TU PERFIL",
+                                title: "¡Eso es estupendo! Ya completaste tu perfil",
                                 icon: "success",
                                 showConfirmButton: false
-                            })
+                            });
+                            // Redirigir después de 3 segundos
                             setTimeout(() => {
-                                window.location.href = res.url;   
-                            }, 3000);    
+                                window.location.href = res.url;
+                            }, 3000);
                         }, 5000);
                     } else {
                         Swal.fire({
-                            title: "¡ESO ES ESTUPENDO! YA COMPLETASTE TU PERFIL",
+                            title: "¡Eso es estupendo! Ya completaste tu perfil",
                             icon: "success",
                             showConfirmButton: false
-                        })
+                        });
+                        // Redirigir después de 5 segundos
                         setTimeout(() => {
-                            window.location.href = res.url;    
+                            window.location.href = res.url;
                         }, 5000);
-                    }                   
+                    }
                 }
             })
+            .fail(function ajaxFailed(e) {
+                Swal.close();  // Cerrar la ventana emergente de carga en caso de error
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Error',
+                    text: 'Hubo un problema con la inscripción. Por favor intenta de nuevo.'
+                });
+            });
         } else {
-            alert("El codigo de confirmacion es incorrecto");
+            Swal.fire({
+                icon: 'error',
+                title: 'Código incorrecto',
+                text: 'El código de confirmación es incorrecto. Por favor, inténtalo nuevamente.'
+            });
         }
+        
     });
     
-
-    
-
-    
-
-
-
-
-
 
     // ****************************************************************************************************** //
     // ********************************** BOTONES  FORMULARIO EMPRESA *************************************** //
@@ -1799,12 +1827,12 @@ $(document).ready(function(){
         var nit                         = $('#nit',form).val();
         var contacto_area_emp           = $('#contacto_area_emp',form).val();
 
-        var celular_emp                 = $('#celular_emp',form).val();
-        var correo_emp                  = $('#correo_emp',form).val();
-        var contrasena_emp              = $('#contrasena_emp',form).val();
-        var confir_contrasena_emp       = $('#confir_contrasena_emp',form).val();
         var departamento_emp            = $('#departamento_emp',form).val();
 		var municipios_emp              = $('#municipios_emp',form).val();
+        var correo_emp                  = $('#correo_emp',form).val();
+        var celular_emp                 = $('#celular_emp',form).val();
+        var contrasena_emp              = $('#contrasena_emp',form).val();
+        var confir_contrasena_emp       = $('#confir_contrasena_emp',form).val();
         var direccion_emp               = $('#direccion_emp',form).val();
 
         var mision_emp                  = $('#mision_emp',form).val();
@@ -1834,7 +1862,18 @@ $(document).ready(function(){
         console.log(codigo_pin_empre);
 
         if (valorToken === codigo_pin_empre) {
-            const url_emp =  "../controlador/controlador_registrar_usuario_empresas.php";
+            // Mostrar ventana emergente de carga
+            Swal.fire({
+                title: 'Registrando...',
+                text: 'Por favor espera mientras procesamos tu inscripción.',
+                allowOutsideClick: false,
+                showConfirmButton: false,
+                willOpen: () => {
+                    Swal.showLoading();
+                }
+            });
+        
+            const url_emp = "../controlador/controlador_registrar_usuario_empresas.php";
             $.ajax({
                 type: "post",
                 url: url_emp,
@@ -1844,19 +1883,45 @@ $(document).ready(function(){
                 dataType: "json",
                 async: true
             })
-            .done(function ajaxDone(res){
+            .done(function ajaxDone(res) {
+                Swal.close();  // Cerrar la ventana emergente de carga cuando la solicitud haya terminado
+        
                 if (res.error !== undefined) {
-                    $('#cont_error_emp').show();
-                    $('#cont_msg_emp').html("Error en la inscripción: " + res.error);
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Error en la inscripción',
+                        text: res.error
+                    });
                 }
-
+        
                 if (res.mensaje !== undefined) {
-                    window.location.href = res.url;
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Registro Exitoso',
+                        text: 'Tu inscripción se ha completado con éxito.',
+                        showConfirmButton: false,
+                        timer: 2000
+                    }).then(() => {
+                        window.location.href = res.url;  // Redirigir después del éxito
+                    });
                 }
+            })
+            .fail(function ajaxFailed(e) {
+                Swal.close();  // Cerrar la ventana emergente de carga en caso de error
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Error',
+                    text: 'Hubo un problema con la inscripción. Por favor intenta de nuevo.'
+                });
             });
         } else {
-            alert("El codigo de confirmacion es incorrecto");
+            Swal.fire({
+                icon: 'error',
+                title: 'Código incorrecto',
+                text: 'El código de confirmación es incorrecto. Por favor, inténtalo nuevamente.'
+            });
         }
+        
     });
 
     $('#btn_env_emp').click(function (e) { 
@@ -1868,19 +1933,20 @@ $(document).ready(function(){
             nit:                       $('#nit').val(),
             contacto_area_emp:         $('#contacto_area_emp').val(),
 
-            celular_emp:               $('#celular_emp').val(),
+            departamento_emp:          $('#departamento_emp').val(),
+            municipios_emp:            $('#municipios_emp').val(),
             correo_emp:                $('#correo_emp').val(),
 			correo_emp_conf:           $('#correo_emp_conf').val(),
             contrasena_emp:            $('#contrasena_emp').val(),
             confir_contrasena_emp:     $('#confir_contrasena_emp').val(),
-            departamento_emp:          $('#departamento_emp').val(),
-            municipios_emp:            $('#municipios_emp').val(),
             direccion_emp:             $('#direccion_emp').val(),
+            celular_emp:               $('#celular_emp').val(),
 
             mision_emp:                $('#mision_emp').val(),
             vision_emp:                $('#vision_emp').val(),
 
-            archivo_logo:              $('#archivo_logo').val()
+            archivo_logo:              $('#archivo_logo').val(),
+            tipo:                       "E"
         };
 
         //VALIDACION DE DATOS
@@ -1931,18 +1997,35 @@ $(document).ready(function(){
         if (msg == "") {
             const url_token = "../controlador/controlador_token.php";
             var codigo_pin_emp = generarAleatorios(8);
+
+            // Mostrar ventana emergente de carga
+            Swal.fire({
+                title: 'Enviando PIN...',
+                text: 'Por favor espera mientras se envía el PIN de verificación.',
+                allowOutsideClick: false,
+                showConfirmButton: false,
+                willOpen: () => {
+                    Swal.showLoading();
+                }
+            });
+
             $.ajax({
                 type: "POST",
                 url: url_token,
-                data: {nombre: data_form_emp.razon_social, token: codigo_pin_emp, correo: data_form_emp.correo_emp},
+                data: {nombre: data_form_emp.razon_social, token: codigo_pin_emp, correo: data_form_emp.correo_emp, tipo: data_form_emp.tipo},
                 dataType: "json",
                 async: true
             })
             .done(function ajaxDone(res){
                 
+                Swal.close();  // Cerrar la ventana emergente de carga cuando la solicitud haya terminado
+
                 if (res.error !== undefined) {
-                    $('#Cont_faltante').show();
-                    $('#cont_msg').html("Error en la inscripción: " + res.error);
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Error en la inscripción',
+                        text: res.error
+                    });
                 }
 
                 if (res.mensaje !== undefined) {

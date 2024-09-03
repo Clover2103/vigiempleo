@@ -56,3 +56,6 @@ conexion-PDO.php
 /plantillas/hv-pdf-admin/*
 !/plantillas/hv-pdf-admin/
 /plantillas/hv-pdf-admin/**
+
+vigiempleo.zip
+.vscode
