@@ -466,7 +466,7 @@ $(document).ready(function(){
             sig_trab:                   $('#sig_trab').val(),
             jefe_inmediato :            $('#jefe_inmediato').val(),
             celular_exp :               $('#celular_exp').val(),
-            compro_laboral :            $('#compro_laboral').val(),
+            // compro_laboral :            $('#compro_laboral').val(),
 
             nombre_empresa_2 :          $('#nombre_empresa_2').val(),
             cargo_2 :                   $('#cargo_2').val(),
@@ -476,83 +476,95 @@ $(document).ready(function(){
             sig_trab_2:                 $('#sig_trab_2').val(),
             jefe_inmediato_2 :          $('#jefe_inmediato_2').val(),
             celular_exp_2 :             $('#celular_exp_2').val(),
-            compro_laboral_2 :          $('#compro_laboral_2').val()
+            // compro_laboral_2 :          $('#compro_laboral_2').val()
 
         };
 
         // Se agrupan por secciones de las experiencias laborales para trabajar las validaciones por grupos
         if (data_form.sig_trab == "si") {
-            var primera_ref_lab = data_form.nombre_empresa + data_form.cargo + data_form.tiempo_ingreso_exp + data_form.jefe_inmediato + data_form.celular_exp + data_form.compro_laboral;
+            // var primera_ref_lab = data_form.nombre_empresa + data_form.cargo + data_form.tiempo_ingreso_exp + data_form.jefe_inmediato + data_form.celular_exp + data_form.compro_laboral;
+            var primera_ref_lab = data_form.nombre_empresa + data_form.cargo + data_form.tiempo_ingreso_exp + data_form.jefe_inmediato + data_form.celular_exp ;
         } else {
-            var primera_ref_lab = data_form.nombre_empresa + data_form.cargo + data_form.tiempo_ingreso_exp + data_form.tiempo_salida_1 + data_form.jefe_inmediato + data_form.celular_exp + data_form.compro_laboral;
+            // var primera_ref_lab = data_form.nombre_empresa + data_form.cargo + data_form.tiempo_ingreso_exp + data_form.jefe_inmediato + data_form.celular_exp + data_form.compro_laboral;
+            var primera_ref_lab = data_form.nombre_empresa + data_form.cargo + data_form.tiempo_ingreso_exp + data_form.tiempo_salida_1 + data_form.jefe_inmediato + data_form.celular_exp;
         }
 
         if (data_form.sig_trab_2 == "si") {
-            var segundo_ref_lab = data_form.nombre_empresa_2 + data_form.cargo_2 + data_form.tiempo_ingreso_exp_2 + data_form.jefe_inmediato_2 + data_form.celular_exp_2 + data_form.compro_laboral_2;    
+            // var segundo_ref_lab = data_form.nombre_empresa_2 + data_form.cargo_2 + data_form.tiempo_ingreso_exp_2 + data_form.jefe_inmediato_2 + data_form.celular_exp_2 + data_form.compro_laboral_2;    
+            var segundo_ref_lab = data_form.nombre_empresa_2 + data_form.cargo_2 + data_form.tiempo_ingreso_exp_2 + data_form.jefe_inmediato_2 + data_form.celular_exp_2;    
         } else {
-            var segundo_ref_lab = data_form.nombre_empresa_2 + data_form.cargo_2 + data_form.tiempo_ingreso_exp_2 + data_form.tiempo_salida_2 + data_form.jefe_inmediato_2 + data_form.celular_exp_2 + data_form.compro_laboral_2;
+            // var segundo_ref_lab = data_form.nombre_empresa_2 + data_form.cargo_2 + data_form.tiempo_ingreso_exp_2 + data_form.tiempo_salida_2 + data_form.jefe_inmediato_2 + data_form.celular_exp_2 + data_form.compro_laboral_2;
+            var segundo_ref_lab = data_form.nombre_empresa_2 + data_form.cargo_2 + data_form.tiempo_ingreso_exp_2 + data_form.tiempo_salida_2 + data_form.jefe_inmediato_2 + data_form.celular_exp_2;
         }
 
         // Validacion de formacion academica
-        if (data_form.sig_trab !== "--" && ((data_form.nombre_empresa == "") && (data_form.cargo == "--") && (data_form.tiempo_ingreso_exp == "") && (data_form.jefe_inmediato == "") && (data_form.celular_exp == "") && (data_form.compro_laboral == ""))) {
-            data_form.nombre_empresa == "" ? msg += "- Por favor agregue el <b>nombre de la empresa</b> en la primera referencia laboral<br>" : "";
-            data_form.cargo == "--" ? msg += "- Por favor indique el <b>cargo desempeñado</b> en la primera referencia laboral<br>" : "";
-            data_form.tiempo_ingreso_exp == "" ? msg += "- Ingrese <b>fecha de ingreso laboral</b> en la primera referencia laboral<br>" : "" ;
-            data_form.jefe_inmediato == "" ? msg += "- Ingrese por favor el <b>nombre de su jefe inmediato</b> en la primera referencia laboral<br>" : "" ;
-            data_form.celular_exp == "" ? msg += "- Ingrese <b>telefono de la empresa o celular de jefe inmediato</b> en la primera referencia laboral<br>" : "" ;
-            data_form.compro_laboral == "" ? msg += "- Por favor ingrese el <b>certificado laboral</b> en la primera referencia laboral<br>" : "" ;
+        // if (data_form.sig_trab !== "--" && ((data_form.nombre_empresa == "") && (data_form.cargo == "--") && (data_form.tiempo_ingreso_exp == "") && (data_form.jefe_inmediato == "") && (data_form.celular_exp == "") && (data_form.compro_laboral == ""))) {
+        if (data_form.sig_trab !== "--" && ((data_form.nombre_empresa == "") && (data_form.cargo == "--") && (data_form.tiempo_ingreso_exp == "") && (data_form.jefe_inmediato == "") && (data_form.celular_exp == ""))) {
+            (data_form.nombre_empresa == "" || data_form.cargo == "--" || data_form.tiempo_ingreso_exp == "" || data_form.jefe_inmediato == "" || data_form.celular_exp == "") ? msg += "PARA LA PRIMERA REFERENCIA LABORAL: <br>": "";
+            data_form.nombre_empresa == "" ? msg += "- Ingrese el nombre de la empresa <br>" : "";
+            data_form.cargo == "--" ? msg += "- Por favor indique el <b>cargo desempeñado</b> <br>" : "";
+            data_form.tiempo_ingreso_exp == "" ? msg += "- Ingrese <b>fecha de ingreso laboral</b> <br>" : "" ;
+            data_form.jefe_inmediato == "" ? msg += "- Ingrese por favor el <b>nombre de su jefe inmediato</b> <br>" : "" ;
+            data_form.celular_exp == "" ? msg += "- Ingrese <b>telefono de la empresa o celular de jefe inmediato</b> <br>" : "" ;
+            // data_form.compro_laboral == "" ? msg += "- Por favor ingrese el <b>certificado laboral</b> <br>" : "" ;
         }
 
-        if (data_form.sig_trab_2 !== "--" && ((data_form.nombre_empresa_2 == "") && (data_form.cargo_2 == "--") && (data_form.tiempo_ingreso_exp_2 == "") && (data_form.jefe_inmediato_2 == "") && (data_form.celular_exp_2 == "") && (data_form.compro_laboral_2 == ""))) {
-            data_form.nombre_empresa_2 == "" ? msg += "- Por favor agregue el <b>nombre de la empresa</b> en la segunda referencia laboral <br>" : "";
-            data_form.cargo_2 == "--" ? msg += "- Por favor indique el <b>cargo desempeñado</b> en la segunda referencia laboral <br>" : "";
-            data_form.tiempo_ingreso_exp_2 == "" ? msg += "- Ingrese <b>fecha de ingreso laboral</b> en la segunda referencia laboral <br>" : "" ;
-            data_form.jefe_inmediato_2 == "" ? msg += "- Ingrese por favor el <b>nombre de su jefe inmediato</b> en la segunda referencia laboral <br>" : "" ;
-            data_form.celular_exp_2 == "" ? msg += "- Ingrese <b>telefono de la empresa o celular de jefe inmediato</b> en la segunda referencia laboral <br>" : "" ;
-            data_form.compro_laboral_2 == "" ? msg += "- Por favor ingrese el <b>certificado laboral</b> en la segunda referencia laboral <br>" : "" ;
+        // if (data_form.sig_trab_2 !== "--" && ((data_form.nombre_empresa_2 == "") && (data_form.cargo_2 == "--") && (data_form.tiempo_ingreso_exp_2 == "") && (data_form.jefe_inmediato_2 == "") && (data_form.celular_exp_2 == "") && (data_form.compro_laboral_2 == ""))) {
+        if (data_form.sig_trab_2 !== "--" && ((data_form.nombre_empresa_2 == "") && (data_form.cargo_2 == "--") && (data_form.tiempo_ingreso_exp_2 == "") && (data_form.jefe_inmediato_2 == "") && (data_form.celular_exp_2 == ""))) {
+            (data_form.nombre_empresa_2 == "" || data_form.cargo_2 == "--" || data_form.tiempo_ingreso_exp_2 == "" || data_form.jefe_inmediato_2 == "" || data_form.celular_exp_2 == "") ? msg += "PARA LA SEGUNDA REFERENCIA LABORAL: <br>": "";
+            data_form.nombre_empresa_2 == "" ? msg += "- Agregue el nombre de la empresa<br>" : "";
+            data_form.cargo_2 == "--" ? msg += "- Indique el cargo desempeñado<br>" : "";
+            data_form.tiempo_ingreso_exp_2 == "" ? msg += "- Ingrese fecha de ingreso laboral<br>" : "" ;
+            data_form.jefe_inmediato_2 == "" ? msg += "- Ingrese el nombre de su jefe inmediato<br>" : "" ;
+            data_form.celular_exp_2 == "" ? msg += "- Ingrese telefono de la empresa o celular de jefe inmediato<br>" : "" ;
+            // data_form.compro_laboral_2 == "" ? msg += "- Por favor ingrese el <b>certificado laboral</b> en la segunda referencia laboral <br>" : "" ;
         }
 
         if (primera_ref_lab !== "--") {
             if (data_form.sig_trab == "si") {
-                data_form.nombre_empresa == "" ? msg += "- Por favor agregue el <b>nombre de la empresa</b> en la primera referencia laboral<br>" : "";
-                data_form.cargo == "--" ? msg += "- Por favor indique el <b>cargo desempeñado</b> en la primera referencia laboral<br>" : "";
-                data_form.cargo == "06" && data_form.cargo_dese == "" ? msg += "- Por favor ingrese el <b>cargo que desempeño</b> en la primera referencia laboral<br>" : "";
-                data_form.tiempo_ingreso_exp == "" ? msg += "- Ingrese <b>fecha de ingreso laboral</b> en la primera referencia laboral<br>" : "" ;
-                data_form.jefe_inmediato == "" ? msg += "- Ingrese por favor el <b>nombre de su jefe inmediato</b> en la primera referencia laboral<br>" : "" ;
-                data_form.celular_exp == "" ? msg += "- Ingrese <b>telefono de la empresa o celular de jefe inmediato</b> en la primera referencia laboral<br>" : "" ;
-                data_form.compro_laboral == "" ? msg += "- Por favor ingrese el <b>certificado laboral</b> en la primera referencia laboral<br>" : "" ;
+                (data_form.nombre_empresa == "" || data_form.cargo == "--" || data_form.tiempo_ingreso_exp == "" || data_form.jefe_inmediato == "" || data_form.celular_exp == "" || (data_form.cargo == "06" && data_form.cargo_dese == "")) ? msg += "PARA LA PRIMERA REFERENCIA LABORAL: <br>" : "";
+                data_form.nombre_empresa == "" ? msg += "- Agregue el nombre de la empresa<br>" : "";
+                data_form.cargo == "--" ? msg += "- Indique el cargo desempeñado<br>" : "";
+                data_form.cargo == "06" && data_form.cargo_dese == "" ? msg += "- Ingrese el cargo que desempeño<br>" : "";
+                data_form.tiempo_ingreso_exp == "" ? msg += "- Ingrese fecha de ingreso laboral<br>" : "" ;
+                data_form.jefe_inmediato == "" ? msg += "- Ingrese por favor el nombre de su jefe inmediato<br>" : "" ;
+                data_form.celular_exp == "" ? msg += "- Ingrese telefono de la empresa o celular de jefe inmediato<br>" : "" ;
+                // data_form.compro_laboral == "" ? msg += "- Por favor ingrese el <b>certificado laboral</b> <br>" : "" ;
             } else {
-                data_form.nombre_empresa == "" ? msg += "- Por favor agregue el <b>nombre de la empresa</b> en la primera referencia laboral<br>" : "";
-                data_form.cargo == "--" ? msg += "- Por favor indique el <b>cargo desempeñado</b> en la primera referencia laboral<br>" : "";
-                data_form.cargo == "06" && data_form.cargo_dese == "" ? msg += "- Por favor ingrese el <b>cargo que desempeño</b> en la primera referencia laboral<br>" : "";
-                data_form.tiempo_ingreso_exp == "" ? msg += "- Ingrese <b>fecha de ingreso laboral</b> en la primera referencia laboral<br>" : "" ;
-                data_form.tiempo_salida_1 == "" && data_form.sig_trab == "no" ? msg += "- Ingrese <b>fecha de finalización</b> de experiencia en la primera referencia laboral<br>" : "" ;
-                data_form.jefe_inmediato == "" ? msg += "- Ingrese por favor el <b>nombre de su jefe inmediato</b> en la primera referencia laboral<br>" : "" ;
-                data_form.celular_exp == "" ? msg += "- Ingrese <b>telefono de la empresa o celular de jefe inmediato</b> en la primera referencia laboral<br>" : "" ;
-                data_form.compro_laboral == "" ? msg += "- Por favor ingrese el <b>certificado laboral</b> en la primera referencia laboral<br>" : "" ;
+                (data_form.nombre_empresa == "" || data_form.cargo == "--" || data_form.tiempo_ingreso_exp == "" || data_form.tiempo_salida_1 == "" || data_form.jefe_inmediato == "" || data_form.celular_exp == "" || (data_form.cargo == "06" && data_form.cargo_dese == "")) ? msg += "PARA LA PRIMERA REFERENCIA LABORAL: <br>" : "";
+                data_form.nombre_empresa == "" ? msg += "- Agregue el nombre de la empresa <br>" : "";
+                data_form.cargo == "--" ? msg += "- Indique el cargo desempeñado <br>" : "";
+                data_form.cargo == "06" && data_form.cargo_dese == "" ? msg += "- Ingrese el cargo que desempeño<br>" : "";
+                data_form.tiempo_ingreso_exp == "" ? msg += "- Ingrese fecha de ingreso laboral<br>" : "" ;
+                data_form.tiempo_salida_1 == "" && data_form.sig_trab == "no" ? msg += "- Ingrese fecha de finalización <br>" : "" ;
+                data_form.jefe_inmediato == "" ? msg += "- Ingrese por favor el nombre de su jefe inmediato<br>" : "" ;
+                data_form.celular_exp == "" ? msg += "- Ingrese telefono de la empresa o celular de jefe inmediato<br>" : "" ;
+                // data_form.compro_laboral == "" ? msg += "- Por favor ingrese el <b>certificado laboral</b> <br>" : "" ;
                 (data_form.tiempo_ingreso_exp > data_form.tiempo_salida_1) ? msg += "- El tiempo de ingreso debe ser menos al tiempo salida de la primera referencia laboral<br>" : "";
             }
         }
 
         if (segundo_ref_lab !== "--") {
             if (data_form.sig_trab_2 == "si") {
-                data_form.nombre_empresa_2 == "" ? msg += "- Por favor agregue el <b>nombre de la empresa</b> en la segunda referencia laboral <br>" : "";
-                data_form.cargo_2 == "--" ? msg += "- Por favor indique el <b>cargo desempeñado</b> en la segunda referencia laboral <br>" : "";
-                data_form.cargo_2 == "06" && data_form.cargo_dese_2 == "" ? msg += "- Por favor <b>ingrese el cargo</b> que desempeño en la segunda referencia laboral <br>" : "";
-                data_form.tiempo_ingreso_exp_2 == "" ? msg += "- Ingrese <b>fecha de ingreso laboral</b> en la segunda referencia laboral <br>" : "" ;
-                data_form.jefe_inmediato_2 == "" ? msg += "- Ingrese por favor el <b>nombre de su jefe inmediato</b> en la segunda referencia laboral <br>" : "" ;
-                data_form.celular_exp_2 == "" ? msg += "- Ingrese <b>telefono de la empresa o celular de jefe inmediato</b> en la segunda referencia laboral <br>" : "" ;
-                data_form.compro_laboral_2 == "" ? msg += "- Por favor ingrese el <b>certificado laboral</b> en la segunda referencia laboral <br>" : "" ;
+                (data_form.nombre_empresa_2 == "" || data_form.cargo_2 == "--" || data_form.tiempo_ingreso_exp_2 == "" || data_form.jefe_inmediato_2 == "" || data_form.celular_exp_2 == "" || (data_form.cargo_2 == "06" && data_form.cargo_dese_2 == "")) ? msg += "PARA LA SEGUNDA REFERENCIA LABORAL: <br>" : "";
+                data_form.nombre_empresa_2 == "" ? msg += "- Agregue el nombre de la empresa<br>" : "";
+                data_form.cargo_2 == "--" ? msg += "- Indique el cargo desempeñado<br>" : "";
+                data_form.cargo_2 == "06" && data_form.cargo_dese_2 == "" ? msg += "- Ingrese el cargo que desempeño<br>" : "";
+                data_form.tiempo_ingreso_exp_2 == "" ? msg += "- Ingrese fecha de ingreso laboral<br>" : "" ;
+                data_form.jefe_inmediato_2 == "" ? msg += "- Ingrese por favor el nombre de su jefe inmediato<br>" : "" ;
+                data_form.celular_exp_2 == "" ? msg += "- Ingrese telefono de la empresa o celular de jefe inmediato<br>" : "" ;
+                // data_form.compro_laboral_2 == "" ? msg += "- Por favor ingrese el <b>certificado laboral</b> en la segunda referencia laboral <br>" : "" ;
             } else {
-                data_form.nombre_empresa_2 == "" ? msg += "- Por favor agregue el <b>nombre de la empresa</b> en la segunda referencia laboral <br>" : "";
-                data_form.cargo_2 == "--" ? msg += "- Por favor indique el <b>cargo desempeñado</b> en la segunda referencia laboral <br>" : "";
-                data_form.cargo_2 == "06" && data_form.cargo_dese_2 == "" ? msg += "- Por favor ingrese el <b>cargo que desempeño</b> en la segunda referencia laboral <br>" : "";
+                (data_form.nombre_empresa_2 == "" || data_form.cargo_2 == "--" || data_form.tiempo_ingreso_exp_2 == "" || data_form.jefe_inmediato_2 == "" || data_form.celular_exp_2 == "" || (data_form.cargo_2 == "06" && data_form.cargo_dese_2 == "")) ? msg += "PARA LA SEGUNDA REFERENCIA LABORAL: <br>" : "";
+                data_form.nombre_empresa_2 == "" ? msg += "- Agregue el nombre de la empresa<br>" : "";
+                data_form.cargo_2 == "--" ? msg += "- Indique el cargo desempeñado<br>" : "";
+                data_form.cargo_2 == "06" && data_form.cargo_dese_2 == "" ? msg += "- Ingrese el cargo que desempeño<br>" : "";
                 data_form.tiempo_ingreso_exp_2 == "" ? msg += "- Ingrese fecha de ingreso laboral en la segunda referencia laboral <br>" : "" ;
-                data_form.tiempo_salida_2 == "" && data_form.sig_trab_2 == "no" ? msg += "- Ingrese <b>fecha de finalización</b> de experiencia en la segunda referencia laboral <br>" : "" ;
-                data_form.jefe_inmediato_2 == "" ? msg += "- Ingrese por favor el <b>nombre de su jefe inmediato</b> en la segunda referencia laboral <br>" : "" ;
-                data_form.celular_exp_2 == "" ? msg += "- Ingrese <b>telefono de la empresa o celular de jefe inmediato</b> en la segunda referencia laboral <br>" : "" ;
-                data_form.compro_laboral_2 == "" ? msg += "- Por favor ingrese el <b>certificado laboral</b> en la segunda referencia laboral <br>" : "" ;
-                (data_form.tiempo_ingreso_exp_2 > data_form.tiempo_salida_2) ? msg += "- El tiempo de ingreso debe ser menos al tiempo salida de la segunda referencia laboral<br>" : "";
+                data_form.tiempo_salida_2 == "" && data_form.sig_trab_2 == "no" ? msg += "- Ingrese fecha de finalización<br>" : "" ;
+                data_form.jefe_inmediato_2 == "" ? msg += "- Ingrese por favor el nombre de su jefe inmediato<br>" : "" ;
+                data_form.celular_exp_2 == "" ? msg += "- Ingrese telefono de la empresa o celular de jefe inmediato<br>" : "" ;
+                // data_form.compro_laboral_2 == "" ? msg += "- Por favor ingrese el <b>certificado laboral</b> en la segunda referencia laboral <br>" : "" ;
+                (data_form.tiempo_ingreso_exp_2 > data_form.tiempo_salida_2) ? msg += "- El tiempo de ingreso debe ser menos al tiempo salida<br>" : "";
             }
         }
 
@@ -611,7 +623,7 @@ $(document).ready(function(){
             culm_aca :                  $('#culm_aca').val(),
             tiempo_fin_1 :              $('#tiempo_fin_1').val(),
             sigo_estu :                 $('#sigo_estu').prop('checked'),
-            comp_est_for :              $('#comp_est_for').val(),
+            // comp_est_for :              $('#comp_est_for').val(),
             
             nombre_instituto_2 :        $('#nombre_instituto_2').val(),
             nivel_academico_2 :         $('#nivel_academico_2').val(),
@@ -619,66 +631,78 @@ $(document).ready(function(){
             culm_aca_2 :                $('#culm_aca_2').val(),
             tiempo_fin_2 :              $('#tiempo_fin_2').val(),
             sigo_estu_2 :               $('#sigo_estu_2').prop('checked'),
-            comp_est_for_2 :            $('#comp_est_for_2').val()
+            // comp_est_for_2 :            $('#comp_est_for_2').val()
         };
 
         // Se agrupan por secciones de las formaciones academicas para trabajar las validaciones por grupos
         if (data_form.culm_aca == "si") {
-            var primera_for_aca = data_form.nombre_instituto + data_form.nivel_academico + data_form.titulo_op + data_form.comp_est_for + data_form.tiempo_fin_1;
+            // var primera_for_aca = data_form.nombre_instituto + data_form.nivel_academico + data_form.titulo_op + data_form.comp_est_for + data_form.tiempo_fin_1;
+            var primera_for_aca = data_form.nombre_instituto + data_form.nivel_academico + data_form.titulo_op + data_form.tiempo_fin_1;
         } else {
-            var primera_for_aca = data_form.nombre_instituto + data_form.nivel_academico + data_form.titulo_op + data_form.comp_est_for;
+            // var primera_for_aca = data_form.nombre_instituto + data_form.nivel_academico + data_form.titulo_op + data_form.comp_est_for;
+            var primera_for_aca = data_form.nombre_instituto + data_form.nivel_academico + data_form.titulo_op;
         }
 
         if (data_form.culm_aca_2 == "si") {
-            var segundo_for_aca = data_form.nombre_instituto_2 + data_form.nivel_academico_2 + data_form.titulo_op_2 + data_form.comp_est_for_2 + data_form.tiempo_fin_2 ;    
+            // var segundo_for_aca = data_form.nombre_instituto_2 + data_form.nivel_academico_2 + data_form.titulo_op_2 + data_form.comp_est_for_2 + data_form.tiempo_fin_2 ;    
+            var segundo_for_aca = data_form.nombre_instituto_2 + data_form.nivel_academico_2 + data_form.titulo_op_2 + data_form.tiempo_fin_2 ;    
         } else {
-            var segundo_for_aca = data_form.nombre_instituto_2 + data_form.nivel_academico_2 + data_form.titulo_op_2 + data_form.comp_est_for_2;
+            // var segundo_for_aca = data_form.nombre_instituto_2 + data_form.nivel_academico_2 + data_form.titulo_op_2 + data_form.comp_est_for_2;
+            var segundo_for_aca = data_form.nombre_instituto_2 + data_form.nivel_academico_2 + data_form.titulo_op_2;
         }
 
         // Validacion de formacion academica
-        if (data_form.culm_aca !== "--" && ((data_form.nombre_instituto == "") && (data_form.nivel_academico == "--") && (data_form.titulo_op == "") && (data_form.comp_est_for == ""))) {
-            data_form.nombre_instituto == "" ? msg += "- Debe ingresar el <b>nombre del instituto</b> de la primera formacion academica <br>" : "";
-            data_form.nivel_academico == "--" ? msg += "- Debe ingresar el <b>nivel academico</b> de la primera formacion academica <br>" : "";
-            data_form.titulo_op == "" ? msg += "- Debe ingresar el <b>titulo optenido</b> de la primera formacion academica <br>" : "";
-            data_form.comp_est_for == "" ? msg += "- Debe anexar el <b>certificado optenido</b> de la primera formacion academica <br>" : "";
+        // if (data_form.culm_aca !== "--" && ((data_form.nombre_instituto == "") && (data_form.nivel_academico == "--") && (data_form.titulo_op == "") && (data_form.comp_est_for == ""))) {
+        if (data_form.culm_aca !== "--" && ((data_form.nombre_instituto == "") && (data_form.nivel_academico == "--") && (data_form.titulo_op == ""))) {
+            (data_form.nombre_instituto == "" || data_form.nivel_academico == "--" || data_form.titulo_op == "") ? msg += "PARA LA PRIMERA FORMACION ACADEMICA DEBE INGRESAR:<br>": "";
+            data_form.nombre_instituto == "" ? msg += "- Ingresar el nombre del instituto<br>" : "";
+            data_form.nivel_academico == "--" ? msg += "- Ingresar el nivel academico<br>" : "";
+            data_form.titulo_op == "" ? msg += "- Ingresar el titulo optenido<br>" : "";
+            // data_form.comp_est_for == "" ? msg += "- Debe anexar el <b>certificado optenido</b> de la primera formacion academica <br>" : "";
         }
 
-        if (data_form.culm_aca_2 !== "--" && ((data_form.nombre_instituto_2 == "") && (data_form.nivel_academico_2 == "--") && (data_form.titulo_op_2 == "") && (data_form.comp_est_for_2 == ""))) {
-            data_form.nombre_instituto_2 == "" ? msg += "- Debe ingresar el <b>nombre del instituto</b> de la segunda formacion academica <br>" : "";
-            data_form.nivel_academico_2 == "--" ? msg += "- Debe ingresar el <b>nivel academico</b> de la segunda formacion academica <br>" : "";
-            data_form.titulo_op_2 == "" ? msg += "- Debe ingresar el <b>titulo optenido</b> de la segunda formacion academica <br>" : "";
-            data_form.comp_est_for_2 == "" ? msg += "- Debe anexar el <b>certificado optenido</b> de la segunda formacion academica <br>" : "";
+        // if (data_form.culm_aca_2 !== "--" && ((data_form.nombre_instituto_2 == "") && (data_form.nivel_academico_2 == "--") && (data_form.titulo_op_2 == "") && (data_form.comp_est_for_2 == ""))) {
+        if (data_form.culm_aca_2 !== "--" && ((data_form.nombre_instituto_2 == "") && (data_form.nivel_academico_2 == "--") && (data_form.titulo_op_2 == ""))) {
+            (data_form.nombre_instituto_2 == "" || data_form.nivel_academico_2 == "--" || data_form.titulo_op_2 == "") ? msg += "PARA LA SEGUNDA FORMACION ACADEMICA DEBE INGRESAR:<br>" : "";
+            data_form.nombre_instituto_2 == "" ? msg += "- Ingresar el nombre del instituto<br>" : "";
+            data_form.nivel_academico_2 == "--" ? msg += "- Ingresar el nivel academico<br>" : "";
+            data_form.titulo_op_2 == "" ? msg += "- Ingresar el titulo optenido<br>" : "";
+            // data_form.comp_est_for_2 == "" ? msg += "- Debe anexar el <b>certificado optenido</b> de la segunda formacion academica <br>" : "";
         }
 
         if (primera_for_aca !== "--") {
             if (data_form.culm_aca == "si") {
-                data_form.nombre_instituto == "" ? msg += "- Debe ingresar el <b>nombre del instituto</b> de la primera formacion academica <br>" : "";
-                data_form.nivel_academico == "--" ? msg += "- Debe ingresar el <b>nivel academico</b> de la primera formacion academica <br>" : "";
-                data_form.titulo_op == "" ? msg += "- Debe ingresar el <b>titulo optenido</b> de la primera formacion academica <br>" : "";
-                data_form.comp_est_for == "" ? msg += "- Debe anexar el <b>certificado optenido</b> de la primera formacion academica <br>" : "";
-                data_form.tiempo_fin_1 == "" ? msg += "- Debe ingresar la <b>fecha de finalizacion</b> de la primera formacion academica <br>" : "";
+                (data_form.nombre_instituto == "" || data_form.nivel_academico == "--" || data_form.titulo_op == "" || data_form.tiempo_fin_1 == "") ? msg += "PARA LA PRIMERA FORMACION ACADEMICA DEBE INGRESAR:<br>" : "";
+                data_form.nombre_instituto == "" ? msg += "- Ingresar el nombre del instituto<br>" : "";
+                data_form.nivel_academico == "--" ? msg += "- Ingresar el nivel academico<br>" : "";
+                data_form.titulo_op == "" ? msg += "- Ingresar el titulo optenido<br>" : "";
+                // data_form.comp_est_for == "" ? msg += "- Debe anexar el <b>certificado optenido</b> de la primera formacion academica <br>" : "";
+                data_form.tiempo_fin_1 == "" ? msg += "- Ingresar la fecha de finalizacion<br>" : "";
             } else {
-                data_form.nombre_instituto == "" ? msg += "- Debe ingresar el <b>nombre del instituto</b> de la primera formacion academica <br>" : "";
-                data_form.nivel_academico == "--" ? msg += "- Debe ingresar el <b>nivel academico</b> de la primera formacion academica <br>" : "";
-                data_form.titulo_op == "" ? msg += "- Debe ingresar el <b>titulo optenido<b> de la primera formacion academica <br>" : "";
-                data_form.comp_est_for == "" ? msg += "- Debe anexar el <b>certificado optenido</b> de la primera formacion academica <br>" : "";
-                data_form.culm_aca == "--" ? msg += "- Debe indicar <b>si termino o no la educacion</b> de la primera formacion academica <br>" : "";
+                (data_form.nombre_instituto == "" || data_form.nivel_academico == "--" || data_form.titulo_op == "" || data_form.culm_aca == "--") ? msg += "PARA LA PRIMERA FORMACION ACADEMICA DEBE INGRESAR:<br>" : "";
+                data_form.nombre_instituto == "" ? msg += "- Ingresar el nombre del instituto<br>" : "";
+                data_form.nivel_academico == "--" ? msg += "- Ingresar el nivel academico<br>" : "";
+                data_form.titulo_op == "" ? msg += "- Ingresar el titulo optenido<br>" : "";
+                // data_form.comp_est_for == "" ? msg += "- Debe anexar el <b>certificado optenido</b> de la primera formacion academica <br>" : "";
+                data_form.culm_aca == "--" ? msg += "- Indicar si termino o no la educacion<br>" : "";
             }
         }
 
         if (segundo_for_aca !== "--") {
             if (data_form.culm_aca_2 == "si") {
-                data_form.nombre_instituto_2 == "" ? msg += "- Debe ingresar el <b>nombre del instituto</b> de la segunda formacion academica <br>" : "";
-                data_form.nivel_academico_2 == "--" ? msg += "- Debe ingresar el <b>nivel academico</b> de la segunda formacion academica <br>" : "";
-                data_form.titulo_op_2 == "" ? msg += "- Debe ingresar el <b>titulo optenido</b> de la segunda formacion academica <br>" : "";
-                data_form.comp_est_for_2 == "" ? msg += "- Debe anexar el <b>certificado optenido</b> de la segunda formacion academica <br>" : "";
-                data_form.tiempo_fin_2 == "" ? msg += "- Debe ingresar la <b>fecha de finalizacion</b> de la segunda formacion academica <br>" : "";
+                (data_form.nombre_instituto_2 == "" || data_form.nivel_academico_2 == "--" || data_form.titulo_op_2 == "" || data_form.tiempo_fin_2 == "" || data_form.tiempo_fin_2 == "") ? msg += "PARA LA SEGUNDA FORMACION ACADEMICA DEBE INGRESAR:<br>" : "";
+                data_form.nombre_instituto_2 == "" ? msg += "- Ingresar el nombre del instituto<br>" : "";
+                data_form.nivel_academico_2 == "--" ? msg += "- Ingresar el nivel academico<br>" : "";
+                data_form.titulo_op_2 == "" ? msg += "- Ingresar el titulo optenido<br>" : "";
+                // data_form.comp_est_for_2 == "" ? msg += "- Debe anexar el <b>certificado optenido</b> de la segunda formacion academica <br>" : "";
+                data_form.tiempo_fin_2 == "" ? msg += "- Ingresar la fecha de finalizacion<br>" : "";
             } else {
-                data_form.nombre_instituto_2 == "" ? msg += "- Debe ingresar el <b>nombre del instituto</b> de la segunda formacion academica <br>" : "";
-                data_form.nivel_academico_2 == "--" ? msg += "- Debe ingresar el <b>nivel academico</b> de la segunda formacion academica <br>" : "";
-                data_form.titulo_op_2 == "" ? msg += "- Debe ingresar el <b>titulo optenido</b> de la segunda formacion academica <br>" : "";
-                data_form.comp_est_for_2 == "" ? msg += "- Debe anexar el <b>certificado optenido</b> de la segunda formacion academica <br>" : "";
-                data_form.culm_aca_2 == "--" ? msg += "- Debe indicar <b>si termino o no la educacion</b> de la segunda formacion academica <br>" : "";
+                (data_form.nombre_instituto_2 == "" || data_form.nivel_academico_2 == "--" || data_form.titulo_op_2 == "" || data_form.culm_aca_2 == "--") ? msg += "PARA LA SEGUNDA FORMACION ACADEMICA DEBE INGRESAR:<br>" : "";
+                data_form.nombre_instituto_2 == "" ? msg += "- Ingresar el nombre del instituto<br>" : "";
+                data_form.nivel_academico_2 == "--" ? msg += "- Ingresar el nivel academico<br>" : "";
+                data_form.titulo_op_2 == "" ? msg += "- Ingresar el titulo optenido<br>" : "";
+                // data_form.comp_est_for_2 == "" ? msg += "- Debe anexar el <b>certificado optenido</b> de la segunda formacion academica <br>" : "";
+                data_form.culm_aca_2 == "--" ? msg += "- Indicar si termino o no la educacion<br>" : "";
             }
         }
 
@@ -716,32 +740,36 @@ $(document).ready(function(){
             nombre_instituto_otro :     $('#nombre_instituto_otro').val(),
             titulo_op_otro :            $('#titulo_op_otro').val(),
             tiempo_fin_otro_1 :         $('#tiempo_fin_otro_1').val(),
-            comp_otro :                 $('#comp_otro').val(),
+            // comp_otro :                 $('#comp_otro').val(),
 
             nombre_instituto_otro_2 :   $('#nombre_instituto_otro_2').val(),
             titulo_op_otro_2 :          $('#titulo_op_otro_2').val(),
             tiempo_fin_otro_2 :         $('#tiempo_fin_otro_2').val(),
-            comp_otro_2 :               $('#comp_otro_2').val()
+            // comp_otro_2 :               $('#comp_otro_2').val()
 
         };
 
         // Se agrupan por secciones de otras formaciones certificables para trabajar las validaciones por grupos
-        var primer_est_ex = data_form.nombre_instituto_otro + data_form.titulo_op_otro +  data_form.tiempo_fin_otro_1 + data_form.comp_otro;
-        var segunda_est_ex = data_form.nombre_instituto_otro_2 + data_form.titulo_op_otro_2 + data_form.tiempo_fin_otro_2 + data_form.comp_otro_2;
+        // var primer_est_ex = data_form.nombre_instituto_otro + data_form.titulo_op_otro +  data_form.tiempo_fin_otro_1 + data_form.comp_otro;
+        var primer_est_ex = data_form.nombre_instituto_otro + data_form.titulo_op_otro +  data_form.tiempo_fin_otro_1;
+        // var segunda_est_ex = data_form.nombre_instituto_otro_2 + data_form.titulo_op_otro_2 + data_form.tiempo_fin_otro_2 + data_form.comp_otro_2;
+        var segunda_est_ex = data_form.nombre_instituto_otro_2 + data_form.titulo_op_otro_2 + data_form.tiempo_fin_otro_2;
 
         // Validacion de otros estudios
         if (primer_est_ex !== "") {
-            data_form.nombre_instituto_otro == "" ? msg += "- Debe ingresar el <b>nombre del instituto</b> de la primera seccion <br>" : "";
-            data_form.titulo_op_otro == "" ? msg += "- Debe ingresar el <b>titulo optenido</b> de la primera seccion <br>" : "";
-            data_form.tiempo_fin_otro_1 == "" ? msg += "- Debe ingresar la <b>fecha de finalización</b> de la primera seccion <br>" : "";
-            data_form.comp_otro == "" ? msg += "- Debe anexar el <b>certificado</b> de la primera seccion <br>" : "";
+            (data_form.nombre_instituto_otro == "" || data_form.titulo_op_otro == "" || data_form.tiempo_fin_otro_1 == "") ? msg += "PARA LA PRIMERA SECCION DE ESTUDIOS FORMALES DEBE INGRESAR:<br>" : "";
+            data_form.nombre_instituto_otro == "" ? msg += "- Ingresar el nombre del instituto<br>" : "";
+            data_form.titulo_op_otro == "" ? msg += "- Ingresar el titulo optenido<br>" : "";
+            data_form.tiempo_fin_otro_1 == "" ? msg += "- Ingresar la fecha de finalización<br>" : "";
+            // data_form.comp_otro == "" ? msg += "- Debe anexar el <b>certificado</b> de la primera seccion <br>" : "";
         }
 
         if (segunda_est_ex !== "") {
-            data_form.nombre_instituto_otro_2 == "" ? msg += "- Debe ingresar el <b>nombre del instituto</b> de la segunda seccion <br>" : "";
-            data_form.titulo_op_otro_2 == "" ? msg += "- Debe ingresar el <b>titulo optenido</b> de la segunda seccion <br>" : "";
-            data_form.tiempo_fin_otro_2 == "" ? msg += "- Debe ingresar la <b>fecha de finalización</b> de la segunda seccion <br>" : "";
-            data_form.comp_otro_2 == "" ? msg += "- Debe anexar el <b>certificado</b> de la segunda seccion <br>" : "";
+            (data_form.nombre_instituto_otro_2 == "" || data_form.titulo_op_otro_2 == "" || data_form.tiempo_fin_otro_2 == "") ? msg += "PARA LA SEGUNDA SECCION DE ESTUDIOS FORMALES DEBE INGRESAR:<br>" : "";
+            data_form.nombre_instituto_otro_2 == "" ? msg += "- Ingresar el nombre del instituto<br>" : "";
+            data_form.titulo_op_otro_2 == "" ? msg += "- Ingresar el titulo optenido<br>" : "";
+            data_form.tiempo_fin_otro_2 == "" ? msg += "- Ingresar la fecha de finalización<br>" : "";
+            // data_form.comp_otro_2 == "" ? msg += "- Debe anexar el <b>certificado</b> de la segunda seccion <br>" : "";
         }
 
         // Mostrar mensaje de error en caso de tener alguno
@@ -784,7 +812,7 @@ $(document).ready(function(){
             lug_capaci_2 :              $('#lug_capaci_2').val(),
             lug_capacita_2 :            $('#lug_capacita_2').val(),
             fech_capacita_2 :           $('#fech_capacita_2').val(),
-            doc_capacita_2 :            $('#doc_capacita_2').val()
+            // doc_capacita_2 :            $('#doc_capacita_2').val()
 
         };
 
@@ -810,8 +838,8 @@ $(document).ready(function(){
             cualifi__li.style.display = "block";
             section_ul.style.marginLeft = "-600%";
             section_ul.style.transition = "1.5s"; 
-        } 
-                  
+        }
+
     });
 
     // INTERACCION CON EL BOTON SI DE LA SECCION DE CAPACITACIONES PARA SABER NO TIENE CUALIFICACIONES //
@@ -840,10 +868,10 @@ $(document).ready(function(){
         let fec_cap_1 =  calcularEdad(data_form.fech_capacita);
 
         // Validacion de otros estudios
-        data_form.lug_capaci == "" ? msg += "- Debe ingresar el <b>nombre del instituto</b> de la primera seccion <br>" : "";
-        data_form.lug_capacita == "" ? msg += "- Debe ingresar el <b>titulo optenido</b> de la primera seccion <br>" : "";
-        data_form.fech_capacita == "" ? msg += "- Debe ingresar la <b>fecha de finalización</b> de la primera seccion <br>" : "";
-        data_form.doc_capacita == "" ? msg += "- Debe anexar el <b>certificado</b> de la primera seccion <br>" : "";
+        data_form.lug_capaci == "" ? msg += "- Ingresar el nombre del instituto<br>" : "";
+        data_form.lug_capacita == "" ? msg += "- Ingresar el titulo optenido<br>" : "";
+        data_form.fech_capacita == "" ? msg += "- Ingresar la fecha de finalización<br>" : "";
+        data_form.doc_capacita == "" ? msg += "- Debe anexar el certificado<br>" : "";
         fec_cap_1 > 0 ? msg += "- Su <b>certificado de capacitacion</b> de la primera seccion ya expiro " : "";
 
         // Mostrar mensaje de error en caso de tener alguno
@@ -879,7 +907,7 @@ $(document).ready(function(){
             lug_capaci_2 :              $('#lug_capaci_2').val(),
             lug_capacita_2 :            $('#lug_capacita_2').val(),
             fech_capacita_2 :           $('#fech_capacita_2').val(),
-            doc_capacita_2 :            $('#doc_capacita_2').val()
+            // doc_capacita_2 :            $('#doc_capacita_2').val()
 
         };
 
@@ -889,21 +917,23 @@ $(document).ready(function(){
 
         // Se agrupan por secciones de capacitaciones para trabajar las validaciones por grupos
         // let primer_capacitacion = data_form.lug_capaci + data_form.lug_capacita + data_form.fech_capacita + data_form.doc_capacita;
-        let segunda_capacitacion = data_form.lug_capaci_2 + data_form.lug_capacita_2 + data_form.fech_capacita_2 + data_form.doc_capacita_2;
+        // let segunda_capacitacion = data_form.lug_capaci_2 + data_form.lug_capacita_2 + data_form.fech_capacita_2 + data_form.doc_capacita_2;
+        let segunda_capacitacion = data_form.lug_capaci_2 + data_form.lug_capacita_2 + data_form.fech_capacita_2;
 
         // Validacion de otros estudios
-        data_form.lug_capaci == "" ? msg += "- Debe ingresar el <b>nombre del instituto</b> de la primera seccion <br>" : "";
-        data_form.lug_capacita == "" ? msg += "- Debe ingresar el <b>titulo optenido</b> de la primera seccion <br>" : "";
-        data_form.fech_capacita == "" ? msg += "- Debe ingresar la <b>fecha de finalización</b> de la primera seccion <br>" : "";
-        data_form.doc_capacita == "" ? msg += "- Debe anexar el <b>certificado</b> de la primera seccion <br>" : "";
-        fec_cap_1 > 0 ? msg += "- Su <b>certificado de capacitacion</b> de la primera seccion ya expiro " : "";
+        data_form.lug_capaci == "" ? msg += "- Ingresar el nombre del instituto<br>" : "";
+        data_form.lug_capacita == "" ? msg += "- Ingresar el titulo optenido<br>" : "";
+        data_form.fech_capacita == "" ? msg += "- Ingresar la fecha de finalización<br>" : "";
+        data_form.doc_capacita == "" ? msg += "- Debe anexar el certificado <br>" : "";
+        fec_cap_1 > 0 ? msg += "- Su certificado de capacitacion de la primera seccion ya expiro " : "";
 
         if (segunda_capacitacion !== "--") {
-            data_form.lug_capaci_2 == "" ? msg += "- Debe ingresar el <b>nombre del instituto</b> de la segunda seccion <br>" : "";
-            data_form.lug_capacita_2 == "" ? msg += "- Debe ingresar el <b>titulo optenido</b> de la segunda seccion <br>" : "";
-            data_form.fech_capacita_2 == "" ? msg += "- Debe ingresar la <b>fecha de finalización</b> de la segunda seccion <br>" : "";
-            data_form.doc_capacita_2 == "" ? msg += "- Debe anexar el <b>certificado</b> de la segunda seccion <br>" : "";
-            fec_cap_2 > 0 ? msg += "- Su <b>certificado de capacitacion</b> de la segunda seccion ya expiro" : "";
+            (data_form.lug_capaci_2 == "" || data_form.lug_capacita_2 == "" || data_form.fech_capacita_2 == "" || fec_cap_2 > 0) ? msg += "PARA LA SEGUNDA SECCION DE CAPACITACION DEBE INGRESAR: <br>" : "";
+            data_form.lug_capaci_2 == "" ? msg += "- Ingresar el nombre del instituto<br>" : "";
+            data_form.lug_capacita_2 == "" ? msg += "- Ingresar el titulo optenido<br>" : "";
+            data_form.fech_capacita_2 == "" ? msg += "- Debe ingresar la fecha de finalización<br>" : "";
+            // data_form.doc_capacita_2 == "" ? msg += "- Debe anexar el <b>certificado</b> de la segunda seccion <br>" : "";
+            fec_cap_2 > 0 ? msg += "- Su certificado de capacitacion de la segunda seccion ya expiro" : "";
         }
 
         // Mostrar mensaje de error en caso de tener alguno
@@ -941,12 +971,12 @@ $(document).ready(function(){
             lug_cuali :                 $('#lug_cuali').val(),
             lug_cualifica :             $('#lug_cualifica').val(),
             fech_cualifi :              $('#fech_cualifi').val(),
-            doc_cualifi :               $('#doc_cualifi').val(),
+            // doc_cualifi :               $('#doc_cualifi').val(),
 
             lug_cuali_2 :               $('#lug_cuali_2').val(),
             lug_cualifica_2 :           $('#lug_cualifica_2').val(),
             fech_cualifi_2 :            $('#fech_cualifi_2').val(),
-            doc_cualifi_2 :             $('#doc_cualifi_2').val()
+            // doc_cualifi_2 :             $('#doc_cualifi_2').val()
 
         };
 
@@ -955,26 +985,30 @@ $(document).ready(function(){
         let fec_cual_2 = calcularEdad(data_form.fech_cualifi_2);
 
         // Se agrupan por secciones de capacitaciones para trabajar las validaciones por grupos
-        let primera_cua = data_form.lug_cuali + data_form.lug_cualifica + data_form.fech_cualifi + data_form.doc_cualifi;
-        let segundo_cua = data_form.lug_cuali_2 + data_form.lug_cualifica_2 + data_form.fech_cualifi_2 + data_form.doc_cualifi_2;
+        // let primera_cua = data_form.lug_cuali + data_form.lug_cualifica + data_form.fech_cualifi + data_form.doc_cualifi;
+        let primera_cua = data_form.lug_cuali + data_form.lug_cualifica + data_form.fech_cualifi;
+        // let segundo_cua = data_form.lug_cuali_2 + data_form.lug_cualifica_2 + data_form.fech_cualifi_2 + data_form.doc_cualifi_2;
+        let segundo_cua = data_form.lug_cuali_2 + data_form.lug_cualifica_2 + data_form.fech_cualifi_2;
 
         // Validacion de otros estudios
         if (primera_cua !== "--") {
-            data_form.lug_cuali == "" ? msg += "- Debe ingresar el <b>nombre del instituto</b> de la primera seccion <br>" : "";
-            data_form.lug_cualifica == "" ? msg += "- Debe ingresar el <b>titulo optenido</b> de la primera seccion <br>" : "";
-            data_form.fech_cualifi == "" ? msg += "- Debe ingresar la <b>fecha de finalización</b> de la primera seccion <br>" : "";
-            data_form.doc_cualifi == "" ? msg += "- Debe anexar el <b>certificado</b> de la primera seccion <br>" : "";
-            fec_cual_1 > 0 && data_form.lug_cualifica !== "01" ? msg += "- Su <b>certificado de cualificacion</b> de la primera seccion ya expiro " : "";
-            fec_cual_1 > 2 && data_form.lug_cualifica == "01" ? msg += "- Su <b>certificado de cualificacion</b> de la primera seccion ya expiro " : "";
+            (data_form.lug_cuali == "" || data_form.lug_cualifica == "" || data_form.fech_cualifi == "" || (fec_cual_1 > 0 && data_form.lug_cualifica !== "01") || (fec_cual_1 > 2 && data_form.lug_cualifica == "01")) ? msg += "PARA LA PRIMERA SECCION DE CUALIFICACION DEBE INGRESAR: <br>" : "";
+            data_form.lug_cuali == "" ? msg += "- ingresar el nombre del instituto<br>" : "";
+            data_form.lug_cualifica == "" ? msg += "- Ingresar el titulo optenido<br>" : "";
+            data_form.fech_cualifi == "" ? msg += "- Ingresar la fecha de finalización<br>" : "";
+            // data_form.doc_cualifi == "" ? msg += "- Debe anexar el <b>certificado</b> de la primera seccion <br>" : "";
+            fec_cual_1 > 0 && data_form.lug_cualifica !== "01" ? msg += "- Su certificado de cualificacion de la primera seccion ya expiro " : "";
+            fec_cual_1 > 2 && data_form.lug_cualifica == "01" ? msg += "- Su certificado de cualificacion de la primera seccion ya expiro " : "";
         }
 
         if (segundo_cua !== "--") {
-            data_form.lug_cuali_2 == "" ? msg += "- Debe ingresar el <b>nombre del instituto</b> de la segunda seccion <br>" : "";
-            data_form.lug_cualifica_2 == "" ? msg += "- Debe ingresar el <b>titulo optenido</b> de la segunda seccion <br>" : "";
-            data_form.fech_cualifi_2 == "" ? msg += "- Debe ingresar la <b>fecha de finalización</b> de la segunda seccion <br>" : "";
-            data_form.doc_cualifi_2 == "" ? msg += "- Debe anexar el <b>certificado</b> de la segunda seccion <br>" : "";
-            fec_cual_2 >= 0 && data_form.lug_cualifica_2 == "01" ? msg += "- Su <b>certificado de cualificacion</b> de la segunda seccion ya expiro" : "";
-            fec_cual_2 > 2 && data_form.lug_cualifica_2 == "01" ? msg += "- Su <b>certificado de cualificacion</b> de la primera seccion ya expiro " : "";
+            (data_form.lug_cuali_2 == "" || data_form.lug_cualifica_2 == "" || data_form.fech_cualifi_2 == "" || (fec_cual_2 > 0 && data_form.lug_cualifica_2 !== "01") || (fec_cual_2 > 2 && data_form.lug_cualifica_2 == "01")) ? msg += "PARA LA SEGUNDA SECCION DE CUALIFICACION DEBE INGRESAR: <br>" : "";
+            data_form.lug_cuali_2 == "" ? msg += "- Ingresar el nombre del instituto<br>" : "";
+            data_form.lug_cualifica_2 == "" ? msg += "- Ingresar el titulo optenido<br>" : "";
+            data_form.fech_cualifi_2 == "" ? msg += "- Ingresar la fecha de finalización<br>" : "";
+            // data_form.doc_cualifi_2 == "" ? msg += "- Debe anexar el <b>certificado</b> de la segunda seccion <br>" : "";
+            fec_cual_2 >= 0 && data_form.lug_cualifica_2 == "01" ? msg += "- Su certificado de cualificacion de la segunda seccion ya expiro" : "";
+            fec_cual_2 > 2 && data_form.lug_cualifica_2 == "01" ? msg += "- Su certificado de cualificacion de la primera seccion ya expiro " : "";
         }
 
         // Mostrar mensaje de error en caso de tener alguno
@@ -1136,7 +1170,6 @@ $(document).ready(function(){
                 $("#Cont_carga").hide();
             });
         }
-      
     });
 
     // ***************************************************************************************************** //

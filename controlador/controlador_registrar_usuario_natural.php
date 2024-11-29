@@ -167,226 +167,179 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             
             }
 
+            // Inicialización de variables
+            $rutaRefLab = "";
+            $rutaRefLab2 = "";
+            $rutaEstFor = "";
+            $rutaEstFor2 = "";
+            $rutaOtro = "";
+            $rutaOtro2 = "";
+            $rutaDocCua = "";
+            $rutaDocCua2 = "";
+            $rutaDocCap = "";
+            $rutaDocCap2 = "";
+
             // Creacion de directorio de ruta de primer referencia laboral
             $targetLab = "../documents/ref_lab/$cedula_de_ciudadania/";
 
             if (!file_exists($targetLab)){
-                mkdir($targetLab,0755,true);
+                mkdir($targetLab, 0755, true);
             }
 
             // Archivo de referencia laboral
-            if(isset($_FILES['compro_laboral']["name"])){
+            if(!empty($_FILES['compro_laboral']["name"])){
                 $file_name = $_FILES['compro_laboral']["name"];
-                
-                $extension = pathinfo($_FILES['compro_laboral']["name"],PATHINFO_EXTENSION);
-                
-                $file_name = $cedula_de_ciudadania.'-'.'ref_lab'.'.'.$extension;
+                $extension = pathinfo($_FILES['compro_laboral']["name"], PATHINFO_EXTENSION);
+                $file_name = $cedula_de_ciudadania . '-ref_lab.' . $extension;
                 $add = $targetLab . $file_name;
-                
                 $rutaRefLab = "../documents/ref_lab/$cedula_de_ciudadania/$file_name";
-                
-                if(move_uploaded_file($_FILES['compro_laboral']["tmp_name"],$add)){}
-            
+
+                if(move_uploaded_file($_FILES['compro_laboral']["tmp_name"], $add)){}
             }
 
             // Creacion de directorio de ruta de segunda referencia laboral
             $targetLab2 = "../documents/ref_lab/$cedula_de_ciudadania/";
 
             if (!file_exists($targetLab2)){
-                mkdir($targetLab2,0755,true);
+                mkdir($targetLab2, 0755, true);
             }
 
             // Archivo de la segunda referencia laboral
-            if(isset($_FILES['compro_laboral_2']["name"])){
+            if(!empty($_FILES['compro_laboral_2']["name"])){
                 $file_name = $_FILES['compro_laboral_2']["name"];
-                
-                $extension = pathinfo($_FILES['compro_laboral_2']["name"],PATHINFO_EXTENSION);
-                
-                $file_name = $cedula_de_ciudadania.'-'.'ref_lab2'.'.'.$extension;
+                $extension = pathinfo($_FILES['compro_laboral_2']["name"], PATHINFO_EXTENSION);
+                $file_name = $cedula_de_ciudadania . '-ref_lab2.' . $extension;
                 $add = $targetLab2 . $file_name;
-                
                 $rutaRefLab2 = "../documents/ref_lab/$cedula_de_ciudadania/$file_name";
-                
-                if(move_uploaded_file($_FILES['compro_laboral_2']["tmp_name"],$add)){}
-            
+
+                if(move_uploaded_file($_FILES['compro_laboral_2']["tmp_name"], $add)){}
             }
 
             // Creacion de directorio de ruta de primer certificado de estudio
             $targetEst = "../documents/est_for/$cedula_de_ciudadania/";
 
             if (!file_exists($targetEst)){
-                mkdir($targetEst,0755,true);
+                mkdir($targetEst, 0755, true);
             }
 
             // Archivo de la primera certificacion de estudio
-            if(isset($_FILES['comp_est_for']["name"])){
+            if(!empty($_FILES['comp_est_for']["name"])){
                 $file_name = $_FILES['comp_est_for']["name"];
-                
-                $extension = pathinfo($_FILES['comp_est_for']["name"],PATHINFO_EXTENSION);
-                
-                $file_name = $cedula_de_ciudadania.'-'.'est_for'.'.'.$extension;
+                $extension = pathinfo($_FILES['comp_est_for']["name"], PATHINFO_EXTENSION);
+                $file_name = $cedula_de_ciudadania . '-est_for.' . $extension;
                 $add = $targetEst . $file_name;
-                
                 $rutaEstFor = "../documents/est_for/$cedula_de_ciudadania/$file_name";
-                
-                if(move_uploaded_file($_FILES['comp_est_for']["tmp_name"],$add)){}
-            
+
+                if(move_uploaded_file($_FILES['comp_est_for']["tmp_name"], $add)){}
             }
 
             // Creacion de directorio de ruta de segunda certificado de estudio
             $targetEst2 = "../documents/est_for/$cedula_de_ciudadania/";
 
             if (!file_exists($targetEst2)){
-                mkdir($targetEst2,0755,true);
+                mkdir($targetEst2, 0755, true);
             }
 
             // Archivo de la segunda certificacion de estudio
-            if(isset($_FILES['comp_est_for_2']["name"])){
+            if(!empty($_FILES['comp_est_for_2']["name"])){
                 $file_name = $_FILES['comp_est_for_2']["name"];
-                
-                $extension = pathinfo($_FILES['comp_est_for_2']["name"],PATHINFO_EXTENSION);
-                
-                $file_name = $cedula_de_ciudadania.'-'.'est_for2'.'.'.$extension;
+                $extension = pathinfo($_FILES['comp_est_for_2']["name"], PATHINFO_EXTENSION);
+                $file_name = $cedula_de_ciudadania . '-est_for2.' . $extension;
                 $add = $targetEst2 . $file_name;
-                
                 $rutaEstFor2 = "../documents/est_for/$cedula_de_ciudadania/$file_name";
-                
-                if(move_uploaded_file($_FILES['comp_est_for_2']["tmp_name"],$add)){}
-            
+
+                if(move_uploaded_file($_FILES['comp_est_for_2']["tmp_name"], $add)){}
             }
 
             // Creacion de directorio de la primera certificado de otros estudios
             $targetOtro = "../documents/otro/$cedula_de_ciudadania/";
 
             if (!file_exists($targetOtro)){
-                mkdir($targetOtro,0755,true);
+                mkdir($targetOtro, 0755, true);
             }
 
             // Archivo de la primera certificacion de otros estudios
-            if(isset($_FILES['comp_otro']["name"])){
+            if(!empty($_FILES['comp_otro']["name"])){
                 $file_name = $_FILES['comp_otro']["name"];
-                
-                $extension = pathinfo($_FILES['comp_otro']["name"],PATHINFO_EXTENSION);
-                
-                $file_name = $cedula_de_ciudadania.'-'.'otro'.'.'.$extension;
+                $extension = pathinfo($_FILES['comp_otro']["name"], PATHINFO_EXTENSION);
+                $file_name = $cedula_de_ciudadania . '-otro.' . $extension;
                 $add = $targetOtro . $file_name;
-                
                 $rutaOtro = "../documents/otro/$cedula_de_ciudadania/$file_name";
-                
-                if(move_uploaded_file($_FILES['comp_otro']["tmp_name"],$add)){}
-            
+
+                if(move_uploaded_file($_FILES['comp_otro']["tmp_name"], $add)){}
             }
 
-            // Creacion de directorio de la segunda certificado de otros estudios
-            $targetOtro2 = "../documents/otro/$cedula_de_ciudadania/";
-
-            if (!file_exists($targetOtro2)){
-                mkdir($targetOtro2,0755,true);
-            }
-
-            // Archivo de la segunda certificacion de otros estudios
-            if(isset($_FILES['comp_otro_2']["name"])){
-                $file_name = $_FILES['comp_otro_2']["name"];
-                
-                $extension = pathinfo($_FILES['comp_otro_2']["name"],PATHINFO_EXTENSION);
-                
-                $file_name = $cedula_de_ciudadania.'-'.'otro2'.'.'.$extension;
-                $add = $targetOtro2 . $file_name;
-                
-                $rutaOtro2 = "../documents/otro/$cedula_de_ciudadania/$file_name";
-                
-                if(move_uploaded_file($_FILES['comp_otro_2']["tmp_name"],$add)){}
-            
-            }
-
-            // Creacion de directorio de primera cualificacion
+            // Creacion de directorio de ruta de segunda cualificacion
             $targetCua = "../documents/cualificaciones/$cedula_de_ciudadania/";
 
             if (!file_exists($targetCua)){
-                mkdir($targetCua,0755,true);
+                mkdir($targetCua, 0755, true);
             }
 
             // Archivo de la primera cualificacion
-            if(isset($_FILES['doc_cualifi']["name"])){
+            if(!empty($_FILES['doc_cualifi']["name"])){
                 $file_name = $_FILES['doc_cualifi']["name"];
-                
-                $extension = pathinfo($_FILES['doc_cualifi']["name"],PATHINFO_EXTENSION);
-                
-                $file_name = $cedula_de_ciudadania.'-'.'doc'.'.'.$extension;
+                $extension = pathinfo($_FILES['doc_cualifi']["name"], PATHINFO_EXTENSION);
+                $file_name = $cedula_de_ciudadania . '-doc.' . $extension;
                 $add = $targetCua . $file_name;
-
                 $rutaDocCua = "../documents/cualificaciones/$cedula_de_ciudadania/$file_name";
-                
-                if(move_uploaded_file($_FILES['doc_cualifi']["tmp_name"],$add)){}
-            
-            }
 
+                if(move_uploaded_file($_FILES['doc_cualifi']["tmp_name"], $add)){}
+            }
+            
             // Creacion de directorio de segunda cualificacion
             $targetCua2 = "../documents/cualificaciones/$cedula_de_ciudadania/";
 
             if (!file_exists($targetCua2)){
-                mkdir($targetCua2,0755,true);
+                mkdir($targetCua2, 0755, true);
             }
 
             // Archivo de la segunda cualificacion
-            if(isset($_FILES['doc_cualifi_2']["name"])){
+            if(!empty($_FILES['doc_cualifi_2']["name"])){
                 $file_name = $_FILES['doc_cualifi_2']["name"];
-                
-                $extension = pathinfo($_FILES['doc_cualifi_2']["name"],PATHINFO_EXTENSION);
-                
-                $file_name = $cedula_de_ciudadania.'-'.'doc2'.'.'.$extension;
+                $extension = pathinfo($_FILES['doc_cualifi_2']["name"], PATHINFO_EXTENSION);
+                $file_name = $cedula_de_ciudadania . '-doc2.' . $extension;
                 $add = $targetCua2 . $file_name;
-                
                 $rutaDocCua2 = "../documents/cualificaciones/$cedula_de_ciudadania/$file_name";
-                
-                if(move_uploaded_file($_FILES['doc_cualifi_2']["tmp_name"],$add)){}
-            
+
+                if(move_uploaded_file($_FILES['doc_cualifi_2']["tmp_name"], $add)){}
             }
 
-            // Creacion de directorio de primera capacitacion 
+            // Creacion de directorio de primera capacitacion
             $targetCap = "../documents/capacitaciones/$cedula_de_ciudadania/";
 
             if (!file_exists($targetCap)){
-                mkdir($targetCap,0755,true);
+                mkdir($targetCap, 0755, true);
             }
 
             // Archivo de la primera capacitacion
-            if(isset($_FILES['doc_capacita']["name"])){
+            if(!empty($_FILES['doc_capacita']["name"])){
                 $file_name = $_FILES['doc_capacita']["name"];
-                
-                $extension = pathinfo($_FILES['doc_capacita']["name"],PATHINFO_EXTENSION);
-                
-                $file_name = $cedula_de_ciudadania.'-'.'doc'.'.'.$extension;
+                $extension = pathinfo($_FILES['doc_capacita']["name"], PATHINFO_EXTENSION);
+                $file_name = $cedula_de_ciudadania . '-doc.' . $extension;
                 $add = $targetCap . $file_name;
-
                 $rutaDocCap = "../documents/capacitaciones/$cedula_de_ciudadania/$file_name";
-                
-                if(move_uploaded_file($_FILES['doc_capacita']["tmp_name"],$add)){}
-            
+
+                if(move_uploaded_file($_FILES['doc_capacita']["tmp_name"], $add)){}
             }
 
-            // Creacion de directorio de la segunda capacitacion
+            // Creacion de directorio de segunda capacitacion
             $targetCap2 = "../documents/capacitaciones/$cedula_de_ciudadania/";
 
             if (!file_exists($targetCap2)){
-                mkdir($targetCap2,0755,true);
+                mkdir($targetCap2, 0755, true);
             }
 
             // Archivo de la segunda capacitacion
-            if(isset($_FILES['doc_capacita_2']["name"])){
+            if(!empty($_FILES['doc_capacita_2']["name"])){
                 $file_name = $_FILES['doc_capacita_2']["name"];
-                
-                $extension = pathinfo($_FILES['doc_capacita_2']["name"],PATHINFO_EXTENSION);
-                
-                $file_name = $cedula_de_ciudadania.'-'.'doc2'.'.'.$extension;
+                $extension = pathinfo($_FILES['doc_capacita_2']["name"], PATHINFO_EXTENSION);
+                $file_name = $cedula_de_ciudadania . '-doc2.' . $extension;
                 $add = $targetCap2 . $file_name;
-                
                 $rutaDocCap2 = "../documents/capacitaciones/$cedula_de_ciudadania/$file_name";
-                
-                if(move_uploaded_file($_FILES['doc_capacita_2']["tmp_name"],$add)){}
-            
-            }
 
+                if(move_uploaded_file($_FILES['doc_capacita_2']["tmp_name"], $add)){}
+            }
 
             // Inicio de estructura TRY // CATCH
             try {
