@@ -269,6 +269,24 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 if(move_uploaded_file($_FILES['comp_otro']["tmp_name"], $add)){}
             }
 
+            // Creacion de directorio de la primera certificado de otros estudios
+            $targetOtro2 = "../documents/otro/$cedula_de_ciudadania/";
+
+            if (!file_exists($targetOtro2)){
+                mkdir($targetOtro2, 0755, true);
+            }
+
+            // Archivo de la primera certificacion de otros estudios
+            if(!empty($_FILES['comp_otro_2']["name"])){
+                $file_name = $_FILES['comp_otro_2']["name"];
+                $extension = pathinfo($_FILES['comp_otro_2']["name"], PATHINFO_EXTENSION);
+                $file_name = $cedula_de_ciudadania . '-otro2.' . $extension;
+                $add = $targetOtro2 . $file_name;
+                $rutaOtro2 = "../documents/otro/$cedula_de_ciudadania/$file_name";
+
+                if(move_uploaded_file($_FILES['comp_otro_2']["tmp_name"], $add)){}
+            }
+
             // Creacion de directorio de ruta de segunda cualificacion
             $targetCua = "../documents/cualificaciones/$cedula_de_ciudadania/";
 
@@ -385,7 +403,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 
                 // Validación de la primera referencia laboral si los campos estan completos
-                if (($nombre_empresa !== "") && ($cargo !== "") && ($tiempo_ingreso_exp !== "") && ($jefe_inmediato !== "") && ($celular_exp !== "") && ($sig_trab !== "") && ($rutaRefLab !== "")) {
+                if (($nombre_empresa !== "") && ($cargo !== "") && ($tiempo_ingreso_exp !== "") && ($jefe_inmediato !== "") && ($celular_exp !== "") && ($sig_trab !== "")) {
                     
                     // En caso de que siga trabajando en la primera referencia laboral
                     if ($sig_trab === "si") {
@@ -448,7 +466,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 
                 // Validación de la segunda referencia laboral si los campos estan completos
-                if (($nombre_empresa_2 !== "") && ($cargo_2 !== "") && ($tiempo_ingreso_exp_2 !== "") && ($jefe_inmediato_2 !== "") && ($celular_exp_2 !== "") && ($sig_trab_2 !== "") && ($rutaRefLab2 !== "")) {
+                if (($nombre_empresa_2 !== "") && ($cargo_2 !== "") && ($tiempo_ingreso_exp_2 !== "") && ($jefe_inmediato_2 !== "") && ($celular_exp_2 !== "") && ($sig_trab_2 !== "")) {
 
                     // En caso de que siga trabajando en la primera referencia laboral
                     if ($sig_trab_2 === "si") {
@@ -511,7 +529,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 
                 // Validación de los primeros estudios formales si los campos estan completos
-                if (($nombre_instituto !== "") && ($nivel_academico !== "") && ($titulo_op !== "") && ($rutaEstFor !== "")) {
+                if (($nombre_instituto !== "") && ($nivel_academico !== "") && ($titulo_op !== "")) {
 
                     // En caso de que si halla culminado en la primera certificacion academica
                     if ($culm_aca === "si") {
@@ -563,7 +581,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 
                 // Validación de los segundos estudios formales si los campos estan completos
-                if (($nombre_instituto_2 !== "") && ($nivel_academico_2 !== "") && ($titulo_op_2 !== "") && ($rutaEstFor2 !== "")) {
+                if (($nombre_instituto_2 !== "") && ($nivel_academico_2 !== "") && ($titulo_op_2 !== "")) {
 
                     // En caso de que si halla culminado en la segunda certificacion academica
                     if ($culm_aca_2 === "si") {
@@ -614,7 +632,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 }
                 
                 // Validación de la primera seccion donde los estudios adicionales esten complestos
-                if (($nombre_instituto_otro !== "") && ($titulo_op_otro !== "") && ($tiempo_fin_otro_1 !== "") && ($rutaOtro !== "")) {
+                if (($nombre_instituto_otro !== "") && ($titulo_op_otro !== "") && ($tiempo_fin_otro_1 !== "")) {
 
                     // Insercion de los datos que vienen del front en la base de datos de la primera seccion de los estudios adicionales
                     $query_o_1 =("INSERT INTO otro_estudios (numero_doc,nivel_ins_otro,titulo_otro,fec_fin_otro,comp_otro)
@@ -630,7 +648,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 }
                 
                 // Validación de la segunda seccion donde los estudios adicionales esten complestos
-                if (($nombre_instituto_otro_2 !== "") && ($titulo_op_otro_2 !== "") && ($tiempo_fin_otro_2 !== "") && ($rutaOtro2 !== "")) {
+                if (($nombre_instituto_otro_2 !== "") && ($titulo_op_otro_2 !== "") && ($tiempo_fin_otro_2 !== "")) {
 
                     // Insercion de los datos que vienen del front en la base de datos de la segunda seccion de los estudios adicionales
                     $query_o_2 =("INSERT INTO otro_estudios (numero_doc,nivel_ins_otro,titulo_otro,fec_fin_otro,comp_otro)
@@ -668,7 +686,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 }
                 
                 // Validacion de la segunda capacitacion donde los campos se encuentren completos
-                if (($lug_capaci_2 !== "") && ($lug_capacita_2 !== "") && ($fech_capacita_2 !== "") && ($rutaDocCap2 !== "")) {
+                if (($lug_capaci_2 !== "") && ($lug_capacita_2 !== "") && ($fech_capacita_2 !== "")) {
 
                     // Insercion en la base de datos de los campos de datos que se encuentran en el front de la segunda capacitacion
                     $query_cap_2 =("INSERT INTO capacitaciones (numero_doc,lugar,cod_cap,nom_cuapa,fec_cuapa,doc_cuapa)
@@ -690,7 +708,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 }
                 
                 // Validacion de la primera cualificacion donde los campos se encuentren completos
-                if (($lug_cuali !== "") && ($lug_cualifica !== "") && ($fech_cualifi !== "") && ($rutaDocCua !== "")) {
+                if (($lug_cuali !== "") && ($lug_cualifica !== "") && ($fech_cualifi !== "")) {
 
                     // Insercion en la base de datos de los campos de datos que se encuentran en el front de la segunda cualificacion
                     $query_cual_1 =("INSERT INTO cualificaciones (numero_doc,lugar,cod_cuali,nom_cualifi,fec_cualifi,doc_cualifi)
@@ -712,11 +730,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 }
 
                 // Validacion de la segunda cualificacion donde los campos se encuentren completos
-                if (($lug_cuali_2 !== "") && ($lug_cualifica_2 !== "") && ($fech_cualifi_2 !== "") && ($rutaDocCua2 !== "")) {
+                if (($lug_cuali_2 !== "") && ($lug_cualifica_2 !== "") && ($fech_cualifi_2 !== "")) {
 
                     // Insercion en la base de datos de los campos de datos que se encuentran en el front de la segunda cualificacion
-                    $query_cual_2 =("INSERT INTO cualificaciones (numero_doc,lugar,nom_cualifi,fec_cualifi,doc_cualifi)
-                                    VALUES (:num_doc,:lug_cuali_2,:lug_cualifica_2,:fec_cuali_2,:doc_culi_2)");
+                    $query_cual_2 =("INSERT INTO cualificaciones (numero_doc,lugar,cod_cuali,nom_cualifi,fec_cualifi,doc_cualifi)
+                                    VALUES (:num_doc,:lug_cuali_2,:cod_cua_2,:lug_cualifica_2,:fec_cuali_2,:doc_culi_2)");
                     $smtm_cual_2 = $conexion->prepare("$query_cual_2");
                     $smtm_cual_2 -> bindParam(':num_doc',$cedula_de_ciudadania,PDO::PARAM_STR);
                     $smtm_cual_2 -> bindParam(':lug_cuali_2',$lug_cuali_2,PDO::PARAM_STR);
@@ -726,7 +744,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                             $smtm_cual_2 -> bindParam(':lug_cualifica_2',$cua,PDO::PARAM_STR);
                         }
                     }
-                    $smtm_cual_2 -> bindParam(':cod_cua',$lug_cualifica_2,PDO::PARAM_STR);
+                    $smtm_cual_2 -> bindParam(':cod_cua_2',$lug_cualifica_2,PDO::PARAM_STR);
                     $smtm_cual_2 -> bindParam(':fec_cuali_2',$fech_cualifi_2,PDO::PARAM_STR);
                     $smtm_cual_2 -> bindParam(':doc_culi_2',$rutaDocCua2,PDO::PARAM_STR);
                     $smtm_cual_2 -> execute();

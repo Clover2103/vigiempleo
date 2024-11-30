@@ -328,6 +328,8 @@ $(document).ready(function(){
             edad :                      $('#edad').val()
         };
 
+        console.log(data_form);
+
         let edad = calcularEdad(data_form.fecha_nacimiento);
         let edadNumerica  = parseInt(data_form.edad);
 
@@ -400,6 +402,9 @@ $(document).ready(function(){
             cate_lic :                  $('#cate_lic').val(),
             contacto_area :             $('#contacto_area').val()
         };
+
+        console.log(data_form);
+        
 
         // Validaciones del sistema para la segunda pestaña de informacion de contacto
         data_form.direccion.length == 0 ? msg += "- Debe ingresar una direccion de recidencia <br>" : "";
@@ -480,6 +485,8 @@ $(document).ready(function(){
 
         };
 
+        console.log(data_form);
+
         // Se agrupan por secciones de las experiencias laborales para trabajar las validaciones por grupos
         if (data_form.sig_trab == "si") {
             // var primera_ref_lab = data_form.nombre_empresa + data_form.cargo + data_form.tiempo_ingreso_exp + data_form.jefe_inmediato + data_form.celular_exp + data_form.compro_laboral;
@@ -502,10 +509,10 @@ $(document).ready(function(){
         if (data_form.sig_trab !== "--" && ((data_form.nombre_empresa == "") && (data_form.cargo == "--") && (data_form.tiempo_ingreso_exp == "") && (data_form.jefe_inmediato == "") && (data_form.celular_exp == ""))) {
             (data_form.nombre_empresa == "" || data_form.cargo == "--" || data_form.tiempo_ingreso_exp == "" || data_form.jefe_inmediato == "" || data_form.celular_exp == "") ? msg += "PARA LA PRIMERA REFERENCIA LABORAL: <br>": "";
             data_form.nombre_empresa == "" ? msg += "- Ingrese el nombre de la empresa <br>" : "";
-            data_form.cargo == "--" ? msg += "- Por favor indique el <b>cargo desempeñado</b> <br>" : "";
-            data_form.tiempo_ingreso_exp == "" ? msg += "- Ingrese <b>fecha de ingreso laboral</b> <br>" : "" ;
-            data_form.jefe_inmediato == "" ? msg += "- Ingrese por favor el <b>nombre de su jefe inmediato</b> <br>" : "" ;
-            data_form.celular_exp == "" ? msg += "- Ingrese <b>telefono de la empresa o celular de jefe inmediato</b> <br>" : "" ;
+            data_form.cargo == "--" ? msg += "- Indique el cargo desempeñado <br>" : "";
+            data_form.tiempo_ingreso_exp == "" ? msg += "- Ingrese fecha de ingreso laboral <br>" : "" ;
+            data_form.jefe_inmediato == "" ? msg += "- Ingrese el nombre de su jefe inmediato <br>" : "" ;
+            data_form.celular_exp == "" ? msg += "- Ingrese telefono de la empresa o celular de jefe inmediato <br>" : "" ;
             // data_form.compro_laboral == "" ? msg += "- Por favor ingrese el <b>certificado laboral</b> <br>" : "" ;
         }
 
@@ -634,6 +641,8 @@ $(document).ready(function(){
             // comp_est_for_2 :            $('#comp_est_for_2').val()
         };
 
+        console.log(data_form);
+
         // Se agrupan por secciones de las formaciones academicas para trabajar las validaciones por grupos
         if (data_form.culm_aca == "si") {
             // var primera_for_aca = data_form.nombre_instituto + data_form.nivel_academico + data_form.titulo_op + data_form.comp_est_for + data_form.tiempo_fin_1;
@@ -749,6 +758,8 @@ $(document).ready(function(){
 
         };
 
+        console.log(data_form);
+
         // Se agrupan por secciones de otras formaciones certificables para trabajar las validaciones por grupos
         // var primer_est_ex = data_form.nombre_instituto_otro + data_form.titulo_op_otro +  data_form.tiempo_fin_otro_1 + data_form.comp_otro;
         var primer_est_ex = data_form.nombre_instituto_otro + data_form.titulo_op_otro +  data_form.tiempo_fin_otro_1;
@@ -816,15 +827,17 @@ $(document).ready(function(){
 
         };
 
+        console.log(data_form);
+
         // Calcular el tiempo que lleva el cartificado vigente
         let fec_cap_1 =  calcularEdad(data_form.fech_capacita);
 
         // Validacion de otros estudios
-        data_form.lug_capaci == "" ? msg += "- Debe ingresar el <b>nombre del instituto</b> de la primera seccion <br>" : "";
-        data_form.lug_capacita == "" ? msg += "- Debe ingresar el <b>titulo optenido</b> de la primera seccion <br>" : "";
-        data_form.fech_capacita == "" ? msg += "- Debe ingresar la <b>fecha de finalización</b> de la primera seccion <br>" : "";
-        data_form.doc_capacita == "" ? msg += "- Debe anexar el <b>certificado</b> de la primera seccion <br>" : "";
-        fec_cap_1 > 0 ? msg += "- Su <b>certificado de capacitacion</b> de la primera seccion ya expiro " : "";
+        data_form.lug_capaci == "" ? msg += "- Ingresar el nombre del instituto de la primera seccion <br>" : "";
+        data_form.lug_capacita == "" ? msg += "- Ingresar el titulo optenido de la primera seccion <br>" : "";
+        data_form.fech_capacita == "" ? msg += "- Ingresar la fecha de finalización de la primera seccion <br>" : "";
+        data_form.doc_capacita == "" ? msg += "- Debe anexar el certificado de la primera seccion <br>" : "";
+        fec_cap_1 > 0 ? msg += "- Su certificado de capacitacion de la primera seccion ya expiro " : "";
 
         // Mostrar mensaje de error en caso de tener alguno
         if (msg !== "") {
@@ -863,6 +876,8 @@ $(document).ready(function(){
             doc_capacita_2 :            $('#doc_capacita_2').val()
 
         };
+
+        console.log(data_form);
 
         // Calcular el tiempo que lleva el cartificado vigente
         let fec_cap_1 =  calcularEdad(data_form.fech_capacita);
@@ -910,6 +925,8 @@ $(document).ready(function(){
             // doc_capacita_2 :            $('#doc_capacita_2').val()
 
         };
+
+        console.log(data_form);
 
         // Calcular el tiempo que lleva el cartificado vigente
         let fec_cap_1 =  calcularEdad(data_form.fech_capacita);
@@ -979,6 +996,8 @@ $(document).ready(function(){
             // doc_cualifi_2 :             $('#doc_cualifi_2').val()
 
         };
+
+        console.log(data_form);
 
         // Calcular el tiempo que lleva el cartificado vigente
         let fec_cual_1 =  calcularEdad(data_form.fech_cualifi);
@@ -1076,6 +1095,8 @@ $(document).ready(function(){
             car_ref_2:                  $('#car_ref_2').val(),
             tipo:                       "N"
         };
+
+        console.log(data_form);
 
         // Se agrupan por secciones de capacitaciones para trabajar las validaciones por grupos
         let primera_ref_per = data_form.nomb_ref + data_form.ape_ref + data_form.cel_ref + data_form.car_ref;
