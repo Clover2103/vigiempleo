@@ -1,0 +1,701 @@
+body {
+    background-color: #dddbd5;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Decoracion de menu */
+
+.menu {
+    width: 100%;
+    border-bottom: 5px solid #2c3691;
+}
+
+    /* Menu responsive */
+    .menu_nav_responsive {
+        display: none;
+        font-size: 1.1em;
+    }
+
+        .nav__toggle {
+            position: absolute;
+            cursor: pointer;
+            margin: 0.1rem;
+            right: 0;
+        }
+
+            .nav__toggle svg{
+                width: 1rem;
+                fill: #2c3691;
+            }
+
+            .nav__toggle .close {
+                display: none;
+            }
+
+            .nav__toggle .close .open {
+                margin-top: 0.3rem;
+            }
+
+        .nav__checkbox {
+            display: none;
+        }
+
+        .nav__menu {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            align-items: end;
+            margin: 1rem;
+        }
+
+            .menu__logo_responsive img{
+                width: 200px;
+            }
+
+            .nav__menu li {
+                list-style-type: noen;
+                display: none;
+            }
+
+                .button_responsive{
+                    display: flex;
+                    flex-direction: column;
+                }
+
+                .nav__menu li button {
+                    margin: 8px 5px 8px 5px ;
+                    padding: 5px 15px;
+                    border-radius: 25px;
+                    background-color: #2c3691;
+                    color: #ffffff;
+                    border: none;
+                }
+
+            .nav__menu li:first-child {
+                margin-right: auto;
+                display: block;
+            }
+
+        #nav__checkbox:checked ~ ul.nav__menu li {
+            display: block;
+        }
+
+        #nav__checkbox:checked ~ label.nav__toggle .close {
+            display: block;
+        }
+
+        #nav__checkbox:checked ~ label.nav__toggle .open {
+            display: none;
+        }
+
+        #btnCerrarSUN {
+            cursor: pointer;
+        }
+
+    .menu_nav {
+        font-size: 1.1em;
+        display: flex;
+        width: 70%;
+        margin: auto;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        align-items: center;
+    }
+        /* logo */
+        .menu_logo img {
+            width: 200px;
+            margin: 10px 0 10px 0;
+        }
+        
+        /* Lista */
+           .menu_ul {
+                display: flex;
+           }
+
+                .menu_ul li {
+                    display: flex;
+                    text-decoration: none;
+                    margin: 10px;
+                }
+
+                    a:link, a:visited, a:active {
+                        text-decoration:none;
+                        color: #000;
+                        font-weight: 900;
+                    }
+                    
+        /* Botones */
+        .menu_btn {
+            display: flex;
+            flex-direction: column;
+        }
+        
+            .menu_btn button {
+                margin: 8px 5px 8px 5px ;
+                padding: 5px 15px;
+                border-radius: 25px;
+                background-color: #2c3691;
+                color: #ffffff;
+                border: none;
+                cursor: pointer;
+            }
+
+        .btn_menu_login {
+            margin: 8px 5px 8px 5px ;
+            padding: 5px 15px;
+            border-radius: 25px;
+            background-color: #2c3691;
+            color: #ffffff;
+            border: none;
+            cursor: pointer;
+        }
+
+/* Cuerpo */
+.cuerpo {
+    min-height: 85vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+    .cuerpo_registro {
+        display: flex;
+        min-height: 80%;
+        width: 80%;
+        background-color: #ffffff;
+        border-radius: 8px;
+    }
+
+    .form-floating>.form-control-plaintext~label::after, .form-floating>.form-control:focus~label::after, .form-floating>.form-control:not(:placeholder-shown)~label::after, .form-floating>.form-select~label::after {
+        background-color: transparent;
+    }
+
+    .form-floating label span {
+        color: red;
+    }
+
+        /* .formulario_general_emp {
+            display: flex;
+            visibility: none;
+            height: 100%;
+            width: 100%;
+            background-color: #ffffff;
+            border-radius: 8px;
+        } */
+
+            .registro_foto {
+                width: 25%;
+                background-color: #2c3691;
+                display: flex;
+                flex-direction: column;
+                border-radius: 8px;
+            }
+
+                .img_preview {
+                    background-color: #ffffff;
+                    overflow: hidden;
+                    height: 160px;
+                    width: 220px;
+                    margin: 50px auto 8px;
+                    /* display: flex;
+                    justify-content: center;
+                    align-items: center; */
+                }
+
+                    .img_preview img {
+                        height: 160px;
+                        width: 220px;
+                    }
+
+                .registro_img {
+                    width: 150px;
+                    margin: 10px auto;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                }
+
+                    .reg__oculto {
+                        width: 0.1px;
+                        height: 0.1px;
+                        opacity: 0;
+                        overflow: hidden;
+                        position: absolute;
+                        z-index: -1;
+                    }
+
+                    .reg__vis__archivo {
+                        width: 100%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        margin-top: -30px;
+                    }
+
+                        .reg__vis__archivo img {
+                            margin: auto;
+                            border-radius: 10px;
+                            border: 2px solid #fff;
+                        }
+
+                    .registro_img input{
+                        color: #ffffff;
+                    }
+
+                    .registro_img img{
+                        width: 40px;
+                        background-color: #dddbd5;
+                        padding: 10px;
+                    }
+
+                    .valueInput {
+                        padding: 20px;
+                        color: #fff;
+                        font-weight: 400;
+                        font-size: 1em;
+                        text-align: center;
+                    }
+
+    /* formulario */
+
+        /* Informacion general */
+        .container_forms {
+            width: 75%;
+            min-height: 50%;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+            .container_forms ul {
+                display: flex;
+                justify-content: space-evenly;
+                padding: 0;
+                height: 100%;
+                width: 400%;
+                margin: 0;
+            }
+
+                .container_forms li {
+                    list-style: none;
+                    width: 100%;
+                    height: 100%;
+                }
+
+                    .container_forms .form {
+                        width: 100%;
+                        height: 100%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                    }
+
+                        .sec_form {
+                            height: 100%;
+                            width: 100%;
+                            display: flex;
+                            flex-direction: column;
+                            /* justify-content: space-evenly; */
+                            align-items: center;
+                        }
+
+                            .sec_form h2 {
+                                margin-bottom: 20px;
+                                margin-top: 20px;
+                                color: #2c3691;
+                            }
+
+                            .btn-center {
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                            }
+
+                                                    #btn_ver_cont_emp img{
+                                                        width: 15px;
+                                                        height: 15px;
+                                                    }
+
+                                                    #btn_ver_cont_conf_emp img{
+                                                        width: 15px;
+                                                        height: 15px;
+                                                    }
+
+
+                                    /* LOGO */
+                                        /* Imagen logo */
+                                        .img_preview_logo {
+                                            background-color: #ffffff;
+                                            overflow: hidden;
+                                            height: 200px;
+                                            max-width: 80%;
+                                            min-width: 200px;
+                                            border-radius: 5px;
+                                            clip-path: polygon(5% 0%, 100% 0%, 100% 100%, 24% 100%,23.9% 99.8%);
+                                            margin: 50px auto 8px;
+                                            display: flex;
+                                            justify-content: center;
+                                            align-items: center;
+                                            border-bottom: 1.5px solid #000;
+                                            border-top: 1.5px solid #000;
+                                            border-right: 1.5px solid #000;
+                                        }
+
+                                            .img_preview_logo img {
+                                                width: 450px;
+                                            }
+
+                                        .reg__vis__archivo__logo {
+                                            width: 100%;
+                                            display: flex;
+                                            justify-content: center;
+                                            align-items: center;
+                                        }
+
+                                        .form .sec_form {
+                                            margin: auto;
+                                            text-align: center;
+                                        }
+
+                                        .cont_error_emp {
+                                            display: none;
+                                        }
+    
+                                            .wind_msg_emp {
+                                                background: rgba(33, 41, 52, .85);
+                                                left: 0;
+                                                bottom: 0;
+                                                right: 0;
+                                                top: 0;
+                                                display: flex;
+                                                position: fixed;
+                                                z-index: 999;
+                                            }
+        
+                                                .wind_msg_emp .contWinMsgEmp {
+                                                    background: #fff;
+                                                    border-radius: 2px;
+                                                    box-shadow: 0 1px 3px rgba(33, 41, 52, .75);
+                                                    box-sizing: content-box;
+                                                    display: flex;
+                                                    justify-content: space-around;
+                                                    flex-direction: column;
+                                                    margin: auto;
+                                                    min-height: 200px;
+                                                    max-width: 600px;
+                                                    min-width: 320px !important;
+                                                    overflow: hidden;
+                                                    position: relative;
+                                                    width: 100%;
+                                                    padding: 25px 10px 15px 10px;
+                                                    font-size: 1.3rem;
+                                                    border-radius: 15px;
+                                                    text-align: center;
+                                                }
+    
+                                                    .cont_msg_emp{
+                                                        display: flex;
+                                                        flex-direction: column;
+                                                        justify-content: center;
+                                                        align-items: center;
+                                                    }
+    
+                                                    .contWinMsgEmp button {
+                                                        margin: 8px 5px 8px 5px ;
+                                                        padding: 8px 20px;
+                                                        font-size: 1.3em;
+                                                        border-radius: 25px;
+                                                        background-color: #2c3691;
+                                                        color: #ffffff;
+                                                        border: none;
+                                                        cursor: pointer;
+                                                    }
+
+                                        .form div .btn_sig {
+                                            margin: 8px 5px 8px 5px ;
+                                            padding: 8px 20px;
+                                            font-size: 1.3em;
+                                            border-radius: 25px;
+                                            background-color: #2c3691;
+                                            color: #ffffff;
+                                            border: none;
+                                        }
+
+                                        .form div .btn_atr {
+                                            margin: 8px 5px 8px 5px ;
+                                            padding: 8px 45px;
+                                            font-size: 1.3em;
+                                            border-radius: 25px;
+                                            background-color: #2c3691;
+                                            color: #ffffff;
+                                            border: none;
+                                            cursor: pointer;
+                                        }
+
+                                        .form div .btn_fin {
+                                            margin: 8px 5px 8px 5px ;
+                                            padding: 8px 30px;
+                                            font-size: 1.3em;
+                                            border-radius: 25px;
+                                            background-color: #2c3691;
+                                            color: #ffffff;
+                                            border: none;
+                                            cursor: pointer;
+                                        } 
+
+                                        .Cont_faltante {
+                                            display: none;
+                                        }
+    
+                                            .wind_msg {
+                                                background: rgba(33, 41, 52, .85);
+                                                left: 0;
+                                                bottom: 0;
+                                                right: 0;
+                                                top: 0;
+                                                display: flex;
+                                                position: fixed;
+                                                z-index: 999;
+                                            }
+        
+                                                .wind_msg .contWinMsg {
+                                                    background: #fff;
+                                                    border-radius: 2px;
+                                                    box-shadow: 0 1px 3px rgba(33, 41, 52, .75);
+                                                    box-sizing: content-box;
+                                                    display: flex;
+                                                    justify-content: space-around;
+                                                    flex-direction: column;
+                                                    margin: auto;
+                                                    height: 500px;
+                                                    max-width: 600px;
+                                                    min-width: 320px !important;
+                                                    overflow: hidden;
+                                                    position: relative;
+                                                    width: 100%;
+                                                    padding: 25px 10px 15px 10px;
+                                                    font-size: 1.3rem;
+                                                    border-radius: 15px;
+                                                    text-align: center;
+                                                }
+    
+                                                    .cont_msg{
+                                                        display: flex;
+                                                        flex-direction: column;
+                                                        justify-content: center;
+                                                        align-items: center;
+                                                    }
+    
+                                                    .contWinMsg button {
+                                                        margin: 8px 5px 8px 5px ;
+                                                        padding: 8px 20px;
+                                                        font-size: 1.3em;
+                                                        border-radius: 25px;
+                                                        background-color: #2c3691;
+                                                        color: #ffffff;
+                                                        border: none;
+                                                        cursor: pointer;
+                                                    }
+    
+                                            .form div .btn_sig {
+                                                margin: 8px 5px 8px 5px ;
+                                                padding: 8px 20px;
+                                                font-size: 1.3em;
+                                                border-radius: 25px;
+                                                background-color: #2c3691;
+                                                color: #ffffff;
+                                                border: none;
+                                                cursor: pointer;
+                                            }
+    
+                                            #cont_termino {
+                                                color: #2c3691;
+                                                cursor: pointer;
+                                            }
+    
+                                            #terCon {
+                                                width: 95%;
+                                                height: 400px;
+                                                color: #000;
+                                                font-weight: 400;
+                                                font-size: 0.8em;
+                                                text-align: justify;
+                                                border-radius: 10px;
+                                                border: 1px solid #dddbd5;
+                                            }
+
+
+                                        .contCerrar {
+                                            display: none;
+                                        }
+                        
+                                            .contCerrarSes {
+                                                background: rgba(33, 41, 52, .85);
+                                                left: 0;
+                                                bottom: 0;
+                                                right: 0;
+                                                top: 0;
+                                                display: flex;
+                                                position: fixed;
+                                                z-index: 999;
+                                            }
+                        
+                                                .contCerrarSes .contCerrarCont {
+                                                    background: #fff;
+                                                    border-radius: 2px;
+                                                    box-shadow: 0 1px 3px rgba(33, 41, 52, .75);
+                                                    box-sizing: content-box;
+                                                    display: flex;
+                                                    justify-content: space-around;
+                                                    flex-direction: column;
+                                                    margin: auto;
+                                                    height: 250px;
+                                                    max-width: 600px;
+                                                    min-width: 320px !important;
+                                                    overflow: hidden;
+                                                    position: relative;
+                                                    width: 100%;
+                                                    padding: 25px 10px 15px 10px;
+                                                    font-size: 1.3rem;
+                                                    border-radius: 15px;
+                                                    text-align: center;
+                                                }
+                
+                                                .OnlyCont {
+                                                    display: flex;
+                                                }
+                        
+                                                    .contCerrarCont{
+                                                        display: flex;
+                                                        flex-direction: column;
+                                                        justify-content: center;
+                                                        align-items: center;
+                                                    }
+                        
+                                                    .contCerrarCont button {
+                                                        margin: 8px 5px 8px 5px ;
+                                                        padding: 8px 20px;
+                                                        font-size: 1.3em;
+                                                        border-radius: 25px;
+                                                        background-color: #2c3691;
+                                                        color: #ffffff;
+                                                        border: none;
+                                                        cursor: pointer;
+                                                    }
+
+
+/* Pie de pagina */
+.footer {
+    display: flex;
+    height: 100px;
+    background-color:#ffffff ;
+}
+
+    .footer_pie {
+        width: 70%;
+        height: 80px;
+        text-align: center;
+        margin: auto;
+        display: flex;
+        justify-content: space-around;
+    }
+
+        .pie_copy, .pie_redes, .pie_contacto {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+            .pie_contacto p{
+                display: flex;
+                flex-direction: column;
+                align-items: start;
+            }
+
+/* Responsive de 1023px hasta 768px */
+@media only screen and (max-width:1023px) and (min-width: 768px) {
+    
+    /* Menu */
+    .menu_nav {
+        display: none;
+    }
+
+    .menu_nav_responsive {
+        display: block;
+    }
+
+    .container_forms {
+        width: 100%;
+    }
+
+        
+}
+
+/* Responsive de 767px hasta 480px */
+@media only screen and (max-width:767px) and (min-width: 480px) {
+    /* Menu */
+    .menu_nav {
+        display: none;
+    }
+
+    .menu_nav_responsive {
+        display: block;
+    }
+
+    .container_forms {
+        width: 100%;
+    }
+
+
+        .cuerpo_registro {
+            display: flex;
+            flex-direction: column;
+        }
+
+            .registro_foto {
+                width: 100%;
+            }
+                
+                .registro_img {
+                    height: 150px;
+                    width: 150px;
+                    margin-top: 8px;
+                    margin-bottom: 8px;
+                } 
+
+}
+
+/* Responsive de 479px o menos */
+@media only screen and (max-width:479px) {
+    /* Menu */
+    .menu_nav {
+        display: none;
+    }
+
+    .menu_nav_responsive {
+        display: block;
+    }
+
+    .container_forms {
+        width: 100%;
+    }
+
+        .cuerpo_registro {
+            display: flex;
+            flex-direction: column;
+        }
+
+            .registro_foto {
+                width: 100%;
+            }
+                
+                .registro_img {
+                    height: 150px;
+                    width: 150px;
+                    margin-top: 8px;
+                    margin-bottom: 8px;
+                } 
+
+}

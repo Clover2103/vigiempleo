@@ -1,0 +1,1154 @@
+body {
+    background-color: #dddbd5;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Decoracion de menu */
+
+.menu {
+    width: 100%;
+    border-bottom: 5px solid #2c3691;
+}
+
+    /* Menu responsive */
+    .menu_nav_responsive {
+        display: none;
+        font-size: 1.1em;
+    }
+
+        .nav__toggle {
+            position: absolute;
+            cursor: pointer;
+            margin: 0.1rem;
+            right: 0;
+        }
+
+            .nav__toggle svg{
+                width: 1rem;
+                fill: #2c3691;
+            }
+
+            .nav__toggle .close {
+                display: none;
+            }
+
+            .nav__toggle .close .open {
+                margin-top: 0.3rem;
+            }
+
+        .nav__checkbox {
+            display: none;
+        }
+
+        .nav__menu {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            align-items: end;
+            margin: 1rem;
+        }
+
+            .menu__logo_responsive img{
+                width: 200px;
+            }
+
+            .nav__menu li {
+                list-style-type: none;
+                display: none;
+                margin: auto;
+            }
+
+                .button_responsive{
+                    display: flex;
+                    flex-direction: column;
+                }
+
+                .nav__menu li button {
+                    margin: 8px 5px 8px 5px ;
+                    padding: 5px 15px;
+                    border-radius: 25px;
+                    background-color: #2c3691;
+                    color: #ffffff;
+                    border: none;
+                }
+
+            .nav__menu li:first-child {
+                margin-right: auto;
+                display: block;
+            }
+
+        #nav__checkbox:checked ~ ul.nav__menu li {
+            display: block;
+        }
+
+        #nav__checkbox:checked ~ label.nav__toggle .close {
+            display: block;
+        }
+
+        #nav__checkbox:checked ~ label.nav__toggle .open {
+            display: none;
+        }
+
+        #btnCerrarSUN {
+            cursor: pointer;
+        }
+
+    /* Menu comun */
+
+    /* styles.css */
+    #dropdown-menu {
+        z-index: 10;
+        min-width: 150px;
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        list-style: none;
+        padding: 8px;
+        margin: 0;
+        border-radius: 25px;
+    }
+    
+    #dropdown-menu li {
+        padding: 10px;
+        border-bottom: 1px solid #2c3691;
+    }
+    
+    #dropdown-menu li:last-child {
+        border-bottom: none;
+    }
+    
+    #dropdown-button {
+        z-index: 10;
+        padding: 10px;
+        background-color: #dddbd5;
+        color: white;
+        border: none;
+        cursor: pointer;
+    }
+
+    #dropdown-menu_2 {
+        z-index: 10;
+        min-width: 150px;
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        list-style: none;
+        padding: 8px;
+        margin: 0;
+        border-radius: 25px;
+    }
+    
+    #dropdown-menu_2 li {
+        padding: 10px;
+        border-bottom: 1px solid #2c3691;
+    }
+    
+    #dropdown-menu_2 li:last-child {
+        border-bottom: none;
+    }
+    
+    #dropdown-button_2 {
+        z-index: 10;
+        padding: 10px;
+        background-color: #dddbd5;
+        color: white;
+        border: none;
+        cursor: pointer;
+    } 
+
+    .nav__toggle_2 {
+        /* position: absolute; */
+        cursor: pointer;
+        margin: 0.1rem;
+        right: 0;
+    }
+
+        .nav__toggle_2 svg{
+            width: 1rem;
+            fill: #2c3691;
+        }
+
+        .nav__toggle_2 .close_2 {
+            display: none;
+        }
+
+        .nav__toggle_2 .close_2 .open_2 {
+            margin-top: 0.3rem;
+        }
+
+    .nav__checkbox_2 {
+        display: none;
+    }
+
+    #nav__checkbox_2:checked ~ ul.nav__menu li {
+        display: block;
+    }
+
+    #nav__checkbox_2:checked ~ label.nav__toggle .close {
+        display: block;
+    }
+
+    #nav__checkbox_2:checked ~ label.nav__toggle .open {
+        display: none;
+    }
+
+        #Capa_1-2 {
+            fill: #2c3691;
+        }
+
+    .menu_nav {
+        font-size: 1.1em;
+        display: flex;
+        width: 70%;
+        margin: auto;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        align-items: center;
+    }
+        /* logo */
+        .menu_logo {
+            width: 200px;
+            margin: 10px 0 10px 0;
+        }
+        
+        /* Lista */
+           .menu_ul {
+                display: flex;
+                height: 100px;
+           }
+
+                .menu_ul li {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    text-decoration: none;
+                    margin: 0 8px;
+                }
+
+                    a:link, a:visited, a:active {
+                        text-decoration:none;
+                        color: #000;
+                        font-weight: 900;
+                    }
+
+                .menu_ul li .decoracion_selec {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+
+                    .decoracion_selec a{
+                        background-color: #2c3691;
+                        text-decoration:none;
+                        color: #fff;
+                        font-weight: 900;
+                    }
+
+                    .decoracion_selec a:link, a:visited {
+                        padding: 35% 40px ;
+                    }
+                    
+        /* Botones */
+        .menu_btn {
+            display: flex;
+            /* flex-direction: column; */
+        }
+        
+            .menu_btn button {
+                margin-left: 5px;
+                padding: 5px 15px;
+                border-radius: 50%;
+                background-color: none;
+                color: #ffffff;
+                cursor: pointer;
+                border: none;
+                overflow: hidden;
+            }
+
+            .menu_btn_cero {
+                display: flex;
+                flex-direction: column; 
+            }
+    
+                .menu_btn_cero button{
+                    margin: 8px 5px 8px 5px ;
+                    padding: 5px 15px;
+                    border-radius: 25px;
+                    background-color: #2c3691;
+                    color: #ffffff;
+                    cursor: pointer;
+                    border: none;
+                }
+
+                .cont_ftn_btn {
+                    width: 60px;
+                    height: 60px;
+                    overflow: hidden;
+                    border-radius: 50%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: start;
+                    box-shadow: -8px 8px 13px #171b42;
+                }
+
+                .cont_ftn_btn_emp {
+                    width: 60px;
+                    height: 60px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+        
+                    .cont_ftn_btn_emp img {
+                        border-radius: 5px;
+                    }
+
+
+/* Cuerpo */
+    /* Buscar ofertas */
+.cuerpo {
+    width: 100%;
+}
+
+    .cuerpo_oferta {
+        display: flex;
+        min-height: 30vh;
+        margin-bottom: 10px;
+    }
+
+        .oferta_conteiner {
+            width: 70%;
+            margin: auto;
+        }
+
+            .oferta_bnt {
+                height: 50%;
+                display: flex;
+                justify-content: center;
+            }
+
+                .oferta_bnt h1 {
+                    color: #2c3691;
+                    margin-bottom: 70px;
+                    text-align: center;
+                }
+
+            .oferta_filtro {
+                width: 100%;
+                height: 100%;
+                padding: 5px;
+                display: flex;
+                justify-content: center;
+            }
+
+                .oferta_cargo {
+                    width: 50%;
+                    text-align: end;
+                    justify-content: center;
+                    display: flex;
+                    border-right: 1px solid #2c3691;
+                }
+
+                    .oferta_cargo img {
+                        width: 30px;
+                        background-color: #fff;
+                        padding-left: 10px;
+                        border-bottom-left-radius: 10px;
+                        border-top-left-radius: 10px;
+                    }
+ 
+                    .oferta_cargo select{
+                        width: 80%;
+                        border:#fff;
+                        padding: 15px 20px;
+                        outline: none;
+                    }
+
+                .oferta_ciudad {
+                    width: 50%;
+                    display: flex;
+                    justify-content: center;
+                }
+
+				.oferta_ciudad2 {
+                    width: 50%;
+                    display: flex;
+                    justify-content: center;
+                    border-left: 1px solid #2c3691;
+                }
+
+                    .oferta_ciudad img{  
+                        width: 30px;
+                        background-color: #fff;
+                        padding-left: 10px;
+                    }
+
+                    .oferta_ciudad select {
+                        width: 80%;
+                        border-bottom-right-radius: 10px;
+                        border-top-right-radius: 10px;
+                        border: none;
+                        padding: 15px 20px;
+                        outline: none;
+                    }
+
+                .oferta_empresa {
+                    width: 50%;
+                    text-align: end;
+                    justify-content: center;
+                    display: flex;
+                    border-left: 1px solid #2c3691;
+                }
+
+                    .oferta_empresa img {
+                        width: 30px;
+                        background-color: #fff;
+                        padding-left: 10px;
+                        border-bottom-right-radius: 10px;
+                        border-top-right-radius: 10px;
+                    }
+ 
+                    .oferta_empresa select{
+                        width: 80%;
+                        border:#fff;
+                        padding: 15px 20px;
+                        outline: none;
+                    }
+
+            .oferta_cont_bus {
+                display: flex;
+				flex-direction: column;
+                width: 100%;
+                background-color: #fff;
+                border-radius: 25px;
+            }
+
+                .oferta_cont_bus button {
+                    background-color: #2c3691;
+                    color: #fff;
+                    cursor: pointer;
+                    border-radius: 25px;
+                    padding: 5px 35px;
+                    margin: 4px 0;
+                    border: none;
+                    font-size: 1.3em;
+                }
+
+                    .form_cons_vac {
+                        display: flex;
+						flex-direction: column;
+                    }
+
+        .resultado_bus {
+            width: 100%;
+            min-height: 65vh;
+        }
+
+			.resultado_bus h2 {
+                text-align: center;
+            }
+
+            .container_bus {
+                width: 70%;
+                height: 110px;
+                margin: auto;
+                display: grid;
+                justify-content: center;
+                align-items: center;
+                grid-template-columns: 20% 60% 20%;
+                border: 1.5px solid #2c3691;
+                z-index: 20;
+                border-radius: 8px;
+                padding: 15px;
+            }
+
+                .btn_mas{
+                    background-color: #2c3691;
+                    color: #fff;
+                    width: 150px;
+                    height: 50px;
+                    border: none;
+                    border-radius: 25px;
+                    cursor: pointer;
+                }
+
+                .btn_mas:hover {
+                    background-color: #2c3691;
+                    color: #fff;
+                    width: 153px;
+                    height: 53px;
+                    transition: all 500ms ease-in-out;
+                }
+
+            .container_des {
+                width: 70%;
+                margin: -8px auto 0;
+                z-index: 10;
+                display: none;
+                background-color: #fff;
+                flex-direction: column;
+                border-bottom: 1.5px solid #2c3691;
+                border-left: 1.5px solid #2c3691;
+                border-right: 1.5px solid #2c3691;
+                padding: 15px;
+            }
+
+                .cont_des_button {
+                    display: flex;
+                    justify-content: end;
+                    align-items: center;
+                }
+
+                    .cont_des_button button {
+                        background-color: #000;
+                        color: #fff;
+                        width: 150px;
+                        height: 50px;
+                        border: none;
+                        border-radius: 25px;
+                        cursor: pointer;
+                        margin-right: 20px;
+                    }
+
+                .cont_des_nom_car {
+                    height: 100px;
+                    display: flex;  
+                    justify-content: space-evenly;
+                    align-items: center;
+                    border-bottom: 1px solid #000;
+                }
+
+                    .cont_des_nom_car img {
+                        height: 60px;
+                        width: 160px;
+                        border-radius: 10px;
+                    }
+
+                .img_bus img{
+                    height: 80px;
+                    width: 180px;
+                    border-radius: 10px;
+                }
+
+                .cont_des_des p {
+                    padding: 25px 100px;
+                }
+
+                .cont_des_button {
+                    height: 80px;
+                }
+
+                .cont_des_conocer_mas {
+                    height: 120px;
+                }
+
+                    .cont_des_conocer_mas img{
+                        height: 100px;
+                        width: 220px;
+                    }
+
+                .cont_des_conocer_mas {
+                    display: flex;
+                    justify-content: space-evenly;
+                    align-items: center;
+                }
+
+                    .cont_des_conocer_mas button{
+                        background-color: #2c3691;
+                        color: #fff;
+                        width: 150px;
+                        height: 50px;
+                        border: none;
+                        border-radius: 25px;
+                        cursor: pointer;
+                        margin-right: 20px;
+                    }
+
+                    .sec_btn {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        padding: 10px;
+                    }
+
+                        .sec_btn button {
+                            margin: 10px;
+                        }      
+                        
+                        #cont_vac h2 {
+                            text-align: center;
+                        }
+
+
+                        .contMsg {
+                            display: none;
+                        }
+        
+                            .contMsgVac {
+                                background: rgba(33, 41, 52, .85);
+                                left: 0;
+                                bottom: 0;
+                                right: 0;
+                                top: 0;
+                                display: flex;
+                                position: fixed;
+                                z-index: 999;
+                            }
+        
+                                .contMsgVac .contMsgVacIn {
+                                    background: #fff;
+                                    border-radius: 2px;
+                                    box-shadow: 0 1px 3px rgba(33, 41, 52, .75);
+                                    box-sizing: content-box;
+                                    display: flex;
+                                    justify-content: space-around;
+                                    flex-direction: column;
+                                    margin: auto;
+                                    height: 250px;
+                                    max-width: 600px;
+                                    min-width: 320px !important;
+                                    overflow: hidden;
+                                    position: relative;
+                                    width: 100%;
+                                    padding: 25px 10px 15px 10px;
+                                    font-size: 1.3rem;
+                                    border-radius: 15px;
+                                    text-align: center;
+                                }
+        
+                                    .contMsgVacIn{
+                                        display: flex;
+                                        flex-direction: column;
+                                        justify-content: center;
+                                        align-items: center;
+                                    }
+        
+                                    .contMsgVacIn button {
+                                        margin: 8px 5px 8px 5px ;
+                                        padding: 8px 20px;
+                                        font-size: 1.3em;
+                                        border-radius: 25px;
+                                        background-color: #2c3691;
+                                        color: #ffffff;
+                                        border: none;
+                                        cursor: pointer;
+                                    }
+
+                        .contCerrar {
+                            display: none;
+                        }
+        
+                            .contCerrarSes {
+                                background: rgba(33, 41, 52, .85);
+                                left: 0;
+                                bottom: 0;
+                                right: 0;
+                                top: 0;
+                                display: flex;
+                                position: fixed;
+                                z-index: 999;
+                            }
+        
+                                .contCerrarSes .contCerrarCont {
+                                    background: #fff;
+                                    border-radius: 2px;
+                                    box-shadow: 0 1px 3px rgba(33, 41, 52, .75);
+                                    box-sizing: content-box;
+                                    display: flex;
+                                    justify-content: space-around;
+                                    flex-direction: column;
+                                    margin: auto;
+                                    height: 250px;
+                                    max-width: 600px;
+                                    min-width: 320px !important;
+                                    overflow: hidden;
+                                    position: relative;
+                                    width: 100%;
+                                    padding: 25px 10px 15px 10px;
+                                    font-size: 1.3rem;
+                                    border-radius: 15px;
+                                    text-align: center;
+                                }
+
+                                .OnlyCont {
+                                    display: flex;
+                                }
+        
+                                    .contCerrarCont{
+                                        display: flex;
+                                        flex-direction: column;
+                                        justify-content: center;
+                                        align-items: center;
+                                    }
+        
+                                    .contCerrarCont button {
+                                        margin: 8px 5px 8px 5px ;
+                                        padding: 8px 20px;
+                                        font-size: 1.3em;
+                                        border-radius: 25px;
+                                        background-color: #2c3691;
+                                        color: #ffffff;
+                                        border: none;
+                                        cursor: pointer;
+                                    }
+
+                                    .nom_car_bus {
+                                        display: flex;
+                                        flex-direction: column;
+                                        justify-content: center;
+                                        align-items: flex-start;
+                                        text-align: start;
+                                    }
+
+/* Pie de pagina */
+.footer {
+    height: 100px;
+    background-color:#ffffff ;
+}
+
+    .footer_pie {
+        width: 70%;
+        height: 80px;
+        text-align: center;
+        margin: auto;
+        display: flex;
+        justify-content: space-around;
+    }
+
+        .pie_copy, .pie_redes, .pie_contacto {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+            .pie_contacto p{
+                display: flex;
+                flex-direction: column;
+                align-items: start;
+            }
+
+/* Responsive de 1500px hasta 1200px */
+@media only screen and (max-width:1500px) and (min-width: 1200px) {
+    
+    /* Sliter */
+    .sliter_completo_izq {
+        margin-right: -150px;
+    }
+
+        .sliter_izq p {
+            font-size: 1.59em;
+        }
+
+        .sliter_izq img {
+            height: 100px;
+        }
+
+    .sliter_completo_der {
+        background-size: 85vh;
+        background-position: center;
+    }
+
+    /* Buscar ofertas */
+
+    .oferta_conteiner {
+        width: 80%;
+    }
+
+        .container_bus {
+            width: 80%;
+            grid-template-columns: 25% 50% 25%;
+        }
+
+        .container_des {
+            width: 80%;
+        }
+
+}
+
+/* Responsive de 1199px hasta 1024px */
+@media only screen and (max-width:1199px) and (min-width: 1024px) {
+    
+    /* Sliter */
+    .sliter_completo_izq {
+        margin-right: -120px;
+    }
+
+        .sliter_izq p {
+            font-size: 1.4em;
+        }
+
+        .sliter_izq img {
+            height: 90px;
+        }
+
+    .sliter_completo_der {
+        background-size: 60vh;
+        background-position: center;
+    }
+
+    .oferta_conteiner {
+        width: 80%;
+    }
+
+        .container_bus {
+            width: 80%;
+            grid-template-columns: 25% 50% 25%;
+        }
+
+        .container_des {
+            width: 80%;
+        }
+
+}
+
+/* Responsive de 1023px hasta 768px */
+@media only screen and (max-width:1023px) and (min-width: 768px) {
+    
+    /* Menu */
+    .menu_nav {
+        display: none;
+    }
+
+    .menu_nav_responsive {
+        display: block;
+    }
+
+    
+    /* Sliter */
+    .sliter_completo_izq {
+        margin-right: -6px;
+        padding-left: 35px;
+        clip-path: polygon(0 0, 100% 0,100% 100%, 0 100%)
+    }
+
+    .sliter_izq {
+        width: 80%;
+    }
+
+        .sliter_izq img {
+            height: 90px;
+        }
+
+        .sliter_izq p {
+            font-size: 1.3em;
+        }
+
+    .sliter_completo_der {
+        background-size: 60vh;
+        background-image: none;
+        background-color: #2c3691;
+        clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)
+    }
+
+    /* Buscar ofertas */
+    .oferta_conteiner {
+        width: 90%;
+    }
+    
+
+        .container_bus {
+            width: 80%;
+            grid-template-columns: 25% 50% 25%;
+        }
+
+        .container_des {
+            width: 80%;
+        }
+}
+
+/* Responsive de 767px hasta 480px */
+@media only screen and (max-width:767px) and (min-width: 480px) {
+    /* Menu */
+    .menu_nav {
+        display: none;
+    }
+
+    .menu_nav_responsive {
+        display: block;
+    }
+
+
+    /* Sliter */
+    .sliter_completo_izq {
+        justify-content: end;
+        margin-right: -2px;
+        clip-path: polygon(0 0, 100% 0,100% 100%, 0 100%)
+    }
+
+    .sliter_izq {
+        width: 90%;
+    }
+
+        .sliter_izq img {
+            height: 90px;
+        }
+
+        .sliter_izq p {
+            font-size: 1.3em;
+        }
+
+    .sliter_completo_der {
+        background-size: 60vh;
+        background-image: none;
+        background-color: #2c3691;
+        clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)
+    }
+
+        .sliter_der img {
+            height: 75%;
+        }
+
+    
+    .container_bus {
+        width: 90%;
+        grid-template-columns: 33.3% 33.3% 33.3%;
+    }
+
+    .container_des {
+        width: 90%;
+    }
+
+        .cont_des_des #descripcion {
+            padding: 5px;
+        }
+
+
+    .cont_des_conocer_mas img{
+        display: none;
+    }
+
+        .cont_des_conocer_mas button {
+            margin: 3px 3px 3px 3px ;
+            padding: 8px 10px;
+            font-size: 1em;
+        }
+
+    /* Buscar ofertas */
+    .cuerpo_oferta {
+        min-height: 30vh;
+    }
+
+    .oferta_conteiner {
+        width: 90%;
+    }
+
+        .oferta_bnt h1{
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 1.6em;
+        }
+
+        .oferta_cont_bus {
+            display: flex;
+            flex-direction: column;
+        }
+	
+		.oferta_filtro {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+        }
+
+            .oferta_cargo {
+                width: 100%;
+                border: none;
+            }
+
+            .oferta_ciudad2 {
+                border: none;
+            }
+
+            .oferta_ciudad {
+                width: 100%;
+            }
+
+            .oferta_empresa {
+                width: 100%;
+                border: none;
+            }
+
+    /* Seccion empresas */
+    .empresas_des p {
+        font-size: 1.3em;
+    }
+
+    .oferta_conteiner {
+        width: 93%;
+    }
+
+    /* seccion final */
+    .final_general {
+        font-size: 0.8em;
+    }
+
+    .final_btn_cont {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .final_btn button {
+        font-size: 0.8em;
+    }
+
+}
+
+/* Responsive de 479px hasta 320px */
+@media only screen and (max-width:479px) {
+    
+    /* Menu */
+    .menu_nav {
+        display: none;
+    }
+
+    .menu_nav_responsive {
+        display: block;
+    }
+    
+    /* Sliter */
+    .sliter_completo_izq {
+        justify-content: end;
+        margin-right: -2px;
+        clip-path: polygon(0 0, 100% 0,100% 100%, 0 100%)
+    }
+
+    .sliter_izq {
+        width: 100%;
+    }
+
+            .sliter_izq img {
+                height: 60px;
+            }
+
+            .sliter_izq p {
+                font-size: 1.3em;
+            }
+
+    .sliter_completo_der {
+        width: 0;
+        background-size: 60vh;
+        background-image: none;
+        background-color: #2c3691;
+        clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)
+    }
+
+        .sliter_der img {
+            display: none;
+        }
+
+    /* Buscar ofertas */
+    .cuerpo_oferta {
+        min-height: 30vh;
+        justify-content: center;
+        align-items: center;
+    }
+
+        .oferta_cargo {
+            width: 100%;
+            text-align: center;
+            border-right: none;
+        }
+
+        .oferta_ciudad {
+            width: 100%;
+            text-align: center;
+            border-right: none;
+        }
+
+        .oferta_empresa {
+            width: 100%;
+            text-align: center;
+            border: none;
+        }
+
+    .container_bus {
+        display: flex;
+        flex-direction: column;
+        width: 90%;
+        min-height: 100px;
+    }
+
+        .img_bus img {
+            display: none;
+        }
+
+    .container_des {
+        width: 90%;
+        min-height: 150px;
+    }
+
+        .cont_des_nom_car #cargo_empresa {
+            display: none;
+        }
+
+        .cont_des_des #descripcion {
+            padding: 2px;
+        }
+
+    .cont_des_conocer_mas {
+        flex-direction: column;
+        min-height: 150px;
+    }
+
+        .cont_des_conocer_mas button {
+            margin: 3px 3px 3px 3px ;
+            padding: 8px 10px;
+            font-size: 1em;
+        }
+
+        .cont_des_conocer_mas img {
+            display: none;
+        }
+
+    .oferta_conteiner {
+        width: 93%;
+    }
+
+        .oferta_bnt h1{
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 1.6em;
+        }
+
+        .oferta_cont_bus {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .oferta_filtro {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+        }
+	
+			.oferta_cargo {
+                width: 100%;
+                border: none;
+            }
+
+            .oferta_ciudad2 {
+                border: none;
+            }
+
+            .oferta_ciudad {
+                width: 100%;
+            }
+
+    /* Seccion empresas */
+    .empresas_des p {
+        font-size: 1.3em;
+    }
+
+    .empresas_container{
+        width: 80%;
+    }
+
+    /* seccion final */
+    .final_general {
+        font-size: 0.8em;
+    }
+
+    .final_btn button {
+        font-size: 0.8em;
+    }
+}

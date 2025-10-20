@@ -1,0 +1,1150 @@
+body {
+    background-color: #dddbd5;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Decoracion de menu */
+
+.menu {
+    width: 100%;
+    border-bottom: 5px solid #2c3691;
+}
+
+    /* Menu responsive */
+    /* Menu responsive */
+    .menu_nav_responsive {
+        display: none;
+        font-size: 1.1em;
+    }
+
+        .nav__toggle {
+            position: absolute;
+            cursor: pointer;
+            margin: 0.1rem;
+            right: 0;
+        }
+
+            .nav__toggle svg{
+                width: 1rem;
+                fill: #2c3691;
+            }
+
+            .nav__toggle .close {
+                display: none;
+            }
+
+            .nav__toggle .close .open {
+                margin-top: 0.3rem;
+            }
+
+        .nav__checkbox {
+            display: none;
+        }
+
+        .nav__menu {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            align-items: end;
+            margin: 1rem;
+        }
+
+            .menu__logo_responsive img{
+                width: 200px;
+            }
+
+            .nav__menu li {
+                list-style-type: none;
+                display: none;
+                margin: auto;
+            }
+
+                .button_responsive{
+                    display: flex;
+                    flex-direction: column;
+                }
+
+                .nav__menu li button {
+                    margin: 8px 5px 8px 5px ;
+                    padding: 5px 15px;
+                    border-radius: 25px;
+                    background-color: #2c3691;
+                    color: #ffffff;
+                    border: none;
+                }
+
+            .nav__menu li:first-child {
+                margin-right: auto;
+                display: block;
+            }
+
+        #nav__checkbox:checked ~ ul.nav__menu li {
+            display: block;
+        }
+
+        #nav__checkbox:checked ~ label.nav__toggle .close {
+            display: block;
+        }
+
+        #nav__checkbox:checked ~ label.nav__toggle .open {
+            display: none;
+        }
+
+        #btnCerrarSUN {
+            cursor: pointer;
+        }
+    /* Menu comun */
+
+    /* styles.css */
+    #dropdown-menu {
+        z-index: 10;
+        min-width: 150px;
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        list-style: none;
+        padding: 8px;
+        margin: 0;
+        border-radius: 25px;
+    }
+    
+    #dropdown-menu li {
+        padding: 10px;
+        border-bottom: 1px solid #2c3691;
+    }
+    
+    #dropdown-menu li:last-child {
+        border-bottom: none;
+    }
+    
+    #dropdown-button {
+        z-index: 10;
+        padding: 10px;
+        background-color: #dddbd5;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+    }
+
+    #dropdown-menu_2 {
+        z-index: 10;
+        min-width: 150px;
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        list-style: none;
+        padding: 8px;
+        margin: 0;
+        border-radius: 25px;
+    }
+    
+    #dropdown-menu_2 li {
+        padding: 10px;
+        border-bottom: 1px solid #2c3691;
+    }
+    
+    #dropdown-menu_2 li:last-child {
+        border-bottom: none;
+    }
+    
+    #dropdown-button_2 {
+        z-index: 10;
+        padding: 10px;
+        background-color: #dddbd5;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+    } 
+
+        .nav__toggle_2 svg{
+            width: 1rem;
+            fill: #2c3691;
+        }
+
+        .nav__toggle_2 .close_2 {
+            display: none;
+        }
+
+        .nav__toggle_2 .close_2 .open_2 {
+            margin-top: 0.3rem;
+        }
+
+    .nav__checkbox_2 {
+        display: none;
+    }
+
+    #nav__checkbox_2:checked ~ ul.nav__menu li {
+        display: block;
+    }
+
+    #nav__checkbox_2:checked ~ label.nav__toggle .close {
+        display: block;
+    }
+
+    #nav__checkbox_2:checked ~ label.nav__toggle .open {
+        display: none;
+    }
+
+        #Capa_1-2 {
+            fill: #2c3691;
+        }
+
+    .menu_nav {
+        font-size: 1.1em;
+        display: flex;
+        width: 70%;
+        margin: auto;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        align-items: center;
+    }
+        /* logo */
+        .menu_logo {
+            width: 200px;
+            margin: 10px 0 10px 0;
+        }
+        
+        /* Lista */
+           .menu_ul {
+                display: flex;
+                height: 100px;
+           }
+
+                .menu_ul li {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    text-decoration: none;
+                    margin: 0 8px;
+                }
+
+                    a:link, a:visited, a:active {
+                        text-decoration:none;
+                        color: #000;
+                        font-weight: 900;
+                    }
+
+                .menu_ul li .decoracion_selec {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+
+                    .decoracion_selec a{
+                        background-color: #2c3691;
+                        text-decoration:none;
+                        color: #fff;
+                        font-weight: 900;
+                    }
+
+                    .decoracion_selec a:link, a:visited {
+                        padding: 35% 40px ;
+                    }
+
+                    #btnPerfil {
+                        cursor: pointer;
+                    }
+                    
+        /* Botones */
+        .menu_btn {
+            display: flex;
+            /* flex-direction: column; */
+        }
+        
+            .menu_btn button {
+                margin-left: 5px;
+                padding: 5px 15px;
+                border-radius: 50%;
+                background-color: none;
+                color: #ffffff;
+                cursor: pointer;
+                border: none;
+                overflow: hidden;
+            }
+
+            .menu_btn_cero {
+                display: flex;
+                flex-direction: column; 
+            }
+    
+                .menu_btn_cero button{
+                    margin: 8px 5px 8px 5px ;
+                    padding: 5px 15px;
+                    border-radius: 25px;
+                    background-color: #2c3691;
+                    color: #ffffff;
+                    cursor: pointer;
+                    border: none;
+                }
+
+                .cont_ftn_btn {
+                    width: 60px;
+                    height: 60px;
+                    overflow: hidden;
+                    border-radius: 50%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: start;
+                    box-shadow: -8px 8px 13px #171b42;
+                }
+
+                .cont_ftn_btn_emp {
+                    width: 60px;
+                    height: 60px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+        
+                    .cont_ftn_btn_emp img {
+                        border-radius: 5px;
+                    }
+
+/* Cuerpo */
+
+    /* Seccion 1 Quienes somos */
+    .cuerpo__seccion_1 {
+        height: 500px ;
+        display: flex;
+        background-color: #2c3691;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.4em;
+    }
+
+        .seccion_1_izq {
+            width: 50%;
+            color: #ffffff;
+            text-align: center;
+            display: flex;
+            padding: 50px 0 0 25px;
+        }
+
+            .seccion_1_izq h2 {
+                margin-bottom: 50px;
+            }
+
+            .seccion_1_izq p {
+                width: 70%;
+                margin: auto;
+            }
+
+        .seccion_1_der {
+            width: 50%;
+            height: 100%;
+            display: flex;
+            justify-content:  start;
+        }
+
+            .seccion_1_der_containter {
+                padding: 50px;
+                background-color: #ffffff;
+                width: 500px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-radius: 50%;                
+            }
+
+        /* Seccion 2 -Proyeccion laboral */
+        .cuerpo__seccion_2 {
+            font-size: 1.4em;
+            height: 500px;
+            display: flex;
+            background-color: #2c3691;
+            justify-content: center;
+            align-items: center;
+        }
+
+            .seccion_2_izq {
+                width: 50%;
+                color: #ffffff;
+                text-align: center;
+                padding: 50px 0 0 25px;
+                display: flex;
+                justify-content: end;
+                align-items: center;
+            }
+
+                    .seccion_2_izq_container {
+                        background-color: #ffffff;
+                        width: 500px;
+                        height: 500px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        border-radius: 50%;
+                        z-index: 40;                   
+                    }
+
+                        .seccion_2_izq_container img {
+                            text-align: center;
+                            z-index: 50;
+                            border-radius: 50%;
+                        }
+
+            .seccion_2_der {
+                width: 50%;
+                color: #ffffff;
+                text-align: center;
+                justify-content: center;
+                padding: 10px 50px 20px 50px;
+            }
+
+                .seccion_2_der h2 {
+                    margin-bottom: 30px;
+                }
+
+                .seccion_2_der p {
+                    margin-bottom: 30px;
+                }
+
+                .btn_registrarse {
+                    width: 250px;
+                    height: 50px;
+                    margin-bottom: 30px;
+                    padding: 8px 15px;
+                    border-radius: 10px;
+                    border: none;
+                    color: #2c3691;
+                    background-color: #ffffff;
+                    font-weight: 600;
+                }
+
+                .btn_registrarse:hover {
+                    width: 260px;
+                    height: 58px;
+                    transition: 500ms ease-in-out;
+                    cursor: pointer;
+                }
+                
+        
+        /* Seccion 3 - Misión y Visión*/
+        .cuerpo__seccion_3 {
+            height: 50vh;
+            display: flex;
+            font-size: 1.4em;
+        }
+
+            .cuerpo_mision {
+                width: 50%;
+                background-color: #2c3691;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+                color: #ffffff;
+            }
+
+                .cuerpo_mision p {
+                    width: 60%;
+                }
+
+            .cuerpo_vision {
+                width: 50%;
+                background-color: #ffffff;  
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                text-align: center ;
+                color: #2c3691;
+            }
+
+                .cuerpo_vision p {
+                    width: 60%;
+                }
+
+        /* Seccion 4 - Beneficios*/
+        .cuerpo__seccion_4 h3 {
+            text-align: center;
+            font-size: 2em;
+            margin: 30px;
+            color: #2c3691;
+        }
+        
+        .beneficios_cuerpo {
+            display: flex;
+            margin: auto;
+            width: 80%;
+        }
+        
+            .seccion_4_container {
+                display: flex;
+                flex-direction: column;
+                text-align: center;
+                width: 50%;
+            }
+
+                .beneficios_container p {
+                    font-size: 1.5em;
+                    margin-bottom: 30px;
+                }
+
+                .beneficios_container img {
+                    fill: #2c3691;
+                }
+
+                .beneficios_container ul {
+                    width: 70%;
+                    margin: auto;
+                }
+
+                    .beneficios_container ul li {
+                        display: grid;
+                        grid-template-columns: 20% 80%;
+                        align-items: center;
+                        justify-content: start;
+                        list-style:none;
+                        text-align: start;
+                        font-size: 1.3em;
+                        margin-bottom: 30px;
+                    }
+
+                    .beneficios_container ul li img {
+                        height: 40px;
+                        width: 40px;
+                    }
+
+                .beneficios_container img {
+                    height: 150px;
+                    margin-top: 25px;
+                }
+
+        /* Seccion 5 - Aliados */
+            .cuerpo_aliados {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                margin: 20px 0;
+            }
+
+                .cuerpo_aliados h3 {
+                    font-size: 2em;
+                    color: #2c3691;
+                }
+
+                .aliados_logos {
+                    display: grid;
+                    grid-template-columns: repeat(3, 400px);
+                    grid-template-rows: repeat(3, 400px);
+                    grid-gap: 10px;
+                    justify-content: center;
+                    align-items: center;
+                }
+
+                    .aliado {
+                        width: 100%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        height: 100%;
+                    }
+
+                        .aliado figure {
+                            position: relative;
+                            height: 400px;
+                            width: 400px;
+                            overflow: hidden;
+                            border-radius: 6px;
+                        }
+
+                            .aliado figure img {
+                                width: 100%;
+                                height: 100%;
+                                transition: all 500ms ease-out;
+                            }
+
+                                .aliado figure .aliado_inf {
+                                    position: absolute;
+                                    top: 0;
+                                    width: 100%;
+                                    height: 100%;
+                                    background-color: rgba(44, 54, 145, 0.6); 
+                                    transition: all 500ms ease-out;
+                                    opacity: 0;
+                                    visibility: hidden;
+                                    text-align: center;
+                                    display: flex;
+                                    flex-direction: column;
+                                    justify-content: center;
+                                    align-items: center;
+                                }
+
+                                    .aliado figure:hover > .aliado_inf {
+                                        opacity: 1;
+                                        visibility: visible;
+                                    }
+
+                                        .aliado figure .aliado_inf p {
+                                            color: #ffffff;
+                                            font-weight: 700;
+                                            margin-bottom: 120px;
+                                            transition: all 500ms ease-out;
+                                            font-size: 1.2em;
+                                            width: 80%;
+                                        }
+
+                                        .aliado figure:hover > .aliado_inf p {
+                                            margin-bottom: 15px;
+                                        }
+
+                                        .aliado figure .aliado_inf button {   
+                                            cursor: pointer;                                    
+                                            margin: 8px 5px 8px 5px ;
+                                            padding: 8px 20px;
+                                            border-radius: 25px;
+                                            background-color: #2c3691;
+                                            color: #ffffff;
+                                            border: none;
+                                        }
+
+                                        .contCerrar {
+                                            display: none;
+                                        }
+                        
+                                            .contCerrarSes {
+                                                background: rgba(33, 41, 52, .85);
+                                                left: 0;
+                                                bottom: 0;
+                                                right: 0;
+                                                top: 0;
+                                                display: flex;
+                                                position: fixed;
+                                                z-index: 999;
+                                            }
+                        
+                                                .contCerrarSes .contCerrarCont {
+                                                    background: #fff;
+                                                    border-radius: 2px;
+                                                    box-shadow: 0 1px 3px rgba(33, 41, 52, .75);
+                                                    box-sizing: content-box;
+                                                    display: flex;
+                                                    justify-content: space-around;
+                                                    flex-direction: column;
+                                                    margin: auto;
+                                                    height: 250px;
+                                                    max-width: 600px;
+                                                    min-width: 320px !important;
+                                                    overflow: hidden;
+                                                    position: relative;
+                                                    width: 100%;
+                                                    padding: 25px 10px 15px 10px;
+                                                    font-size: 1.3rem;
+                                                    border-radius: 15px;
+                                                    text-align: center;
+                                                }
+                
+                                                .OnlyCont {
+                                                    display: flex;
+                                                }
+                        
+                                                    .contCerrarCont{
+                                                        display: flex;
+                                                        flex-direction: column;
+                                                        justify-content: center;
+                                                        align-items: center;
+                                                    }
+                        
+                                                    .contCerrarCont button {
+                                                        margin: 8px 5px 8px 5px ;
+                                                        padding: 8px 20px;
+                                                        font-size: 1.3em;
+                                                        border-radius: 25px;
+                                                        background-color: #2c3691;
+                                                        color: #ffffff;
+                                                        border: none;
+                                                        cursor: pointer;
+                                                    }
+
+/* Pie de pagina */
+.footer {
+    height: 100px;
+    background-color:#ffffff ;
+}
+
+    .footer_pie {
+        width: 70%;
+        height: 80px;
+        text-align: center;
+        margin: auto;
+        display: flex;
+        justify-content: space-around;
+    }
+
+        .pie_copy, .pie_redes, .pie_contacto {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+            .pie_contacto p{
+                display: flex;
+                flex-direction: column;
+                align-items: start;
+            }
+
+
+/* Responsive de 1500px hasta 1200px */
+@media only screen and (max-width:1500px) and (min-width: 1200px) {
+    
+    /* Seccion 1 Quienes somos */
+    .cuerpo__seccion_1 {
+        font-size: 1.3em;
+    }
+
+        .seccion_1_der {
+            justify-content: center;
+            align-items: center;
+        }
+
+    /* Seccion 2 -Proyeccion laboral */
+    .cuerpo__seccion_2 {
+            font-size: 1.3em;
+            height: 500px;
+            display: flex;
+        }
+
+            .seccion_2_izq {
+                text-align: center;
+                display: flex;
+                justify-content: center;
+            }
+
+                        .seccion_2_izq_container img {
+                            text-align: center;
+                        }
+
+    /* Seccion 3 - Misión y Visión*/
+    .cuerpo__seccion_3 {
+            font-size: 1.3em;
+    }
+    
+    /* Seccion 4 - Beneficios*/
+            .beneficios_container p {
+                font-size: 1.2em;
+                margin-bottom: 30px;
+            }
+
+            .beneficios_container ul {
+                width: 70%;
+                margin: auto;
+            }
+
+                .beneficios_container ul li {
+                    font-size: 1.1em;
+                }
+
+    /* Aliados */    
+    .aliados_logos {
+        grid-template-columns: repeat(3, 300px);
+        grid-template-rows: repeat(3, 300px);
+    }
+
+        .aliado figure {
+            height: 300px;
+            width: 300px;
+        }
+
+            .aliado figure .aliado_inf p {
+                font-size: 1em;
+            }   
+}
+
+/* Responsive de 1199px hasta 1024px */
+@media only screen and (max-width:1199px) and (min-width: 1024px) {
+    /* Seccion 1 Quienes somos */
+    .cuerpo__seccion_1 {
+        font-size: 1.3em;
+    }
+
+        .seccion_1_der {
+            justify-content: center;
+            align-items: center;
+        }
+
+            .seccion_1_der_containter {
+                margin-top: 20px;
+                width: 450px;
+                height: 450px;             
+            }
+
+    /* Seccion 2 -Proyeccion laboral */
+    .cuerpo__seccion_2 {
+        font-size: 1.3em;
+        height: 500px;
+        display: flex;
+    }
+
+        .seccion_2_izq {
+            text-align: center;
+            display: flex;
+            justify-content: center;
+        }
+
+                .seccion_2_izq_container {
+                    width: 450px;
+                    height: 450px;                  
+                }
+
+                    .seccion_2_izq_container img {
+                        text-align: center;
+                    }
+    
+    /* Aliados */    
+    .aliados_logos {
+        grid-template-columns: repeat(3, 300px);
+        grid-template-rows: repeat(3, 300px);
+    }
+
+        .aliado figure {
+            height: 300px;
+            width: 300px;
+        }
+
+            .aliado figure .aliado_inf p {
+                font-size: 1em;
+            }
+    
+}
+
+/* Responsive de 1023px hasta 768px */
+@media only screen and (max-width:1023px) and (min-width: 768px) {
+    
+    /* Menu */
+    .menu_nav {
+        display: none;
+    }
+
+    .menu_nav_responsive {
+        display: block;
+    }
+
+    /* Seccion 1 Quienes somos */
+    .cuerpo__seccion_1 {
+        font-size: 1em;
+    }
+
+        .seccion_1_der {
+            justify-content: center;
+            align-items: center;
+        }
+
+            .seccion_1_der_containter {
+                margin-top: 20px;
+                width: 350px;
+                height: 350px;             
+            }
+
+    /* Seccion 2 -Proyeccion laboral */
+    .cuerpo__seccion_2 {
+        font-size: 1em;
+        height: 500px;
+        display: flex;
+    }
+
+        .seccion_2_izq {
+            text-align: center;
+            display: flex;
+            justify-content: center;
+        }
+
+                .seccion_2_izq_container {
+                    width: 350px;
+                    height: 350px;                  
+                }
+
+                    .seccion_2_izq_container img {
+                        text-align: center;
+                    }
+	
+	/* Seccion 3 - Misión y Visión*/
+    .cuerpo__seccion_3 {
+        font-size: 1.2em;
+    }
+
+            .cuerpo_mision p {
+                width: 60%;
+                margin-top: 15px;
+            }
+
+            .cuerpo_vision p {
+                width: 60%;
+                margin-top: 15px;
+            }
+
+    /* Aliados */    
+    .aliados_logos {
+        grid-template-columns: repeat(3, 240px);
+        grid-template-rows: repeat(3, 240px);
+    }
+
+        .aliado figure {
+            height: 240px;
+            width: 240px;
+        }
+
+            .aliado figure .aliado_inf p {
+                font-size: 0.9em;
+            }
+
+}
+
+/* Responsive de 767px hasta 480px */
+@media only screen and (max-width:767px) and (min-width: 480px) {
+    /* Menu */
+    .menu_nav {
+        display: none;
+    }
+
+    .menu_nav_responsive {
+        display: block;
+    }
+
+    /* Seccion 1 Quienes somos */
+    .cuerpo__seccion_1 {
+        height: auto;
+        font-size: 1.2em;
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+        .seccion_1_izq {
+            width: 90%;
+            text-align: center;
+            display: flex;
+        }
+	
+			.seccion_1_izq h2 {
+				margin-bottom: 50px;
+			}
+
+			.seccion_1_izq p {
+				width: 100%;
+				margin: auto;
+			}
+	
+        .seccion_1_der {
+            width: 90%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+            .seccion_1_der_containter {
+                margin-top: 20px;
+                width: 400px;
+                height: 400px;          
+            }
+
+    /* Seccion 2 -Proyeccion laboral */
+    .cuerpo__seccion_2 {
+        font-size: 1.2em;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+    }
+
+        .seccion_2_izq {
+            width: 90%;
+            justify-content: center;
+            align-items: center;
+        }
+        .seccion_2_der {
+            width: 90%;
+            justify-content: center;
+        }
+
+                .seccion_2_izq_container {
+                    width: 400px;
+                    height: 400px;                  
+                }
+
+                    .seccion_2_izq_container img {
+                        text-align: center;
+                    }
+
+    /* Seccion 3 - Misión y Visión*/
+    .cuerpo__seccion_3 {
+        height: 60vh;
+        width: 100%;
+        flex-direction: column-reverse;
+        font-size: 1.2em;
+    }
+
+        .cuerpo_mision {
+            width: 100%;
+            height: 50%;
+        }
+
+            .cuerpo_mision p {
+                width: 60%;
+            }
+
+        .cuerpo_vision {
+            width: 100%;
+            height: 50%; 
+        }
+
+            .cuerpo_vision p {
+                width: 60%;
+            }
+
+    /* Seccion 4 - Beneficios*/    
+    .beneficios_cuerpo {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+    
+        .seccion_4_container {
+            width: 75%;
+        }
+
+
+    /* Aliados */    
+    .aliados_logos {
+        display: flex;
+        flex-direction: column;
+    }
+
+        .aliado figure {
+            height: 400px;
+            width: 400px;
+        }
+
+            .aliado figure .aliado_inf p {
+                font-size: 1.2em;
+            }
+}
+
+/* Responsive de 479px o menos */
+@media only screen and (max-width:479px) {
+    /* Menu */
+    .menu_nav {
+        display: none;
+    }
+
+    .menu_nav_responsive {
+        display: block;
+    }
+
+    /* Seccion 1 Quienes somos */
+    .cuerpo__seccion_1 {
+        height: auto;
+        font-size: 1.1em;
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+        .seccion_1_izq {
+            width: 93%;
+            text-align: center;
+            display: flex;
+        }
+
+            .seccion_1_izq h2 {
+                margin-bottom: 50px;
+            }
+
+            .seccion_1_izq p {
+                width: 100%;
+                margin: auto;
+            }
+	
+        .seccion_1_der {
+            width: 90%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+            .seccion_1_der_containter {
+                width: 300px;
+                height: 300px;
+                margin-top: 20px;        
+            }
+
+    /* Seccion 2 -Proyeccion laboral */
+    .cuerpo__seccion_2 {
+        font-size: 1.1em;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+    }
+
+        .seccion_2_izq {
+            width: 90%;
+            justify-content: center;
+            align-items: center;
+        }
+        .seccion_2_der {
+            width: 90%;
+            justify-content: center;
+        }
+
+                .seccion_2_izq_container {
+                    width: 300px;
+                    height: 300px;                  
+                }
+
+                    .seccion_2_izq_container img {
+                        text-align: center;
+                    }
+
+    /* Seccion 3 - Misión y Visión*/
+    .cuerpo__seccion_3 {
+        height: 60vh;
+        width: 100%;
+        flex-direction: column-reverse;
+        font-size: 1.2em;
+    }
+
+        .cuerpo_mision {
+            width: 100%;
+            height: 50%;
+        }
+
+            .cuerpo_mision p {
+                width: 80%;
+            }
+
+        .cuerpo_vision {
+            width: 100%;
+            height: 50%; 
+        }
+
+            .cuerpo_vision p {
+                width: 80%;
+            }
+
+    /* Seccion 4 - Beneficios*/    
+    .beneficios_cuerpo {
+        flex-direction: column;
+        width: 100%;
+    }
+    
+        .seccion_4_container {
+            width: 100%;
+        }
+
+    /* Aliados */    
+    .aliados_logos {
+        display: flex;
+        flex-direction: column;
+    }
+
+        .aliado figure {
+            height: 300px;
+            width: 300px;
+        }
+
+            .aliado figure .aliado_inf p {
+                font-size: 1em;
+            }
+}

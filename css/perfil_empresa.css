@@ -1,0 +1,2356 @@
+body {
+    background-color: #dddbd5;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Decoracion de menu */
+.menu {
+    width: 100%;
+    border-bottom: 5px solid #2c3691;
+}
+
+    /* Menu responsive */
+    .menu_nav_responsive {
+        display: none;
+        font-size: 1.1em;
+    }
+
+        .nav__toggle {
+            position: absolute;
+            cursor: pointer;
+            margin: 0.1rem;
+            right: 0;
+        }
+
+            .nav__toggle svg{
+                width: 1rem;
+                fill: #2c3691;
+            }
+
+            .nav__toggle .close {
+                display: none;
+            }
+
+            .nav__toggle .close .open {
+                margin-top: 0.3rem;
+            }
+
+        .nav__checkbox {
+            display: none;
+        }
+
+        .nav__menu {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            align-items: end;
+            margin: 1rem;
+        }
+
+            .menu__logo_responsive img{
+                width: 200px;
+            }
+
+            .nav__menu li {
+                list-style-type: noen;
+                display: none;
+            }
+
+                .button_responsive{
+                    display: flex;
+                    flex-direction: column;
+                }
+
+                .nav__menu li button {
+                    margin: 8px 5px 8px 5px ;
+                    padding: 5px 15px;
+                    border-radius: 25px;
+                    background-color: #2c3691;
+                    color: #ffffff;
+                    border: none;
+                }
+
+            .nav__menu li:first-child {
+                margin-right: auto;
+                display: block;
+            }
+
+        #nav__checkbox:checked ~ ul.nav__menu li {
+            display: block;
+        }
+
+        #nav__checkbox:checked ~ label.nav__toggle .close {
+            display: block;
+        }
+
+        #nav__checkbox:checked ~ label.nav__toggle .open {
+            display: none;
+        }
+
+    /* Menu comun */
+
+    /* styles.css */
+    #dropdown-menu {
+        z-index: 10;
+        min-width: 150px;
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        list-style: none;
+        padding: 8px;
+        margin: 0;
+        border-radius: 25px;
+    }
+    
+    #dropdown-menu li {
+        padding: 10px;
+        border-bottom: 1px solid #2c3691;
+    }
+    
+    #dropdown-menu li:last-child {
+        border-bottom: none;
+    }
+    
+    #dropdown-button {
+        z-index: 10;
+        padding: 10px;
+        background-color: #fff;
+        color: white;
+        border: none;
+        cursor: pointer;
+    } 
+
+
+    #dropdown-menu_2 {
+        z-index: 10;
+        min-width: 150px;
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        list-style: none;
+        padding: 8px;
+        margin: 0;
+        border-radius: 25px;
+    }
+    
+    #dropdown-menu_2 li {
+        padding: 10px;
+        border-bottom: 1px solid #2c3691;
+    }
+    
+    #dropdown-menu_2 li:last-child {
+        border-bottom: none;
+    }
+    
+    #dropdown-button_2 {
+        z-index: 10;
+        padding: 10px;
+        background-color: #fff;
+        color: white;
+        border: none;
+        cursor: pointer;
+    } 
+
+    .nav__toggle_2 {
+        /* position: absolute; */
+        cursor: pointer;
+        margin: 0.1rem;
+        right: 0;
+    }
+
+        .nav__toggle_2 svg{
+            width: 1rem;
+            fill: #2c3691;
+        }
+
+        .nav__toggle_2 .close_2 {
+            display: none;
+        }
+
+        .nav__toggle_2 .close_2 .open_2 {
+            margin-top: 0.3rem;
+        }
+
+    .nav__checkbox_2 {
+        display: none;
+    }
+
+    #nav__checkbox_2:checked ~ ul.nav__menu li {
+        display: block;
+    }
+
+    #nav__checkbox_2:checked ~ label.nav__toggle .close {
+        display: block;
+    }
+
+    #nav__checkbox_2:checked ~ label.nav__toggle .open {
+        display: none;
+    }
+
+    #btnCerrarSUN {
+        cursor: pointer;
+    }
+
+        #Capa_1-2 {
+            fill: #2c3691;
+        }
+
+    .menu_nav {
+        font-size: 1.1em;
+        display: flex;
+        width: 70%;
+        margin: auto;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        align-items: center;
+    }
+        /* logo */
+        .menu_logo {
+            width: 200px;
+            margin: 10px 0 10px 0;
+        }
+        
+        /* Lista */
+           .menu_ul {
+                display: flex;
+                height: 100px;
+           }
+
+                .menu_ul li {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    text-decoration: none;
+                    margin: 0 8px;
+                }
+
+                    a:link, a:visited, a:active {
+                        text-decoration:none;
+                        color: #000;
+                        font-weight: 900;
+                    }
+
+                .menu_ul li .decoracion_selec {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+
+                    .decoracion_selec a{
+                        background-color: #2c3691;
+                        text-decoration:none;
+                        color: #fff;
+                        font-weight: 900;
+                    }
+
+                    .decoracion_selec a:link, a:visited {
+                        padding: 35% 40px ;
+                    }
+                    
+       /* Botones */
+    .menu_btn {
+        display: flex;
+        /* flex-direction: column; */
+    }
+    
+        .menu_btn button {
+            margin-left: 5px;
+            padding: 5px 15px;
+            border-radius: 50%;
+            background-color: none;
+            color: #ffffff;
+            cursor: pointer;
+            border: none;
+            overflow: hidden;
+        }
+
+        .menu_btn_cero {
+            display: flex;
+            flex-direction: column; 
+        }
+
+            .menu_btn_cero button{
+                margin: 8px 5px 8px 5px ;
+                padding: 5px 15px;
+                border-radius: 25px;
+                background-color: #2c3691;
+                color: #ffffff;
+                cursor: pointer;
+                border: none;
+            }
+
+        .cont_ftn_btn_emp {
+            width: 60px;
+            height: 60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+            .cont_ftn_btn_emp img {
+                border-radius: 5px;
+            }
+
+        .cont_ftn_btn {
+            width: 60px;
+            height: 60px;
+            overflow: hidden;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: start;
+            box-shadow: -8px 8px 13px #171b42;
+        }
+
+            .cont_ftn_btn img {
+                border-radius: 5px;
+            }
+
+    /* styles.css */
+    #dropdown-menu {
+        z-index: 10;
+        min-width: 150px;
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        list-style: none;
+        padding: 8px;
+        margin: 0;
+        border-radius: 25px;
+    }
+    
+    #dropdown-menu li {
+        padding: 10px;
+        border-bottom: 1px solid #2c3691;
+    }
+    
+    #dropdown-menu li:last-child {
+        border-bottom: none;
+    }
+    
+    #dropdown-button {
+        z-index: 10;
+        padding: 10px;
+        background-color: #dddbd5;
+        color: white;
+        border: none;
+        cursor: pointer;
+    }
+
+    #dropdown-menu_2 {
+        z-index: 10;
+        min-width: 150px;
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        list-style: none;
+        padding: 8px;
+        margin: 0;
+        border-radius: 25px;
+    }
+    
+    #dropdown-menu_2 li {
+        padding: 10px;
+        border-bottom: 1px solid #2c3691;
+    }
+    
+    #dropdown-menu_2 li:last-child {
+        border-bottom: none;
+    }
+    
+    #dropdown-button_2 {
+        z-index: 10;
+        padding: 10px;
+        background-color: #fff;
+        color: white;
+        border: none;
+        cursor: pointer;
+    } 
+
+/* Cuerpo */
+
+.cuerpo_sliter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 400px;
+}
+
+    .sliter_completo_izq {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        background-color:#2c3691;
+        clip-path: polygon(0 0, 75% 0%,75.2% 0.2%,94% 100%,0 100%, 0% 50%);
+        margin-right: -220px;
+    }       
+
+        .sliter_izq {
+            width: 50%;
+            text-align: center;
+            color: #ffffff;
+        }
+
+            .sliter_izq h2 {
+                font-size: 2em;
+            }
+
+            .sliter_izq img{
+                height: 125px;
+                margin-top: 27px;
+            }
+
+
+    .sliter_completo_der {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: end;
+        background-image: url(https://i0.wp.com/vigiempleo.com/wp-content/uploads/2022/03/Logos-20x20-11.png?fit=2363%2C2363&ssl=1);
+        background-position: right;
+        background-repeat: no-repeat;
+        background-color: #ffffff;
+        background-size: 100vh;
+        clip-path: polygon(5% 0%, 100% 0%, 100% 100%, 24% 100%,23.9% 99.8%);        
+    }
+
+    .sliter_completo_der_emp {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: end;
+        align-items: center;
+        background-color:#ffffff;
+        background-size: 60vh;
+        clip-path: polygon(5% 0%, 100% 0%, 100% 100%, 24% 100%,23.9% 99.8%);        
+    }
+
+        .sliter_completo_der_emp img {
+            width: 70%;
+            height: 80%;
+            margin-right: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .sliter_der {
+            width: 100%;
+            text-align: center;
+            height: 65%;
+            display: flex;
+            justify-content: center;
+            align-items: end;
+        }
+
+            .edi_sliter {
+                width: 300px;
+                height: 50px;
+                cursor: pointer;
+            }
+
+.nombre_emp {
+    width: 320px;
+    text-align: center;
+    border-radius: 9px;
+    padding: 5px;
+    border: 1px solid #dddbd5;
+}
+
+.descrip_emp {
+    width: 100%;
+    height: 150px;
+    border-radius: 9px;
+    padding: 5px;
+    border: none;
+}
+
+.mision_area {
+    width: 100%;
+    height: 150px;
+    border-radius: 9px;
+    padding: 5px;
+    border: none;
+}
+
+.vision_area {
+    width: 100%;
+    height: 150px;
+    border-radius: 9px;
+    padding: 5px;
+    border: 1px solid #dddbd5;
+}
+
+.resultado_bus {
+    width: 100%;
+    min-height: 65vh;
+}
+
+    .container_bus {
+        width: 70%;
+        height: 110px;
+        margin: auto;
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        grid-template-columns: 20% 60% 20%;
+        border: 1.5px solid #2c3691;
+        z-index: 20;
+        border-radius: 8px;
+        padding: 15px;
+    }
+
+        .btn_mas{
+            background-color: #2c3691;
+            color: #fff;
+            width: 150px;
+            height: 50px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+        }
+
+        .btn_mas:hover {
+            background-color: #2c3691;
+            color: #fff;
+            width: 153px;
+            height: 53px;
+            transition: all 500ms ease-in-out;
+        }
+
+    .container_des {
+        width: 70%;
+        margin: -8px auto 0;
+        z-index: 10;
+        display: none;
+        background-color: #fff;
+        flex-direction: column;
+        border-bottom: 1.5px solid #2c3691;
+        border-left: 1.5px solid #2c3691;
+        border-right: 1.5px solid #2c3691;
+        padding: 15px;
+    }
+
+        .cont_des_button {
+            display: flex;
+            justify-content: end;
+            align-items: center;
+        }
+
+        #btnPerfil {
+            cursor: pointer;
+        }
+
+            .cont_des_button button {
+                background-color: #fff;
+                color: #000;
+                width: 150px;
+                height: 50px;
+                border: none;
+                border-radius: 25px;
+                cursor: pointer;
+                margin-right: 20px;
+            }
+
+        .cont_des_nom_car {
+            height: 100px;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+
+            .cont_des_nom_car img {
+                height: 60px;
+                width: 160px;
+                border-radius: 10px;
+            }
+
+        .img_bus img{
+            height: 80px;
+            width: 180px;
+            border-radius: 10px;
+        }
+
+        .cont_des_des p {
+            padding: 25px 100px;
+        }
+
+        .cont_des_button {
+            height: 80px;
+        }
+
+        .cont_des_conocer_mas {
+            height: 120px;
+        }
+
+            .cont_des_conocer_mas img{
+                height: 100px;
+                width: 220px;
+            }
+
+        .cont_des_conocer_mas {
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+
+            .cont_des_conocer_mas button{
+                background-color: #2c3691;
+                color: #fff;
+                width: 150px;
+                height: 50px;
+                border: none;
+                border-radius: 25px;
+                cursor: pointer;
+                margin-right: 20px;
+            }
+
+            .sec_btn {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 10px;
+            }
+
+                .sec_btn button {
+                    margin: 10px;
+                }      
+                
+                #cont_vac h2 {
+                    text-align: center;
+                }
+                
+
+/**********************************************************************************/
+/***************************** DISEÑO FORMULARIO EDICION **************************/
+/**********************************************************************************/
+.div_inf_foto {
+    display: flex;
+    justify-content: center;
+}
+
+.img_preview_logo {
+    background-color: #ffffff;
+    overflow: hidden;
+    height: 180px;
+    width: 350px;
+    border-radius: 5px;
+    margin: 2px auto 8px;
+    border: 1.5px solid #000;
+}
+
+    .img_preview_logo img {
+        width: 100%;
+        height: 100%;
+    }
+
+.reg__vis__archivo__logo {
+    cursor: pointer;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form .sec_form {
+    margin: auto;
+    text-align: center;
+}
+
+    .registro_foto {
+        width: 100%;
+        height: 100%;
+        /* background-color: #2c3691; */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        border-radius: 8px;
+    }
+
+        .img_preview {
+            background-color: #ffffff;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            width: 100%;
+            border-radius: 8px;
+            border: 1px solid #2c3691;
+            margin:  auto;
+        }
+        
+
+        .registro_img {
+            width: 50%;
+            margin: auto;
+        }
+
+            .reg__oculto {
+                width: 0.1px;
+                height: 0.1px;
+                opacity: 0;
+                overflow: hidden;
+                position: absolute;
+                z-index: -1;
+            }
+
+        .archivo_foto_emp {
+            width: 50px;
+            display: flex;
+            justify-content: center;
+        }
+
+            .reg__vis__archivo {
+                cursor: pointer;
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+                .reg__vis__archivo img {
+                    width: 30px;
+                    height: 40px;
+                    margin: auto;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+
+            .registro_img input{
+                color: #ffffff;
+            }
+
+            .registro_img img{
+                width: 40px;
+                background-color: #dddbd5;
+                padding: 10px;
+            }
+
+                .cuerpoIntEdit .input {
+                    width: 90%;
+                    margin: 8px;
+                    border-radius: 8px;
+                    padding: 2.5px;
+                }
+
+        .container_div {
+            background-color: #fff;
+            display: flex;
+            height: 90%;
+            width: 100%;
+            border-top-left-radius: 50%; 
+            border-top-right-radius: 50% ;
+            border-bottom: 3px solid #2c3691;
+        }
+
+            .container_div_blanco {
+                width: 15%;
+            }
+
+            .sliter_centro {
+                width: 70%;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-evenly;
+                align-items: center;
+            }
+
+                .sliter_centro img {
+                    width: 350px;
+                    height: 200px;
+                    border-radius: 15px;
+                }
+
+            .sliter_centro_mod {
+                width: 70%;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-evenly;
+                align-items: center;
+            }
+
+            .sliter_der {
+                width: 15%;
+                display: flex;
+                justify-content: end;
+                align-items: end;
+            }
+
+                .sliter_der button{
+                    margin: 15px;
+                    width: 200px;
+                    height: 50px;
+                    color: #dddbd5;
+                    background-color: #2c3691;
+                    border: none;
+                    border-radius: 25px;
+                    cursor: pointer;
+                }
+
+            .oferta_filtro {
+                width: 90%;
+                height: 50%;
+                padding: 5px;
+                display: flex;
+                justify-content: center;
+            }
+
+                .oferta_cargo {
+                    width: 50%;
+                    text-align: end;
+                    justify-content: center;
+                    display: flex;
+                    border-right: 1px solid #000;
+                }
+
+                    .oferta_cargo img {
+                        width: 30px;
+                        background-color: #fff;
+                        padding-left: 10px;
+                        border-bottom-left-radius: 10px;
+                        border-top-left-radius: 10px;
+                    }
+ 
+                    .oferta_cargo select{
+                        width: 80%;
+                        border:#fff;
+                        padding: 15px 20px;
+                        outline: none;
+                    }
+
+                .oferta_ciudad {
+                    width: 50%;
+                    display: flex;
+                    justify-content: center;
+                }
+
+                    .oferta_ciudad img{  
+                        width: 30px;
+                        background-color: #fff;
+                        padding-left: 10px;
+                    }
+
+                    .oferta_ciudad select {
+                        width: 80%;
+                        border-bottom-right-radius: 10px;
+                        border-top-right-radius: 10px;
+                        border: none;
+                        padding: 15px 20px;
+                        outline: none;
+                    }
+
+/*  */
+.cuerpo_oferta {
+    display: flex;
+    height: 150px;
+}
+
+    .oferta_conteiner {
+        width: 70%;
+        margin: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .cantidad_vacantes {
+        width: 20%;
+    }
+
+        .cantidad_vacantes  p{
+            color: #2c3691;
+            font-weight: 600;
+            font-size: 1.2em;
+        }
+
+    .oferta_cont_bus {
+        width: 80%;
+    }
+
+        .oferta_filtro {
+            width: 90%;
+            height: 50%;
+            padding: 5px;
+            display: flex;
+            justify-content: center;
+        }
+
+            .oferta_cargo {
+                width: 50%;
+                text-align: end;
+                justify-content: center;
+                display: flex;
+                border-right: 1px solid #000;
+            }
+
+                .oferta_cargo img {
+                    width: 30px;
+                    background-color: #fff;
+                    padding-left: 10px;
+                    border-bottom-left-radius: 10px;
+                    border-top-left-radius: 10px;
+                }
+
+                .oferta_cargo select{
+                    width: 80%;
+                    border:#fff;
+                    padding: 15px 20px;
+                    outline: none;
+                }
+
+            .oferta_ciudad {
+                width: 50%;
+                display: flex;
+                justify-content: center;
+            }
+
+                .oferta_ciudad img{  
+                    width: 30px;
+                    background-color: #fff;
+                    padding-left: 10px;
+                }
+
+                .oferta_ciudad select {
+                    width: 80%;
+                    border-bottom-right-radius: 10px;
+                    border-top-right-radius: 10px;
+                    border: none;
+                    padding: 15px 20px;
+                    outline: none;
+                }
+
+        .oferta_cont_bus {
+            display: flex;
+            width: 100%;
+            background-color: #fff;
+            border-radius: 25px;
+        }
+
+            .oferta_cont_bus button {
+                background-color: #2c3691;
+                color: #fff;
+                border-radius: 25px;
+                padding: 5px 35px;
+                margin: 4px 0;
+                border: none;
+                font-size: 1.3em;
+            }
+
+    .cuerpo_inf {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        min-height: 400px;
+        margin-top: 15px;
+    }
+
+        .cuerpo_inf_quien {
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: center;
+            text-align: justify;
+        }        
+
+        .cuerpo_inf_img {
+            width: 50%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+            .inf_img_cont {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100%;
+                width: 80%;
+                overflow: hidden;
+            }
+
+                .inf_img_cont {
+                    border-radius: 10px;
+                }
+
+                .inf_img_cont img {
+                    max-width: 90%;
+                    min-width: 380px;
+                }
+
+    .cuerpo_mis_vis {
+        display: flex;
+        margin-bottom: 10px;
+        width: 100%;
+        height: 400px;
+        box-shadow: 0px 6px 10px #000;
+    }
+
+        .mision {
+            width: 50%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: center;
+            background-color: #2c3691;
+            color: #fff;
+            font-weight: 400;
+            text-align: justify;
+        }
+
+        .vision {
+            width: 50%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: center;
+            background-color: #fff;
+            color: #2c3691;
+            font-weight: 400;
+            text-align: justify;
+        }
+
+            .descrip_empresa {
+                width: 90%;
+            }
+
+    .filtro_bus {
+        width: 100%;
+    }
+
+        .div_bus {
+            width: 70%;
+            display: flex;
+            justify-content: space-evenly;
+            margin: 20px auto;
+        }
+
+    .cuerpo_aspirantes {
+        width: 100%;
+        margin-bottom: 50px;
+    }
+
+        .div_inf_cont {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+
+            .div_inf_cont ul {
+                display: flex;
+                width: 200%;
+            }
+
+                .div_inf_cont li {
+                    width: 100%;
+                    list-style: none;
+                }
+
+                .cuerpo_vacantes {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                }
+
+                .cont_btn {
+                    width: 80%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    margin: auto;
+                }
+
+                    .cont_btn button {
+                        width: 150px;
+                        padding: 10px;
+                        background-color: #2c3691;
+                        border: none;
+                        border-radius: 25px;
+                        color: #fff;
+                        margin: 20px;
+                        cursor: pointer;
+                    }
+
+                .cuerpo_car {
+                    width: 80%;
+                    height: 110px;
+                    margin: auto;
+                    display: grid;
+                    color: #2c3691;
+                    grid-template-columns: 35% 40% 20% 5%;
+                    justify-content: center;
+                    align-items: center;
+                    border: 1px solid #2c3691;
+                    border-radius: 8px;
+                    padding: 15px;
+                }
+
+                    .cont_btn_car button {
+                        width: 150px;
+                        height: 50px;
+                        border-radius: 8px;
+                        border: 1px solid #2c3691;
+                        background-color: #fff;
+                        cursor: pointer;
+                    }
+
+                .cont_aspi {
+                    width: 80%;
+                    min-height: 100px;
+                    margin: -8px auto;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    color: #fff;
+                    background-color: #2c3691;
+                    border-left: 1px solid #2c3691;
+                    border-right: 1px solid #2c3691;
+                    border-bottom: 1px solid #2c3691;
+                    border-bottom-left-radius: 8px;
+                    border-bottom-right-radius: 8px;
+                    padding: 15px;            
+                }                     
+
+                    .cont_ap {
+                        width: 100%;
+                    }
+
+                        .cont_ap_dato {
+                            display: flex;
+                            height: 100px;
+                            width: 100%;
+                            justify-content: space-between;
+                            align-items: center;
+                            text-align: left;
+                            border-bottom: 1.5px solid #fff;
+                        }
+
+                        .cont_ap_erro {
+                            display: flex;
+                            justify-content: center;
+                            text-align: center;
+                            font-size: 1.2em;
+                        }
+
+                            .cont_des_button button {
+                                width: 150px;
+                                height: 50px;
+                                border-radius: 8px;
+                                border: 1px solid #fff;
+                                color: #2c3691;
+                                font-weight: 1000;
+                                cursor: pointer;
+                            }
+
+                .foto_user_nat img {
+                    height: 120px;
+                    border-radius: 8px;
+                }
+                
+                .cont_perfil {
+                    width: 100%;
+                    height: 150px;
+                    margin: -8px auto 0;
+                    display: flex;
+                    justify-content: space-around;
+                    align-items: center;
+                    border: 1.5px solid #fff;
+                    background-color: #fff;
+                    color: #2c3691;
+                    border-top: none;
+                    border-radius: 25px;
+                    padding: 15px;
+                }
+
+                    .btn_cono_mas {
+                        width: 20%;
+                    }
+
+                    .btn_cono_mas button {
+                        width: 130px;
+                        height: 50px;
+                        border-radius: 8px;
+                        border: none;
+                        background-color: #2c3691;
+                        color: #fff;
+                        cursor: pointer;
+                    }
+
+                    .cont_inf_perf {
+                        display: flex;
+                        justify-content: space-around;
+                        width: 100%;
+                    }
+
+                        .logo_empresa {
+                            width: 100%;
+                        }
+
+                            .logo_empresa img {
+                                height: 80px;
+                                border-radius: 10px;
+                            }   
+
+                        .inf_aspi {
+                            width: 60%;
+                        }
+
+                        .btn_edi {
+                            position: relative;
+                            top: -55px;
+                            right: -25px;
+                            cursor: pointer;
+                            width: 70px;
+                            height: 25px;
+                            background-color: #2c3691;
+                            color: #fff;
+                            border: none;
+                            border-radius: 8px;
+                        }
+
+                .check_btn {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+
+                .wrap-toggle {
+                    margin: 10px;
+                }
+
+                    .swith {
+                        position: relative;
+                        display: inline-block;
+                        width: 40px;
+                        height: 20px;
+                        background-color: #aaa;
+                        border-radius: 20px;
+                        cursor: pointer;
+                    }
+
+                    .swith::after {
+                        content: '';
+                        position: absolute;
+                        width: 15px;
+                        height: 15px;
+                        border-radius: 15px;
+                        background-color: #fff;
+                        left: 2px;
+                        top: 2px;
+                        transition: 0.5s;
+                    }
+
+                    input[type='checkbox']:checked + .swith::after {
+                        transform: translate(20px);
+                        background-color: #fff;
+                    }
+
+                    input[type='checkbox']:checked + .swith {
+                        background-color: #61a0ff;
+                    }
+
+                    #toggle {
+                        display: none;
+                    }
+                        
+                .li_dif {
+                    background-color: #2c3691;
+                    border-radius: 25px;
+                    text-align: center;
+                    width: 100%;
+                    height: 650px;
+                }   
+
+                    .li_dif h2 {
+                        color: #fff;
+                    }
+
+                    .form_new_vac {
+                        background-color: #fff;
+                        border-radius: 25px;
+                        width: 650px;
+                        min-height: 550px;
+                        margin: 20px auto 0;
+                        padding: 25px;
+                    }
+
+                        .form_new_vac form {
+                            display: flex;
+                            flex-direction: column;
+                            width: 500px;
+                            margin: auto;
+                        }
+
+                            .form_new_vac h3 {
+                                color: #2c3691;
+                                font-size: 2em;
+                            }
+
+                            .form_new_vac .input {
+                                border-radius: 8px;
+                                margin: 10px 0;
+                                border: 1px solid #000;
+                                padding: 6px;
+                            }
+
+                            #nom_vacante_edi {
+                                width: 90%;
+                                border-radius: 8px;
+                                margin: 10px 0;
+                                border: 1px solid #000;
+                                padding: 6px;
+                            }
+
+                            #cuerpoIntEdit {
+                                font-size: 0.8em;
+                            }
+
+                            #des_vacante_edi {
+                                width: 90%;
+                                border-radius: 8px;
+                                margin: 10px 0;
+                                border: 1px solid #000;
+                                padding: 6px;
+                            }
+
+                            #sal_vacante_edi {
+                                width: 90%;
+                                border-radius: 8px;
+                                margin: 10px 0;
+                                border: 1px solid #000;
+                                padding: 6px;
+                            }
+
+                            #ciudad_vacante_edi {
+                                width: 90%;
+                                border-radius: 8px;
+                                margin: 10px 0;
+                                border: 1px solid #000;
+                                padding: 6px;
+                            }
+
+                            .btn_edit_vac{
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                            }
+
+                                .btn_edit_vac .btn {
+                                    width: 150px;
+                                    height: 50px;
+                                    margin: 8px 5px 8px 5px ;
+                                    padding: 8px 8px;
+                                    font-size: 0.8em;
+                                    border-radius: 25px;
+                                    background-color: #2c3691;
+                                    color: #ffffff;
+                                    border: none;
+                                    cursor: pointer;
+                                }
+
+                            #form_vacante button {
+                                margin: 8px 5px 8px 5px ;
+                                padding: 8px 20px;
+                                font-size: 1.3em;
+                                border-radius: 25px;
+                                background-color: #2c3691;
+                                color: #ffffff;
+                                border: none;
+                                cursor: pointer;
+                            }
+
+                            .contCerrar {
+                                display: none;
+                            }
+            
+                                .contCerrarSes {
+                                    background: rgba(33, 41, 52, .85);
+                                    left: 0;
+                                    bottom: 0;
+                                    right: 0;
+                                    top: 0;
+                                    display: flex;
+                                    position: fixed;
+                                    z-index: 999;
+                                }
+            
+                                    .contCerrarSes .contCerrarCont {
+                                        background: #fff;
+                                        border-radius: 2px;
+                                        box-shadow: 0 1px 3px rgba(33, 41, 52, .75);
+                                        box-sizing: content-box;
+                                        display: flex;
+                                        justify-content: space-around;
+                                        flex-direction: column;
+                                        margin: auto;
+                                        height: 250px;
+                                        max-width: 600px;
+                                        min-width: 320px !important;
+                                        overflow: hidden;
+                                        position: relative;
+                                        width: 100%;
+                                        padding: 25px 10px 15px 10px;
+                                        font-size: 1.3rem;
+                                        border-radius: 15px;
+                                        text-align: center;
+                                    }
+    
+                                    .OnlyCont {
+                                        display: flex;
+                                    }
+            
+                                        .contCerrarCont{
+                                            display: flex;
+                                            flex-direction: column;
+                                            justify-content: center;
+                                            align-items: center;
+                                        }
+            
+                                        .contCerrarCont button {
+                                            margin: 8px 5px 8px 5px ;
+                                            padding: 8px 20px;
+                                            font-size: 1.3em;
+                                            border-radius: 25px;
+                                            background-color: #2c3691;
+                                            color: #ffffff;
+                                            border: none;
+                                            cursor: pointer;
+                                        }
+
+                            .contGlobal {
+                                display: none;
+                            }
+            
+                                .contInt {
+                                    background: rgba(33, 41, 52, .85);
+                                    left: 0;
+                                    bottom: 0;
+                                    right: 0;
+                                    top: 0;
+                                    display: flex;
+                                    position: fixed;
+                                    z-index: 999;
+                                }
+            
+                                    .contInt .contComp {
+                                        background: #fff;
+                                        border-radius: 2px;
+                                        box-shadow: 0 1px 3px rgba(33, 41, 52, .75);
+                                        box-sizing: content-box;
+                                        display: flex;
+                                        justify-content: space-around;
+                                        flex-direction: column;
+                                        margin: auto;
+                                        height: 250px;
+                                        max-width: 600px;
+                                        min-width: 320px !important;
+                                        overflow: hidden;
+                                        position: relative;
+                                        width: 100%;
+                                        padding: 25px 10px 15px 10px;
+                                        font-size: 1.3rem;
+                                        border-radius: 15px;
+                                        text-align: center;
+                                    }
+            
+                                        .contComp{
+                                            display: flex;
+                                            flex-direction: column;
+                                            justify-content: center;
+                                            align-items: center;
+                                        }
+            
+                                        .contComp button {
+                                            margin: 8px 5px 8px 5px ;
+                                            padding: 8px 20px;
+                                            font-size: 1.3em;
+                                            border-radius: 25px;
+                                            background-color: #2c3691;
+                                            color: #ffffff;
+                                            border: none;
+                                            cursor: pointer;
+                                        }
+
+                                .contEdit {
+                                    display: none;
+                                }
+                
+                                    .contIntEdit {
+                                        background: rgba(33, 41, 52, .85);
+                                        left: 0;
+                                        bottom: 0;
+                                        right: 0;
+                                        top: 0;
+                                        display: flex;
+                                        position: fixed;
+                                        z-index: 999;
+                                    }
+                
+                                        .contIntEdit .contCompEdit {
+                                            background: #fff;
+                                            border-radius: 2px;
+                                            box-shadow: 0 1px 3px rgba(33, 41, 52, .75);
+                                            box-sizing: content-box;
+                                            display: flex;
+                                            justify-content: space-around;
+                                            flex-direction: column;
+                                            margin: auto;
+                                            min-height: 600px;
+                                            max-width: 600px;
+                                            overflow: hidden;
+                                            position: relative;
+                                            width: 100%;
+                                            padding: 25px 10px 15px 10px;
+                                            font-size: 1.3rem;
+                                            border-radius: 15px;
+                                            text-align: center;
+                                        }
+                
+                                            .contCompEdit{
+                                                display: flex;
+                                                flex-direction: column;
+                                                justify-content: center;
+                                                align-items: center;
+                                            }
+                
+                                            .contCompEdit button {
+                                                margin: 8px 5px 8px 5px ;
+                                                padding: 8px 20px;
+                                                font-size: 1.3em;
+                                                border-radius: 25px;
+                                                background-color: #2c3691;
+                                                color: #ffffff;
+                                                border: none;
+                                                cursor: pointer;
+                                            }
+
+                                        .contMsg {
+                                            display: none;
+                                        }
+                        
+                                            .contMsgVac {
+                                                background: rgba(33, 41, 52, .85);
+                                                left: 0;
+                                                bottom: 0;
+                                                right: 0;
+                                                top: 0;
+                                                display: flex;
+                                                position: fixed;
+                                                z-index: 999;
+                                            }
+                        
+                                                .contMsgVac .contMsgVacIn {
+                                                    background: #fff;
+                                                    border-radius: 2px;
+                                                    box-shadow: 0 1px 3px rgba(33, 41, 52, .75);
+                                                    box-sizing: content-box;
+                                                    display: flex;
+                                                    justify-content: space-around;
+                                                    flex-direction: column;
+                                                    margin: auto;
+                                                    height: 250px;
+                                                    max-width: 600px;
+                                                    min-width: 320px !important;
+                                                    overflow: hidden;
+                                                    position: relative;
+                                                    width: 100%;
+                                                    padding: 25px 10px 15px 10px;
+                                                    font-size: 1.3rem;
+                                                    border-radius: 15px;
+                                                    text-align: center;
+                                                }
+                        
+                                                    .contMsgVacIn{
+                                                        display: flex;
+                                                        flex-direction: column;
+                                                        justify-content: center;
+                                                        align-items: center;
+                                                    }
+                        
+                                                    .contMsgVacIn button {
+                                                        margin: 8px 5px 8px 5px ;
+                                                        padding: 8px 20px;
+                                                        font-size: 1.3em;
+                                                        border-radius: 25px;
+                                                        background-color: #2c3691;
+                                                        color: #ffffff;
+                                                        border: none;
+                                                        cursor: pointer;
+                                                    }
+
+                                    .contEli {
+                                        display: none;
+                                    }
+                    
+                                        .contIntEli {
+                                            background: rgba(33, 41, 52, .85);
+                                            left: 0;
+                                            bottom: 0;
+                                            right: 0;
+                                            top: 0;
+                                            display: flex;
+                                            position: fixed;
+                                            z-index: 999;
+                                        }
+                    
+                                            .contIntEli .contCompEli {
+                                                background: #fff;
+                                                border-radius: 2px;
+                                                box-shadow: 0 1px 3px rgba(33, 41, 52, .75);
+                                                box-sizing: content-box;
+                                                display: flex;
+                                                justify-content: space-around;
+                                                flex-direction: column;
+                                                margin: auto;
+                                                height: 250px;
+                                                max-width: 600px;
+                                                min-width: 320px !important;
+                                                overflow: hidden;
+                                                position: relative;
+                                                width: 100%;
+                                                padding: 25px 10px 15px 10px;
+                                                font-size: 1.3rem;
+                                                border-radius: 15px;
+                                                text-align: center;
+                                            }
+                    
+                                                .contCompEli{
+                                                    display: flex;
+                                                    justify-content: center;
+                                                    align-items: center;
+                                                }
+                    
+                                                .contCompEli button {
+                                                    margin: 8px 5px 8px 5px ;
+                                                    padding: 8px 20px;
+                                                    font-size: 1.3em;
+                                                    border-radius: 25px;
+                                                    background-color: #2c3691;
+                                                    color: #ffffff;
+                                                    border: none;
+                                                    cursor: pointer;
+                                                }
+/* Pie de pagina */
+.footer {
+    height: 100px;
+    background-color:#ffffff ;
+}
+
+    .footer_pie {
+        width: 70%;
+        height: 80px;
+        text-align: center;
+        margin: auto;
+        display: flex;
+        justify-content: space-around;
+    }
+
+        .pie_copy, .pie_redes, .pie_contacto {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+            .pie_contacto p{
+                display: flex;
+                flex-direction: column;
+                align-items: start;
+            }
+
+/* Responsive de 1500px hasta 1200px */
+@media only screen and (max-width:1500px) and (min-width: 1200px) {
+    
+    /* Sliter */
+    .sliter_completo_izq {
+        margin-right: -150px;
+    }
+
+        .sliter_izq p {
+            font-size: 1.59em;
+        }
+
+        .sliter_izq img {
+            height: 100px;
+        }
+
+    .sliter_completo_der {
+        background-size: 85vh;
+        background-position: center;
+    }
+
+    /* Buscar ofertas */
+
+    .oferta_conteiner {
+        width: 80%;
+    }
+
+        .container_bus {
+            width: 80%;
+            grid-template-columns: 25% 50% 25%;
+        }
+
+        .container_des {
+            width: 80%;
+        }
+
+        .nom_car_bus {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+}
+
+/* Responsive de 1199px hasta 1024px */
+@media only screen and (max-width:1199px) and (min-width: 1024px) {
+    
+    /* Sliter */
+    .sliter_completo_izq {
+        margin-right: -120px;
+    }
+
+        .sliter_izq p {
+            font-size: 1.4em;
+        }
+
+        .sliter_izq img {
+            height: 90px;
+        }
+
+    .sliter_completo_der {
+        background-size: 60vh;
+        background-position: center;
+    }
+
+    .oferta_conteiner {
+        width: 80%;
+    }
+
+        .container_bus {
+            width: 80%;
+            grid-template-columns: 25% 50% 25%;
+        }
+
+        .container_des {
+            width: 80%;
+        }
+
+        .nom_car_bus {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+    .mision {
+        width: 80%;
+        padding: 20px 40px;
+    }
+
+    .vision {
+        width: 80%;
+        padding: 20px 40px;
+    }
+}
+
+/* Responsive de 1023px hasta 768px */
+@media only screen and (max-width:1023px) and (min-width: 768px) {
+    
+    /* Menu */
+    .menu_nav {
+        display: none;
+    }
+
+    .menu_nav_responsive {
+        display: block;
+    }
+
+    .cuerpo_sliter {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 320px;
+    }
+
+        .sliter_der {
+            min-height: 50px;
+        }
+
+    /* Sliter */
+    .sliter_completo_izq {
+        margin-right: -6px;
+        padding-left: 35px;
+        clip-path: polygon(0 0, 100% 0,100% 100%, 0 100%);
+    }
+
+    .sliter_centro h2 {
+        color: #fff;
+    }
+
+    .sliter_izq {
+        width: 80%;
+    }
+
+        .sliter_izq img {
+            height: 90px;
+        }
+
+        .sliter_izq p {
+            font-size: 1.3em;
+        }
+
+    .div_inf_cont {
+        width: 90%;
+    }
+
+    .cont_inf_perf {
+        width: 80%;
+    }
+
+    .sliter_completo_der_emp {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        background-size: 60vh;
+        background-color: #2c3691;
+        clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+    }
+
+        .sliter_completo_der_emp button {
+            width: 200px;
+            background-color: #fff;
+            color: #2c3691;
+            margin: 8px 5px 8px 5px ;
+            padding: 8px 20px;
+            font-size: 1em;
+            border-radius: 25px;
+            border: none;
+            cursor: pointer;
+        }
+
+    .oferta_conteiner {
+        width: 90%;
+    }
+    
+
+        .container_bus {
+            width: 80%;
+            grid-template-columns: 25% 50% 25%;
+        }
+
+        .container_des {
+            width: 80%;
+        }
+
+        .nom_car_bus {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+    /* Buscar ofertas */
+    .oferta_conteiner {
+        width: 90%;
+    }
+
+        .mision {
+            width: 80%;
+            padding: 20px 20px;
+        }
+
+        .vision {
+            width: 80%;
+            padding: 20px 20px;
+        }
+}
+
+/* Responsive de 767px hasta 480px */
+@media only screen and (max-width:767px) and (min-width: 480px) {
+    /* Menu */
+    .menu_nav {
+        display: none;
+    }
+
+    .menu_nav_responsive {
+        display: block;
+    }
+
+    .div_inf_cont {
+        width: 100%;
+    }
+    /* Sliter */
+    .sliter_completo_izq {
+        display: none;
+    }
+
+        .sliter_izq p {
+            font-size: 1.3em;
+        }
+
+        .sliter_completo_der_emp {
+            height: 320px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-direction: column;
+            background-color: #2c3691;
+            clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+        }
+
+            .sliter_completo_der_emp h2 {
+                color: #fff;}
+    
+            .sliter_completo_der_emp button {
+                width: 200px;
+                background-color: #fff;
+                color: #2c3691;
+                margin: 8px 5px 8px 5px ;
+                padding: 8px 20px;
+                font-size: 1em;
+                border-radius: 25px;
+                border: none;
+                cursor: pointer;
+            }
+
+        .cuerpo_sliter {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 320px;
+        }
+    
+            .sliter_der {
+                height: 50px;
+            }
+
+    .cuerpo_car {
+        width: 90%;
+    }
+
+    .cont_aspi {
+        width: 90%;
+    }
+
+    .btn_edi {
+        right: 10px;
+    }
+
+    .form_new_vac {
+        width: 80%;
+    }
+
+        .form_new_vac form {
+            width: 95%;
+        }
+
+            .form_new_vac h3 {
+                font-size: 1.5em;
+            }
+
+    .cuerpo_inf {
+        flex-direction: column-reverse;
+    }
+
+        .cuerpo_inf_quien {
+            width: 100%;
+            padding: 8px;
+        }
+
+        .cuerpo_inf_img {
+            width: 100%;
+            margin: auto;
+        }
+
+    .cont_perfil {
+        flex-direction: column;
+        min-height: 200px;
+    }
+
+        .cont_inf_perf {
+            justify-content: space-evenly;
+        }
+
+        .container_bus {
+            width: 90%;
+            grid-template-columns: 33.3% 33.3% 33.3%;
+        }
+    
+        .container_des {
+            width: 90%;
+        }
+    
+            .cont_des_des #descripcion {
+                padding: 5px;
+            }
+    
+        .nom_car_bus {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+    
+        .cont_des_conocer_mas img{
+            display: none;
+        }
+    
+            .cont_des_conocer_mas button {
+                margin: 3px 3px 3px 3px ;
+                padding: 8px 10px;
+                font-size: 1em;
+            }
+
+    /* Buscar ofertas */
+    .cuerpo_oferta {
+        height: 30vh;
+    }
+
+    .oferta_conteiner {
+        width: 90%;
+    }
+
+        .oferta_bnt h1{
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+    .cuerpo_mis_vis {
+        margin-top: 20px;
+        height: 600px;
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+        .mision {
+            min-height:50%;
+            width: 100%;
+            padding: 20px;
+        }
+
+        .vision {
+            min-height: 50%;
+            width: 100%;
+            padding: 20px;
+        }
+
+    /* Seccion empresas */
+    .empresas_des p {
+        font-size: 1.3em;
+    }
+
+    .oferta_conteiner {
+        width: 93%;
+    }
+
+    /* seccion final */
+    .final_general {
+        font-size: 0.8em;
+    }
+
+    .final_btn_cont {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .final_btn button {
+        font-size: 0.8em;
+    }
+
+    .cuerpoIntEdit {
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .contIntEdit .contCompEdit {
+        width: 100%;
+    }
+
+        /* .contCompEdit .input {
+            width: 380px;
+        } */
+
+
+}
+
+/* Responsive de 479px hasta 320px */
+@media only screen and (max-width:479px) {
+    
+    /* Menu */
+    .menu_nav {
+        display: none;
+    }
+
+    .menu_nav_responsive {
+        display: block;
+    }
+
+    .div_inf_cont {
+        width: 100%;
+    }
+    
+    /* Sliter */
+    .sliter_completo_izq {
+        display: none;
+        justify-content: end;
+        margin-right: 0px;
+        clip-path: polygon(0 0, 100% 0,100% 100%, 0 100%)
+    }
+
+    .sliter_izq {
+        min-height: 50px;
+        width: 100%;
+    }
+
+            .sliter_izq img {
+                height: 60px;
+            }
+
+            .sliter_izq p {
+                font-size: 1.3em;
+            }
+
+            .sliter_completo_der_emp {
+                height: 320px;
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+                flex-direction: column;
+                background-color: #2c3691;
+                clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+            }
+    
+                .sliter_completo_der_emp h2 {
+                    color: #fff;}
+        
+                .sliter_completo_der_emp button {
+                    width: 200px;
+                    background-color: #fff;
+                    color: #2c3691;
+                    margin: 8px 5px 8px 5px ;
+                    padding: 8px 20px;
+                    font-size: 1em;
+                    border-radius: 25px;
+                    border: none;
+                    cursor: pointer;
+                }
+    
+            .cuerpo_sliter {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                height: 320px;
+            }
+        
+                .sliter_der {
+                    height: 50px;
+                }
+
+    .cuerpo_car {
+        width: 90%;
+        min-height: 250px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+        .logo_empresa {
+            display: flex;
+            justify-content: center;
+        }
+
+    .cont_perfil {
+        flex-direction: column;
+        min-height: 200px;
+    }
+
+        .cont_inf_perf {
+            justify-content: space-evenly;
+        }
+
+    .cont_aspi {
+        width: 90%;
+    }
+
+    .btn_edi {
+        right: -130px;
+        top: -210px;
+    }
+
+    .li_dif {
+        border-radius: 0;
+    }
+
+    .form_new_vac {
+        min-height: 300px;
+        width: 80%;
+    }
+
+        .form_new_vac form {
+            width: 95%;
+        }
+
+            .form_new_vac h3 {
+                font-size: 0.8em;
+                padding-top: 25px;
+            }
+
+    .cuerpo_inf {
+        flex-direction: column-reverse;
+    }
+
+        .cuerpo_inf_quien {
+            width: 100%;
+            padding: 5px;
+        }
+
+        .cuerpo_inf_img {
+            width: 100%;
+            margin: auto;
+        }
+
+    .cuerpo_mis_vis {
+        margin-top: 20px;
+        height: 620px;
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+        .mision {
+            min-height:50%;
+            width: 100%;
+            padding: 20px;
+        }
+
+        .vision {
+            min-height: 50%;
+            width: 100%;
+            padding: 20px;
+        }
+
+        .container_bus {
+            display: flex;
+            flex-direction: column;
+            width: 90%;
+            min-height: 100px;
+        }
+    
+            .img_bus img {
+                display: none;
+            }
+    
+        .container_des {
+            width: 90%;
+            min-height: 150px;
+        }
+    
+            .cont_des_nom_car #cargo_empresa {
+                display: none;
+            }
+    
+            .cont_des_des #descripcion {
+                padding: 2px;
+            }
+
+            .cont_des_nom_car {
+                height: 100px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+    
+        .nom_car_bus {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+    
+        .cont_des_conocer_mas {
+            flex-direction: column;
+            min-height: 150px;
+        }
+    
+            .cont_des_conocer_mas button {
+                margin: 3px 3px 3px 3px ;
+                padding: 8px 10px;
+                font-size: 1em;
+            }
+    
+            .cont_des_conocer_mas img {
+                display: none;
+            }
+
+    .cuerpo_sliter{
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* Buscar ofertas */
+    .cuerpo_oferta {
+        height: 30vh;
+    }
+
+    .oferta_conteiner {
+        width: 93%;
+    }
+
+        .oferta_bnt h1{
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+    /* Seccion empresas */
+    .empresas_des p {
+        font-size: 1.3em;
+    }
+
+    .empresas_container{
+        width: 80%;
+    }
+
+    /* seccion final */
+    .final_general {
+        font-size: 0.8em;
+    }
+
+    .final_btn button {
+        font-size: 0.8em;
+    }
+
+    .cuerpoIntEdit {
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .contIntEdit .contCompEdit {
+        width: 100%;
+    }
+
+    .btn_edit_vac{
+        display: flex;
+        flex-direction: column;
+    }
+
+}
